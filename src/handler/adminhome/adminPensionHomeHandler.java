@@ -11,7 +11,7 @@ import handler.CommandHandler;
 
 @Controller
 public class adminPensionHomeHandler implements CommandHandler{
-	@RequestMapping("/adminHome")
+	@RequestMapping("/adminPensionHome")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		

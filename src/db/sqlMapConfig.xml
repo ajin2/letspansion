@@ -24,7 +24,7 @@
 	
 	<!-- Mapper 설정 -->
 	<mappers>
-		<mapper resource="db/board.xml"/>
 		<mapper resource="db/member.xml"/>
+		<mapper resource="db/room.xml"/>
 	</mappers>
 </configuration>

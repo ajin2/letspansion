@@ -15,6 +15,6 @@ public class adminPensionRoomProHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		return new ModelAndView("adminroom/adminPensionRoomPro");
+		return new ModelAndView("adminroom/adminRoomPro");
 	}
 }
