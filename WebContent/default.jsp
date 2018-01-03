@@ -4,3 +4,6 @@
 
 에러페이지다
 고쳐라
+
+흰트 : <%=request.getAttribute( "result" )%> <br>
+흰트 : <%=request.getAttribute( "adminid" )%> <br>
