@@ -6,6 +6,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import admin.AdminDBBean;
+import admin.AdminDao;
 import member.LogonDBBean;
 import member.LogonDao;
 import room.RoomDBBean;
@@ -14,6 +16,11 @@ import room.RoomDao;
 @Configuration
 public class CreateBean {
 
+	@Bean
+	public AdminDao adminDao() {
+		return new AdminDBBean();
+	}
+	
 	@Bean 
 	public LogonDao logonDao() {
 		return new LogonDBBean();
