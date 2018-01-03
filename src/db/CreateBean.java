@@ -8,6 +8,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import member.LogonDBBean;
 import member.LogonDao;
+import room.RoomDBBean;
+import room.RoomDao;
 
 @Configuration
 public class CreateBean {
@@ -16,6 +18,11 @@ public class CreateBean {
 	public LogonDao logonDao() {
 		return new LogonDBBean();
 	}	
+	
+	@Bean
+	public RoomDao roomDao() {
+		return new RoomDBBean();
+	}
 	
 	@Bean
 	public ViewResolver viewResolver() {
