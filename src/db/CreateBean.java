@@ -12,6 +12,8 @@ import after.AfterDBBean;
 import after.AfterDao;
 import member.LogonDBBean;
 import member.LogonDao;
+import notice.NoticeDBBean;
+import notice.NoticeDao;
 import room.RoomDBBean;
 import room.RoomDao;
 
@@ -36,6 +38,11 @@ public class CreateBean {
 	@Bean
 	public AfterDao afterDao() {
 		return new AfterDBBean();
+	}
+	
+	@Bean
+	public NoticeDao noticeDao() {
+		return new NoticeDBBean();
 	}
 	
 	@Bean

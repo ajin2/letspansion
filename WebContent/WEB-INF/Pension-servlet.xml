@@ -36,6 +36,10 @@
 	<context:component-scan base-package="handler.qna"/>
 	<context:component-scan base-package="qna"/>
 	
+	<context:component-scan base-package="handler.adminnotice"/>
+	<context:component-scan base-package="handler.notice"/>
+	<context:component-scan base-package="notice"/>
+	
 	<context:component-scan base-package="handler.adminafter"/>
 	<context:component-scan base-package="handler.after"/>
 	<context:component-scan base-package="after"/>

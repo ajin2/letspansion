@@ -1,5 +1,5 @@
 package qna;
 
-public class QnaDao {
+public interface QnaDao {
 
 }

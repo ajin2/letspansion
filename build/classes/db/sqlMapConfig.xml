@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- sqlMapConfig.xml -->
 <!DOCTYPE configuration 
 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -27,6 +27,7 @@
 		<mapper resource="db/admin.xml"/>
 		<mapper resource="db/member.xml"/>
 		<mapper resource="db/room.xml"/>
-		<mapper resource="db/after.xml"/>
-	</mappers>
+<mapper resource="db/notice.xml"/>
+<mapper resource="db/after.xml"/>
+</mappers>
 </configuration>
