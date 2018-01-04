@@ -28,11 +28,11 @@ public class LogonInputProHandler implements CommandHandler {
 		request.setCharacterEncoding( "utf-8" );
 	
 		LogonDataBean memberDto = new LogonDataBean();
-		memberDto.setId( request.getParameter( "id" ) );
+		/*memberDto.setId( request.getParameter( "id" ) );
 		memberDto.setPasswd( request.getParameter( "passwd" ) );
 		memberDto.setName( request.getParameter( "name" ) );
 		memberDto.setJumin1( request.getParameter( "jumin1" ) );
-		memberDto.setJumin2( request.getParameter( "jumin2" ) );
+		memberDto.setJumin2( request.getParameter( "jumin2" ) );*/
 	
 		// tel
 		String tel = null;
@@ -44,7 +44,7 @@ public class LogonInputProHandler implements CommandHandler {
 			&& ! tel3.equals( "" ) ) {
 			tel = tel1 + "-" + tel2 + "-" + tel3; 
 		}
-		memberDto.setTel( tel );	
+		/*memberDto.setTel( tel );	*/
 	
 		// email
 		String email = null;
@@ -57,16 +57,16 @@ public class LogonInputProHandler implements CommandHandler {
 				email = email1 + "@" + email2;
 			}
 		}
-		memberDto.setEmail( email );
+		/*memberDto.setEmail( email );*/
 	
 		// reg_date	
-		memberDto.setReg_date( new Timestamp( System.currentTimeMillis() ) );
+		/*memberDto.setReg_date( new Timestamp( System.currentTimeMillis() ) );*/
 	
 		//LogonDBBean memberDao = LogonDBBean.getInstance();
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		int result = logonDao.insertMember( memberDto );
+		/*int result = logonDao.insertMember( memberDto );*/
 	
-		request.setAttribute( "result", result );	
+		/*request.setAttribute( "result", result );	*/
 		
 		return new ModelAndView("member/inputPro");
 	}

@@ -10,15 +10,21 @@
 		<%@ include file="setting.jsp" %>
 		
 	</head>
+
+	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
+	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
+
 	<body>
-		<h2> </h2>
-		<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-		<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
+		<h2> Let's Pension의 방을 소개합니다. </h2>
 
-		Admin Pension Room 본문		
-
-
-		<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
+		<input type="button" value="${room_add}" onclick="location='adminRoomWrite.do'">
+		<form>
+			<table border="1">
+				
+			
+			</table>
+		</form>
 	</body>
+	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
 </html>
 	

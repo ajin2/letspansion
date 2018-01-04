@@ -28,14 +28,14 @@ public class LogonModifyViewHandler implements CommandHandler {
 	
 		//LogonDBBean memberDao = LogonDBBean.getInstance();
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		int result = logonDao.check( id, passwd );	
+		/*int result = logonDao.check( id, passwd );	*/
 	
-		request.setAttribute( "result", result );
+		/*request.setAttribute( "result", result );*/
 		
-		if( result == 1 ) {
+		/*if( result == 1 ) {
 			LogonDataBean memberDto = logonDao.getMember( id );
 			request.setAttribute( "memberDto", memberDto );
-		}
+		}*/
 		
 		return new ModelAndView("member/modifyView");
 	}	
