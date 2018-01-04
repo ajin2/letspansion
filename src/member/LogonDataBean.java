@@ -3,63 +3,78 @@ package member;
 import java.sql.Timestamp;
 
 public class LogonDataBean {
-/*	private String id;
-	private String passwd;
-	private String name;
-	private String jumin1;
-	private String jumin2;
-	private String tel;
-	private String email;
-	private Timestamp reg_date;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPasswd() {
-		return passwd;
-	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getJumin1() {
-		return jumin1;
-	}
-	public void setJumin1(String jumin1) {
-		this.jumin1 = jumin1;
-	}
-	public String getJumin2() {
-		return jumin2;
-	}
-	public void setJumin2(String jumin2) {
-		this.jumin2 = jumin2;
-	}
-	public String getTel() {
-		return tel;
-	}
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Timestamp getReg_date() {
-		return reg_date;
-	}
-	public void setReg_date(Timestamp reg_date) {
-		this.reg_date = reg_date;
-	}*/
+	private String m_id;
+	private String m_passwd;
+	private String m_name;
+	private String m_tel;
+	private String m_email;
+	private String m_postcode;
+	private String m_address;
+	private String m_detailadd;
+	private Timestamp m_regdate;
+	private String extra;
 	
+	
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+	public String getM_passwd() {
+		return m_passwd;
+	}
+	public void setM_passwd(String m_passwd) {
+		this.m_passwd = m_passwd;
+	}
+	public String getM_name() {
+		return m_name;
+	}
+	public void setM_name(String m_name) {
+		this.m_name = m_name;
+	}
+	public String getM_tel() {
+		return m_tel;
+	}
+	public void setM_tel(String m_tel) {
+		this.m_tel = m_tel;
+	}
+	public String getM_email() {
+		return m_email;
+	}
+	public void setM_email(String m_email) {
+		this.m_email = m_email;
+	}
+	public String getM_postcode() {
+		return m_postcode;
+	}
+	public void setM_postcode(String m_postcode) {
+		this.m_postcode = m_postcode;
+	}
+	public String getM_address() {
+		return m_address;
+	}
+	public void setM_address(String m_address) {
+		this.m_address = m_address;
+	}
+	public String getM_detailadd() {
+		return m_detailadd;
+	}
+	public void setM_detailadd(String m_detailadd) {
+		this.m_detailadd = m_detailadd;
+	}
+	public Timestamp getM_regdate() {
+		return m_regdate;
+	}
+	public void setM_regdate(Timestamp m_regdate) {
+		this.m_regdate = m_regdate;
+	}
+	public String getExtra() {
+		return extra;
+	}
+	public void setExtra(String extra) {
+		this.extra = extra;
+	}
 	
 }
 

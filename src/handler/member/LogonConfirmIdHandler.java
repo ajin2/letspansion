@@ -26,9 +26,9 @@ public class LogonConfirmIdHandler implements CommandHandler {
 	
 		// LogonDBBean memberDao = LogonDBBean.getInstantce();	logonDao의 객체 받기
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		int result = logonDao.check( id );
+		/*int result = logonDao.check( id );*/
 	
-		request.setAttribute( "result", result );
+		/*request.setAttribute( "result", result );*/
 		request.setAttribute( "id", id );
 				
 		return new ModelAndView("member/confirmId");

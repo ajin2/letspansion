@@ -28,14 +28,14 @@ public class LogonDeleteProHandler implements CommandHandler {
 	
 		// LogonDBBean memberDao = LogonDBBean.getInstance();
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		int resultCheck = logonDao.check( id, passwd );
+		/*int resultCheck = logonDao.check( id, passwd );*/
 	
-		request.setAttribute( "resultCheck", resultCheck );
+		/*request.setAttribute( "resultCheck", resultCheck );*/
 		
-		if( resultCheck == 1 ) {
+		/*if( resultCheck == 1 ) {
 			int result = logonDao.deleteMember( id );
 			request.setAttribute( "result", result );
-		}
+		}*/
 		
 		return new ModelAndView("member/deletePro");
 	}

@@ -27,9 +27,9 @@ public class LogonLoginProHandler implements CommandHandler {
 
 		//LogonDBBean memberDao = LogonDBBean.getInstance(); logonDao의 객체 받기
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao"); to user @Resource
-		int result = logonDao.check( id, passwd );
+		/*int result = logonDao.check( id, passwd );*/
 	
-		request.setAttribute( "result", result );
+		/*request.setAttribute( "result", result );*/
 		request.setAttribute( "id", id );
 		
 		return new ModelAndView("member/loginPro");

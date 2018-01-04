@@ -8,6 +8,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import admin.AdminDBBean;
 import admin.AdminDao;
+import after.AfterDBBean;
+import after.AfterDao;
 import member.LogonDBBean;
 import member.LogonDao;
 import room.RoomDBBean;
@@ -29,6 +31,11 @@ public class CreateBean {
 	@Bean
 	public RoomDao roomDao() {
 		return new RoomDBBean();
+	}
+
+	@Bean
+	public AfterDao afterDao() {
+		return new AfterDBBean();
 	}
 	
 	@Bean

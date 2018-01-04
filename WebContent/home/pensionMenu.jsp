@@ -11,7 +11,7 @@
      		<a href="pensionRoomPro.do">Room</a>
      		<a href="pensionBook.do">Book</a>
        		<a href="pensionQna.do">Q & A</a>
-       		<a href="pensionAfter.do">후기</a>		
+       		<a href="http://localhost:8080/LetsPension/list.do">후기</a>		
 	</body>
 </html>
 	
