@@ -17,7 +17,7 @@ public class LogonLogoutHandler implements CommandHandler {
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
 		request.getSession().removeAttribute( "memId" );		
-		return new ModelAndView("member/main");
+		return new ModelAndView("home/pensionHome");
 	}	
 }
 
