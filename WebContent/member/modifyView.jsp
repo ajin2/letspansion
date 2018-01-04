@@ -6,6 +6,7 @@
 <%@ include file="setting.jsp"%>
 <link href="${project}member/style.css" rel="stylesheet" type="text/css">
 <script src="${project}member/script.js"></script>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <h2> ${page_modify} </h2>
 

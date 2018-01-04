@@ -9,7 +9,7 @@
 
 <c:if test="${result == 1}">
 	${sessionScope.memId = id}
-	<c:redirect url="logonMain.do"/>
+	<c:redirect url="pensionHome.do"/>
 </c:if>
 <c:if test="${result == -1}">
 	<script type="text/javascript">

@@ -25,7 +25,7 @@
 	    <body>
 		    <a class="text-shadow text-white" >${sessionScope.memId} 님</a> |
 		    <a class="text-shadow text-white" href="pensionMypage.do">${str_mypage}</a> | 
-		    <a class="text-shadow text-white" href="Band_Logon_logout.do?con=1">${str_logout}</a>
+		    <a class="text-shadow text-white" href="logonLogout.do">${str_logout}</a>
 		</body>
 	</c:if>  	
 	
