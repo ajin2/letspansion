@@ -24,10 +24,10 @@ public class LogonModifyProHandler implements CommandHandler {
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
 		LogonDataBean memberDto = new LogonDataBean();
-		memberDto.setPasswd( request.getParameter( "passwd" ) );
+		/*memberDto.setPasswd( request.getParameter( "passwd" ) );*/
 		
 		String id = (String) request.getSession().getAttribute( "memId" );
-		memberDto.setId( id );
+		/*memberDto.setId( id );*/
 	
 		String tel = null;
 		String tel1 = request.getParameter( "tel1" );
@@ -38,7 +38,7 @@ public class LogonModifyProHandler implements CommandHandler {
 			&& ! tel3.equals( "" ) ) {
 			tel = tel1 + "-" + tel2 + "-" + tel3;
 		}
-		memberDto.setTel( tel );
+		/*memberDto.setTel( tel );*/
 	
 		String email = null;
 		String email1 = request.getParameter( "email1" );
@@ -47,13 +47,13 @@ public class LogonModifyProHandler implements CommandHandler {
 			&& ! email2.equals( "" ) ) {
 			email = email1 + "@" + email2;
 		}
-		memberDto.setEmail( email );
+		/*memberDto.setEmail( email );*/
 	
 		//LogonDBBean memberDao = LogonDBBean.getInstance();
 		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		int result = logonDao.updateMember( memberDto );
+		/*int result = logonDao.updateMember( memberDto );*/
 
-		request.setAttribute( "result", result );
+		/*request.setAttribute( "result", result );*/
 		
 		return new ModelAndView("member/modifyPro");
 	}

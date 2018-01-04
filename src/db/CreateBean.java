@@ -6,11 +6,18 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import after.AfterDBBean;
+import after.AfterDao;
 import member.LogonDBBean;
 import member.LogonDao;
 
 @Configuration
 public class CreateBean {
+	
+	@Bean
+	public AfterDao afterDao() {
+		return new AfterDBBean();
+	}
 
 	@Bean 
 	public LogonDao logonDao() {
