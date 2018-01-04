@@ -11,11 +11,11 @@ import handler.CommandHandler;
 
 @Controller
 public class LogonMainHandler implements CommandHandler {
-	@RequestMapping("/logonMain")
+	@RequestMapping( "/logonMain" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 				
-		return new ModelAndView("member/main");
+		return new ModelAndView( "member/main" );
 	}
 }
 
