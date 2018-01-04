@@ -14,8 +14,8 @@
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
 		<body>
-			<a class="text-shadow text-white" href="pensionLoginForm.do">${str_login}</a>  | 
-		    <a class="text-shadow text-white" href="pensionInputForm.do">${str_signon}</a> |  
+			<a class="text-shadow text-white" href="logonMain.do">${str_login}</a>  | 
+		    <a class="text-shadow text-white" href="logonInput.do">${str_signon}</a> |  
 		    <a class="text-shadow text-white" href="pensionFindId.do">${str_findid}</a>  | 
 		    <a class="text-shadow text-white" href="pensionFindPasswd.do">${str_findpasswd}</a>     
 		</body>
