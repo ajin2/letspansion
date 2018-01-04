@@ -16,21 +16,27 @@
 	<context:component-scan base-package="handler"/>
 	<context:component-scan base-package="db"/>
 	
+	<context:component-scan base-package="handler.admin"/>
+	<context:component-scan base-package="admin"/>
 	<context:component-scan base-package="handler.member"/>
 	<context:component-scan base-package="member"/>
 	
+	<context:component-scan base-package="handler.adminhome"/>
 	<context:component-scan base-package="handler.home"/>
-	<context:component-scan base-package="home"/>
 	
+	<context:component-scan base-package="handler.adminroom"/>
 	<context:component-scan base-package="handler.room"/>
 	<context:component-scan base-package="room"/>
 	
+	<context:component-scan base-package="handler.adminbook"/>
 	<context:component-scan base-package="handler.book"/>
 	<context:component-scan base-package="book"/>
 	
+	<context:component-scan base-package="handler.adminqna"/>
 	<context:component-scan base-package="handler.qna"/>
 	<context:component-scan base-package="qna"/>
 	
+	<context:component-scan base-package="handler.adminafter"/>
 	<context:component-scan base-package="handler.after"/>
 	<context:component-scan base-package="after"/>
 </beans>

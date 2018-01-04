@@ -7,11 +7,11 @@
 	</head>
 	<body>
 		<h2> </h2>
-			<a href="adminPensionHomePro.do">Home</a>
-     		<a href="adminPensionRoomPro.do">관리자 Room</a>
-     		<a href="adminPensionBookPro.do">관리자 Book</a>
-       		<a href="adminPensionQnaPro.do">관리자 Q & A</a>
-       		<a href="adminPensionAfterPro.do">관리자 후기</a>		
+			<a href="adminPensionHome.do">Home</a> &nbsp; ㅣ &nbsp; 
+     		<a href="adminRoomPro.do">관리자 Room</a> &nbsp; ㅣ &nbsp; 
+     		<a href="adminPensionBookPro.do">관리자 Book</a> &nbsp; ㅣ &nbsp; 
+       		<a href="adminPensionQnaPro.do">관리자 Q & A</a> &nbsp; ㅣ &nbsp; 
+       		<a href="adminPensionAfterPro.do">관리자 후기</a> &nbsp; 
 	</body>
 </html>
 	
