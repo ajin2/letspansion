@@ -42,7 +42,7 @@ public class NoticeDBBean implements NoticeDao {
 			
 			// deleteArticle
 			
-			SqlMapClient.getSqlSession().delete("Board.deleteArticle", n_id);
+			SqlMapClient.getSqlSession().delete("Board.deleteArticle",  n_id);
 		}		
 		
 		return result;
