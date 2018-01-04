@@ -26,5 +26,6 @@
 	<mappers>
 		<mapper resource="db/member.xml"/>
 		<mapper resource="db/room.xml"/>
+		<mapper resource="db/notice.xml"/>
 	</mappers>
 </configuration>
