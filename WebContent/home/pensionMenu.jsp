@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h2> </h2>
-			<a href="pensionHomePro.do">Home</a>
+			<a href="pensionHome.do">Home</a>
      		<a href="pensionRoomPro.do">Room</a>
      		<a href="pensionBook.do">Book</a>
        		<a href="pensionQna.do">Q & A</a>

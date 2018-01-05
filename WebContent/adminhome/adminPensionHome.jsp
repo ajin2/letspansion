@@ -7,13 +7,14 @@
 		<%@ include file="setting.jsp" %>
 		
 	</head>
+	<jsp:include page="adminPensionHeader.jsp" flush="false"/>	
+	<jsp:include page="adminPensionMenu.jsp" flush="false"/>
+
 	<body>
 		<h2> </h2>
-		<jsp:include page="adminPensionHeader.jsp" flush="false"/>	
-		<jsp:include page="adminPensionMenu.jsp" flush="false"/>
 
 		<jsp:include page="adminPensionMain.jsp" flush="false"/>
-		<jsp:include page="adminPensionBottom.jsp" flush="false"/>
 	</body>
+	<jsp:include page="adminPensionBottom.jsp" flush="false"/>
 </html>
 	
