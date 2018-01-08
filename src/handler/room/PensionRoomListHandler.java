@@ -1,4 +1,4 @@
-package handler.adminroom;
+package handler.room;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,11 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionRoomProHandler implements CommandHandler{
-	@RequestMapping("/adminRoomPro")
+public class PensionRoomListHandler implements CommandHandler{
+	@RequestMapping("/pensionRoomList")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		
-		return new ModelAndView("adminroom/adminRoomPro");
+
+		return new ModelAndView("room/pensionRoomList");
 	}
 }

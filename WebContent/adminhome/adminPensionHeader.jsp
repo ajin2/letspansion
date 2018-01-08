@@ -31,7 +31,6 @@
 				</table>
 			</form>
 		</body>
-
 	</c:if>
 	
 	<c:if test="${sessionScope.adminId != null}">
@@ -40,7 +39,7 @@
 			<a href="adminManageMemberPro.do">${str_managemember}</a> &nbsp; ㅣ  &nbsp;
 			<a href="adminManageBookPro.do">${str_managebook}</a> &nbsp; ㅣ &nbsp;
 			<a href="adminManageProductPro.do">${str_manageproduct}</a> &nbsp; ㅣ &nbsp;
-			로그아웃도 해야함
+			<a href="adminLogout.do">${str_logout}</a><br>
 		</body>
 	</c:if>
 	

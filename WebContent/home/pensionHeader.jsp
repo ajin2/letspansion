@@ -10,6 +10,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<script src="${project}home/script.js"></script>
+		
 	</head>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
