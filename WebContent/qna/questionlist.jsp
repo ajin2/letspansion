@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<form name="qlist">
-			<table border="1">
+			<table border="1" >
 				<tr>
 					<th colspan="4" align="right"> &nbsp;
 						<input type="button" value="글작성" 
