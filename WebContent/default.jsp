@@ -2,8 +2,4 @@
     pageEncoding="UTF-8"%>
 
 
-에러페이지다
-고쳐라
-
-흰트 : <%=request.getAttribute( "result" )%> <br>
-흰트 : <%=request.getAttribute( "adminid" )%> <br>
+<img src="/LetsPension/img/error500.jpg" width="100%" height="100%"> <br>
