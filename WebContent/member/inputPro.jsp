@@ -16,7 +16,7 @@
 	</script>
 </c:if>
 <c:if test="${result != 0}">
-	<c:redirect url="logonLoginForm.do"/>
+	<c:redirect url="pensionHome.do"/>
 </c:if>	
 
 

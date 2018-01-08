@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
-    <%@ include file="setting.jsp" %>
-   <script src="${project}member/script.js"></script>
+
+<%@ include file="setting.jsp" %>
+<script src="${project}member/script.js"></script>
    
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -22,7 +21,7 @@
           <h1>회원가입 <small>Let's Pension</small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
-          <form role="form" method="post" action="logonLoginPro.do" name="inputform" onsubmit="return inputcheck()">
+          <form method="post" action="logonInputPro.do" name="inputform" onsubmit="return inputcheck()">
             <input type="hidden" name="confirm" value="0">
        		<input type="hidden" name="emailconfirm_value" value="0">
             
@@ -31,7 +30,7 @@
               <div class="input-group">
               <input type="text" class="form-control" name="id" placeholder="아이디">
               <span class="input-group-btn">
-                 <button class="btn btn-success" type="button" name="confirmbtn" onclick="confirmid()">${btn_confirm}<i class="fa fa-mail-forward spaceLeft"></i></button>
+                 <button class="btn btn-success" type="button" onclick="confirmid()">${btn_confirm}<i class="fa fa-mail-forward spaceLeft"></i></button>
               </span>
               </div>
             </div>
@@ -60,7 +59,7 @@
               <label for="inputEmail" id="a">*${str_email}</label>
               <div class="input-group">
               <input type="text" class="form-control" name="email1" placeholder="email을 입력해주세요" style="width:200px">
-              <label for="inputEmail" >&nbsp;@&nbsp;</label>
+              <label>@</label>
               <select class="custom-select" name="email2" style="width:200px" >
                   <option value="0"> 직접입력 </option>
                       <option value="naver.com"> 네이버 </option>
@@ -69,11 +68,19 @@
                       <option value="nate.com"> 네이트 </option>
                  </select> 
               <span class="input-group-btn">
-                 <button class="btn btn-success" type="button" name="emailconfirm" onclick="emailcheck(inputform.email1.value, inputform.email2.value, 0)">${btn_email}<i class="fa fa-mail-forward spaceLeft"></i></button>
+                 <button class="btn btn-success" type="button" name="emailconfirm" onclick="emalicheck(inputform.email1.value, inputform.email2.value, 0)">${btn_email}<i class="fa fa-mail-forward spaceLeft"></i></button>
               </span>
               </div>
             </div>
-            
+            <script type="text/javascript">
+   				//<!--
+         			function emalicheck(email1,email2, emailvalue){
+        			var url="emailckeck.do?email1="+email1+"&email2="+email2+"&emailvalue="+emailvalue;
+        			open(url,"emailwindow", "statusbar=no, scrollbar=no, menubar=no, width=600, height=400" );
+         			}
+      
+   				//-->
+   			</script>
             <div class="form-group">
               <label for="inputpostcode" id="a">*${str_postcode}</label>
              <div class="input-group">
@@ -91,19 +98,20 @@
               <label for="username">*상세주소</label>
               <input type="text" class="form-control" id="detailadd" name="detailadd" placeholder="상세주소를 입력해주세요">
             </div>
+            
             <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 			<script>
-   // 우편번호 찾기 화면을 넣을 element
-   var element_layer = document.getElementById('layer');
+  				 // 우편번호 찾기 화면을 넣을 element
+   					var element_layer = document.getElementById('layer');
 
-   function closeDaumPostcode() {
-       // iframe을 넣은 element를 안보이게 한다.
-       element_layer.style.display = 'none';
-   }
+   					function closeDaumPostcode() {
+       					// iframe을 넣은 element를 안보이게 한다.
+       				element_layer.style.display = 'none';
+   					}
 
-   function sample2_execDaumPostcode() {
-       new daum.Postcode({
-           oncomplete: function(data) {
+   					function sample2_execDaumPostcode() {
+       					new daum.Postcode({
+           			oncomplete: function(data) {
                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
@@ -165,7 +173,7 @@
             
             <div class="form-group text-center">
               <button type="submit" class="btn btn-info">${btn_in}<i class="fa fa-check spaceLeft"></i></button>
-              <button type="reset" class="btn btn-warning" onclick="location='BandBoard_main.do'">가입취소<i class="fa fa-times spaceLeft"></i></button>
+              <button type="reset" class="btn btn-warning" onclick="location='pensionHome.do'">가입취소<i class="fa fa-times spaceLeft"></i></button>
             </div>
           </form>
         </div>
