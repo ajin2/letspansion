@@ -51,20 +51,19 @@
 				
 
 <form>
-
-			<a href="qna_questionWriteForm.jsp"> ${question} </a>
-			<br>
-			<a href="qna_myqnalist.jsp"> ${myqnalist} </a>
+	<a href="questionWrite.do"> ${question} </a>
+	<a href="questionlist.do"> ${myqnalist} </a> 
 
 <table border="1">
-	
-	<%-- <c:if test="${a_id eq 'admin'}"> --%>
 	<tr>
+	<c:if test="${adminId eq 'admin'}">
+	
 		<th colspan="4" align="right">
 			<input type="button" value="글작성" onclick="location='noticeWriteForm.do'">
 		</th> 
+	
+	</c:if>
 	</tr>
-	<%-- </c:if> --%>
 	
 	<tr>
 		<th style="width: 8%;"> 
@@ -135,5 +134,5 @@
 				
 				
 </form>
-	</body>
+</body>
 </html>

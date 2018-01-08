@@ -14,6 +14,8 @@ import member.LogonDBBean;
 import member.LogonDao;
 import notice.NoticeDBBean;
 import notice.NoticeDao;
+import qna.QnaDBBean;
+import qna.QnaDao;
 import room.RoomDBBean;
 import room.RoomDao;
 
@@ -43,6 +45,11 @@ public class CreateBean {
 	@Bean
 	public NoticeDao noticeDao() {
 		return new NoticeDBBean();
+	}
+	
+	@Bean
+	public QnaDao qnaDao() {
+		return new QnaDBBean();
 	}
 	
 	@Bean

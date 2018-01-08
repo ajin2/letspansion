@@ -29,5 +29,6 @@
 		<mapper resource="db/room.xml"/>
 		<mapper resource="db/notice.xml"/>
 		<mapper resource="db/after.xml"/>
+		<mapper resource="db/qna.xml"/>
 	</mappers>
 </configuration>

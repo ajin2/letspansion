@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="QnA">
+  	<!-- list -->
+  	<select id="getCount" resultType="int">
+  		select count(*) from penstion_qna
+  	</select>
+  	
+  	<select id="getArticles" parameterType="Map" resultType="qna.QnaDataBean">
+  		select q_num, m_id, a_id, q_cate, q_subject, q_content, ref, re_step, re_level,
+  		q_regdate, q_delete, r from (select q_num, m_id, a_id, q_cate, q_subject, q_content,
+  		ref, re_step, re_level, q_regdate, q_delete, rownum r from (select q_num, m_id,
+  		a_id, q_cate, q_subject, q_content, ref, re_step, re_level,	q_regdate, q_delete 
+ 		from pension_qna order by ref desc, re_step asc) order by ref desc, re_step asc) 
+ 		where r &gt;= #{start} and r &lt;= #{end}
+  	</select>
+  	
+  </mapper>
