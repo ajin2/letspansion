@@ -7,4 +7,4 @@
 
 <c:set var="project" value = "/LetsPension/"/>
 
-<c:set var="room_add" value= "방 등 록 "/>
+<c:set var="btn_roomAdd" value= "방 등 록 "/>

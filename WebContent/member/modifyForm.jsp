@@ -27,7 +27,7 @@
 				<th colspan="2">
 					<input class="inputbutton" type="submit" value="${btn_mod}">
 					<input class="inputbutton" type="button" value="${btn_mod_cancel}"
-						onclick="location='logonMain.do'">
+						onclick="location='pensionHome.do'">
 				</th>
 			</tr>
 		</table>

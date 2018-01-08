@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import handler.CommandHandler;
-import member.LogonDBBean;
 import member.LogonDao;
 
 @Controller
@@ -18,33 +17,17 @@ public class LogonConfirmIdHandler implements CommandHandler {
 	@Resource
 	private LogonDao logonDao;
 	
-	@RequestMapping("/logonConfirmId")
+	@RequestMapping( "/logonConfirmId" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
 		String id = request.getParameter( "id" );	
+
+		int result = logonDao.check( id );
 	
-		// LogonDBBean memberDao = LogonDBBean.getInstantce();	logonDao의 객체 받기
-		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		/*int result = logonDao.check( id );*/
-	
-		/*request.setAttribute( "result", result );*/
+		request.setAttribute( "result", result );
 		request.setAttribute( "id", id );
 				
-		return new ModelAndView("member/confirmId");
+		return new ModelAndView( "member/confirmId" );
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

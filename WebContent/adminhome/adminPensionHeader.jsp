@@ -24,15 +24,13 @@
 						<td> <input class="input" type="text" name="adminid" maxlength="15"> </td> 
 						<th> ${str_adminpasswd} : </th>
 						<td> <input class="input" type="password" name="adminpasswd" maxlength="15"> </td> 
-						<th colspan="1">
-						<input class="inputbutton" type="submit" value="${btn_adminlogin}"> 
-						<input class="inputbutton" type="reset" value="취소">
-						<input class="inputbutton" type="button" value="왜안되냐" onclick="location='adminPensionHome.do'"> </th>
+						<th>
+							<input class="inputbutton" type="submit" value="${btn_adminlogin}"> 
+						</th>
 					</tr>
 				</table>
 			</form>
 		</body>
-
 	</c:if>
 	
 	<c:if test="${sessionScope.adminId != null}">
@@ -41,7 +39,7 @@
 			<a href="adminManageMemberPro.do">${str_managemember}</a> &nbsp; ㅣ  &nbsp;
 			<a href="adminManageBookPro.do">${str_managebook}</a> &nbsp; ㅣ &nbsp;
 			<a href="adminManageProductPro.do">${str_manageproduct}</a> &nbsp; ㅣ &nbsp;
-			로그아웃도 해야함
+			<a href="adminLogout.do">${str_logout}</a><br>
 		</body>
 	</c:if>
 	

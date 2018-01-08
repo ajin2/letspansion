@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ 
+ <mapper namespace="Notice">
+ <!-- list -->
+ 	<select id="getCount" resultType="int">
+ 		select count(*) from pension_notice
+ 	</select>
+ 	
+ 	<select id="getArticles" parameterType="Map" resultType="notice.NoticeDataBean">
+ 		select n_id, a_id, n_subject, n_content, n_regdata, r 
+ 		from (select n_id, a_id, n_subject, n_content, n_regdata, rownum r 
+ 		from (select n_id, a_id, n_subject, n_content, n_regdata 
+ 		from pension_notice order by n_regdata desc) order by n_regdata desc ) 
+ 		where r &gt;= #{start} and r &lt;= #{end}
+ 	</select>
+ 
+ 
+ <!-- content -->
+ 	<select id="getArticle" parameterType="int" resultType="notice.NoticeDataBean">
+  			select * from pension_notice where n_id=#{n_id}
+  	</select>
+  	
+ <!-- insert -->
+  	<insert id="insertArticle" parameterType="notice.NoticeDataBean">
+  			insert into pension_notice( n_id, a_id, n_subject, n_content, n_regdata )
+  			 values(pension_notice_seq.NEXTVAL, #{a_id}, #{n_subject}, #{n_regdata}, 
+  			 #{n_content} )
+  	</insert>
+  
+ 	
+ </mapper>
