@@ -5,18 +5,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp" %>
-		<script src="${project}notice/script.js"></script>
 	</head>
 	<body>
 		<c:if test="${result == 0}">
 			<script type="text/javascript">
 			<!--
-			erroralert( writeerror );
+			erroralert(n_writeerror);
 			//-->
 			</script>
 		</c:if>
-		<c:if test="${result == 1}">
-			<c:redirect url="noticeList.do"/>
-		</c:if>		
+		<c:if test="${result != 0}" >
+			<c:redirect url="noticeList.do" />
+		</c:if>
 	</body>
 </html>

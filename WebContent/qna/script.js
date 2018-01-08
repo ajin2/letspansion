@@ -52,14 +52,14 @@ function passwdcheck() {
 function writefocus() {
 	writeform.writer.focus();
 }
-function noticewritecheck() {
-	if( ! noticeWriteForm.subject.value ) {
+function writecheck() {
+	if( ! questionform.subject.value ) {
 		alert( subjecterror );
-		noticeWriteForm.subject.focus();
+		questionform.subject.focus();
 		return false;
-	} else if( ! noticeWriteForm.content.value ) {
+	} else if( ! questionform.content.value ) {
 		alert( contenterror );
-		noticeWriteForm.content.focus();
+		questionform.content.focus();
 		return false;
 	} 
 }

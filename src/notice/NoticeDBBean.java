@@ -20,10 +20,12 @@ public class NoticeDBBean implements NoticeDao {
 	}
 	
 	public int insertArticle( NoticeDataBean nDto ) {
-		int num = nDto.getN_id();
+		int n_id =  nDto.getN_id();
 		
-		//SqlMapClient.getSqlSession().update("Board.updateReply", boardDto);
-			
+		if(getCount() != 0) {
+			n_id =  SqlMapClient.getSqlSession().selectOne("Notice.maxnum");
+		}
+		
 		return SqlMapClient.getSqlSession().insert("Notice.insertArticle", nDto);		
 	}
 	

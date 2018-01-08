@@ -1,4 +1,4 @@
-package handler.adminnotice;
+package handler.notice;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +12,7 @@ import handler.CommandHandler;
 import notice.NoticeDao;
 
 @Controller
-public class NoticeDeletePro implements CommandHandler {
+public class NoticeDeleteProHandler implements CommandHandler {
 	
 	@Resource
 	private NoticeDao nDao;
