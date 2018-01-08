@@ -2,20 +2,31 @@
  * 회원관리
  */
 
-var iderror = "아이디를 입력하세요";
-var passwderror = "비밀번호를 입력하세요";
-var repasswderror = "비밀번호가 다릅니다";
-var nameerror = "이름을 입력하세요";
-var juminerror = "주민등록번호를 입력하세요";
-var telerror = "전화번호를 입력하세요";
-var emailerror = "이메일 형식에 맞지 않습니다";
+var iderror = "아이디를 입력하세요.";
+var confirmerror = "중복확인을 하지 않았습니다.";
+var passwderror = "비밀번호를 입력하세요.";
+var repasswderror = "비밀번호가 다릅니다.";
+var nameerror = "이름을 입력하세요.";
+var juminerror = "주민등록번호를 입력하세요.";
+var telerror = "전화번호를 입력하세요.";
+var emailerror = "이메일이 형식에 맞지 않습니다.";
+var emailnoerror = "이메일을 입력하세요.";
+var zipcodeerror = "우편번호를 입력하세요.";
+var adderror = "주소를 입력하세요.";
+var ziperror = "읍/면/동 을 입력하세요.";
+var emailconfirm_false = "이메일 인증을 해주세요.";
+var senderror = "이메일이 전송되었습니다.";
 
-var inputerror = "회원가입에 실패했습니다\n잠시 후 다시 시도하세요";
-var confirmerror = "아이디 중복확인을 해주세요"; 
-var loginiderror = "입력하신 아이디가 없습니다";
-var loginpasserror = "입력하신 비밀번호가 다릅니다";
-var deleteerror = "회원탈퇴에 실패했습니다\n잠시 후 다시 시도하세요";
-var updateerror = "회원정보 수정에 실패했습니다\n잠시 후 다시 시도하세요";	
+var inputerror = "회원가입에 실패했습니다. \n잠시 후 다시시도하세요.";
+var loginiderror = "입력하신 아이디가 없습니다.";
+var loginpasserror = "입력하신 비밀번호가 다릅니다.";
+var deleteerror = "회원탈퇴에 실패했습니다. \n잠시 후 다시시도하세요.";
+var emailconfirmerror = "인증번호가 일치하지 않습니다.";
+var emailconfirm = "인증에 성공했습니다.";
+var finderror = "아이디 / 비밀번호 찾기에 실패했습니다. \n잠시 후 다시시도하세요.";
+var delete_ok_error = "회원탈퇴가 성공적으로 완료되었습니다. \n계속하시려면 확인을 눌러주세요. \n취소버튼을 누르면 메인으로 이동합니다.";
+var deleteconfirm = "회원을 탈퇴하시겠습니까?";
+var returnValue = "false";	
 
 function erroralert( msg ) {
 	alert( msg );
@@ -49,12 +60,8 @@ function viewcheck() {
 			return false;
 		}
 	}
-	if( viewform.tel1.value 
-			|| viewform.tel2.value
-			|| veiwform.tel3.value ) {
-		if( viewform.tel1.value.length < 3 
-			|| viewform.tel2.value.length < 4 
-			|| viewform.tel3.value.length < 4 ) {
+	if( viewform.tel1.value  ) {
+		if( viewform.tel1.value.length < 11 ) {
 			alert( telerror );
 			viewform.tel1.focus();
 			return false;			
@@ -125,80 +132,103 @@ function maincheck() {
 		return false;
 	} 
 }
+///////email 인증
+/*function emailcheck(email1, email2, emailvalue){
+    // 인증을 위해 새창으로 이동
+	var url="emailckeck.do?email1="+email1+"&email2="+email2+"&emailvalue="+emailvalue;
+	open(url,"emailwindow", "statusbar=no, scrollbar=no, menubar=no, width=600, height=400" );
+}*/
 
+function confirmemail(emailconfirm_value, authNum, emailvalue){
+    // 입력한 값이 없거나, 인증코드가 일지하지 않을 경우
+	if(!emailconfirm_value || emailconfirm_value != authNum){
+		alert(emailconfirmerror);
+		emailconfirm_value="";
+		self.close();
+    // 인증코드가 일치하는 경우
+	}else if(emailconfirm_value==authNum){
+		alert(emailconfirm);
+		emailconfirm_value="";
+		self.close();
+		if(emailvalue == "0"){
+			opener.document.inputform.emailconfirm_value.value = "1";
+		} else if(emailvalue == "1"){
+			opener.document.viewform.emailconfirm_value.value = "1";
+		}
+	}
+}
 // 회원 가입
 function inputfocus() {
 	inputform.id.focus();
 }
-function inputcheck() {
-	// 아이디 비밀번호 이름 주민1 주민2 는 not null 이다.
-	// passwd 와 repassws 는 같아야 한다.	
-	
-	if( inputform.confirm.value == "0" ) {
-		alert( confirmerror );
+function inputcheck(){
+	if(inputform.confirm.value == "0"){
+		alert(confirmerror);
 		inputform.id.focus();
 		return false;
-	}
-	
-	if( ! inputform.id.value ) {
-		alert( iderror );
+	}if(inputform.emailconfirm_value.value == "0"){
+		alert(emailconfirm_false);
+		inputform.email1.focus();
+		return false;
+	} else if(!inputform.id.value){	// 값이 없냐
+		alert(iderror);
 		inputform.id.focus();
 		return false;
-	} else if( ! inputform.passwd.value ) {
-		alert( passwderror );
+	} else if(!inputform.passwd.value){
+		alert(passwderror);
 		inputform.passwd.focus();
 		return false;
-	} else if( inputform.passwd.value != inputform.repasswd.value ) {
-		alert( repasswderror );
+	} else if(!inputform.repasswd.value){
+		alert(passwderror);
 		inputform.repasswd.focus();
 		return false;
-	} else if( ! inputform.name.value ) {
-		alert( nameerror );
+	} else if(inputform.passwd.value != inputform.repasswd.value){
+		alert(repasswderror);
+		inputform.repasswd.focus();
+		return false;
+	} else if(!inputform.name.value){
+		alert(nameerror);
 		inputform.name.focus();
 		return false;
-	} else if( inputform.tel1.value 
-			|| inputform.tel2.value 
-			|| inputform.tel3.value ) {
-			//	전화번호 1 2 3 란 하나 입력했다면 모두 값이 있어야 한다
-			//	모두 값을 입력했다면 3 3 4 보다 작으면 안된다.
-			if( inputform.tel1.value.length < 3 
-				|| inputform.tel2.value.length < 3 
-				|| inputform.tel3.value.length < 4 ) {
-				alert( telerror );
-				inputform.tel1.focus();
-				return false;
-			}				
-	}
-	
-	if( inputform.email1.value ) {
-		if( inputform.email2.value == "0" ) {
-			// 직접입력 
-			if( inputform.email1.value.indexOf( "@" ) == -1 ) {
-				// @가 없다
-				alert( emailerror );
-				inputform.email1.focus();
-				return false;
-			}			
-		} else {
-			// 선택입력
-			if( inputform.email1.value.indexOf( "@" ) != -1 ) {
-				// @가 없다
-				alert( emailerror );
-				inputform.email1.focus();
-				return false;
+	} else if(!inputform.tel1.value){
+		alert(telerror);
+		inputform.email1.focus();
+		return false;
+	}else if(!inputform.email1.value){
+		alert(emailerror);
+		inputform.email1.focus();
+		return false;
+	} 
+	if(!inputform.email1.value || !inputform.email2.value){ 
+		alert(emailerror);
+		inputform.email1.focus();
+		return;
+	} if(inputform.email1.value){
+			if(inputform.email2.value==0){
+				// 직접입력
+				if(inputform.email1.value.indexOf("@")==-1){
+					alert(emailerror);
+					inputform.email1.focus();
+					return false;
+				}
+			}else{
+				// 선택입력
+				if(inputform.email1.value.indexOf("@")!=-1){
+					alert(emailerror);
+					inputform.email1.focus();
+					return false;
+				}
 			}
-		}		
-	}
+		}
 	
-	// 	1. null 인 경우		이동
-	// 	2. 직접입력일 경우		email1 란에 @가 없으면 경고
-	// 	3. 선택입력일 경우		email1 란에 @가 있으면 경고
-	//	단 전화번호가 있건 없건 모두 가능
-}
-
-function nextjumin2() {
-	if( inputform.jumin1.value.length == 6 ) {
-		inputform.jumin2.focus();
+	if(!inputform.postcode.value){
+		alert(zipcodeerror);
+		inputform.postcode.focus();
+		return false;
+	} else if(!inputform.address.value){
+		alert(adderror);
+		inputform.address.focus();
+		return false;
 	} 
 }
 function nexttel1() {

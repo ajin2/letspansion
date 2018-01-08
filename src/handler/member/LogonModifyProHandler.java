@@ -19,26 +19,19 @@ public class LogonModifyProHandler implements CommandHandler {
 	@Resource
 	private LogonDao logonDao;
 	
-	@RequestMapping("/logonModifyPro")
+	@RequestMapping( "/logonModifyPro" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
 		LogonDataBean memberDto = new LogonDataBean();
-		/*memberDto.setPasswd( request.getParameter( "passwd" ) );*/
+		memberDto.setM_passwd( request.getParameter( "passwd" ) );
 		
 		String id = (String) request.getSession().getAttribute( "memId" );
-		/*memberDto.setId( id );*/
+		memberDto.setM_id( id );
 	
-		String tel = null;
-		String tel1 = request.getParameter( "tel1" );
-		String tel2 = request.getParameter( "tel2" );
-		String tel3 = request.getParameter( "tel3" );
-		if( ! tel1.equals( "" ) 
-			&& ! tel2.equals( "" ) 
-			&& ! tel3.equals( "" ) ) {
-			tel = tel1 + "-" + tel2 + "-" + tel3;
-		}
-		/*memberDto.setTel( tel );*/
+		memberDto.setM_tel( request.getParameter( "tel1" ));
+
+		
 	
 		String email = null;
 		String email1 = request.getParameter( "email1" );
@@ -47,15 +40,13 @@ public class LogonModifyProHandler implements CommandHandler {
 			&& ! email2.equals( "" ) ) {
 			email = email1 + "@" + email2;
 		}
-		/*memberDto.setEmail( email );*/
+		memberDto.setM_email( email );
 	
-		//LogonDBBean memberDao = LogonDBBean.getInstance();
-		//LogonDao logonDao = (LogonDao)LogonDBBean.ctx.getBean("logonDao");
-		/*int result = logonDao.updateMember( memberDto );*/
+		int result = logonDao.updateMember( memberDto );
 
-		/*request.setAttribute( "result", result );*/
+		request.setAttribute( "result", result );
 		
-		return new ModelAndView("member/modifyPro");
+		return new ModelAndView( "member/modifyPro" );
 	}
 }
 

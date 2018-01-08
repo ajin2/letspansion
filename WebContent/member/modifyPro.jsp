@@ -10,14 +10,14 @@
 
 <c:if test="${result == 0}">
 	<script type="text/javascript">
-	 	<!--
+	 	//<!--
 	 	alert( updateerror );
 	 	//-->
 	</script>
 	<meta http-equiv="refresh" content="0; url=logonMain.do"/>				
 </c:if>
 <c:if test="${result != 0}">
-	<c:redirect url="logonMain.do"/>
+	<c:redirect url="pensionHome.do"/>
 </c:if>
 
 

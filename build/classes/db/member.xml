@@ -13,16 +13,15 @@
 	</select>
 	
 	<insert id="insertMember" parameterType="member.LogonDataBean">
-		insert into pension_member values(#{m_id}, #{m_passwd}, #{m_name}, 
-		#{m_tel}, #{m_email}, #{m_regdate},#{m_postcode},#{m_address},#{m_detailsadd})
+		insert into pension_member (m_id,m_passwd,m_name,m_tel,m_email,m_postcode,m_address,m_detailadd,m_regdate)
+		values(#{m_id}, #{m_passwd}, #{m_name}, #{m_tel}, #{m_email},#{m_postcode},#{m_address},#{m_detailadd},#{m_regdate})
 	</insert>
-	
 	<delete id="deleteMember" parameterType="String">
 		delete from pension_member where m_id=#{id}
 	</delete>
 	
 	<update id="updateMember" parameterType="member.LogonDataBean">
-		update pension_member set m_passwd=#{passwd}, m_tel=#{tel},
-		m_email=#{email} where m_id=#{id}
+		update pension_member set m_passwd=#{m_passwd}, m_tel=#{m_tel},
+		m_email=#{m_email} where m_id=#{m_id}
 	</update>
 </mapper>

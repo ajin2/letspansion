@@ -3,10 +3,13 @@
 <%@page import="member.LogonDBBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="setting.jsp"%>
 <link href="${project}member/style.css" rel="stylesheet" type="text/css">
 <script src="${project}member/script.js"></script>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <h2> ${page_modify} </h2>
 
@@ -22,69 +25,60 @@
 					</tr>
 					<tr>
 						<th> ${str_id} </th>
-						<td> &nbsp;${memberDto.id} </td>						
+						<td> &nbsp;${memberDto.m_id} </td>						
 					</tr>
 					<tr>
 						<th rowspan="2"> ${str_passwd} </th>
 						<td>
 							<input class="input" type="password" name="passwd"
-								maxlength="15" value="${memberDto.passwd}">
+								maxlength="15" value="${memberDto.m_passwd}">
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<input class="input" type="password" name="repasswd"
-								maxlength="15" value="${memberDto.passwd}">
+								maxlength="15" value="${memberDto.m_passwd}">
 						</td>
 					</tr>
 					<tr>
 						<th> ${str_name} </th>
-						<td> &nbsp;${memberDto.name} </td>
+						<td> &nbsp;${memberDto.m_name} </td>
 					</tr>
 					<tr>
 						<th> ${str_tel} </th>
 						<td>							
-							<c:if test="${memberDto.tel == null or memberDto.tel == ''}">
+							<c:if test="${memberDto.m_tel == null or memberDto.m_tel == ''}">
 								<input class="input" type="text" name="tel1"
-									maxlength="3" style="width: 28px">
-								- <input class="input" type="text" name="tel2"
-									maxlength="4" style="width: 35px">
-								- <input class="input" type="text" name="tel3"
-									maxlength="4" style="width: 35px">
+									maxlength="15" style="width: 28px">
 							</c:if>
-							<c:if test="${memberDto.tel != null and memberDto.tel != ''}">
-								<c:set var="t" value="${fn:split( memberDto.tel, '-')}"/>
+							<c:if test="${memberDto.m_tel != null and memberDto.m_tel != ''}">
 								<input class="input" type="text" name="tel1"
-									maxlength="3" style="width: 28px" value="${t[0]}">
-								- <input class="input" type="text" name="tel2"
-									maxlength="4" style="width: 35px" value="${t[1]}">
-								- <input class="input" type="text" name="tel3"
-									maxlength="4" style="width: 35px" value="${t[2]}">
+									maxlength="15" style="width: 28px" value="${t[0]}">
 							</c:if>					
 						</td>
 					</tr>
 					<tr>
 						<th> ${str_email} </th>
 						<td>
-							<c:if test="${memberDto.email == null or memberDto.email == ''}">
+							<c:if test="${memberDto.m_email == null or memberDto.m_email == ''}">
 								<input class="input" type="text" name="email1"
 									maxlength="15" style="width:100px">
-								@ <input class="input" type="text" name="email2"
+								@<input class="input" type="text" name="email2"
 									maxlength="15" style="width:100px">
-							</c:if>											
-							<c:if test="${memberDto.email != null and memberDto.email != ''}">
-								<c:set var="e" value="${fn:split( memberDto.email, '@') }"/>
+							</c:if>									
+							<c:if test="${memberDto.m_email != null and memberDto.m_email != ''}">
+								<c:set var="e" value="${fn:split( memberDto.m_email, '@') }"/>
 								<input class="input" type="text" name="email1"
-									maxlength="15" value="${e[0]}" style="width:100px">
+									maxlength="20" value="${e[0]}" style="width:100px">
 								@ <input class="input" type="text" name="email2"
-									maxlength="15" value="${e[1]}" style="width:100px">									
+									maxlength="20" value="${e[1]}" style="width:100px">									
 							</c:if>
 						</td>
 					</tr>
 					<tr>					
 						<th> ${str_reg_date} </th>
 						<td>
-							&nbsp;<fmt:formatDate value="${memberDto.reg_date}"
+							&nbsp;<fmt:formatDate value="${memberDto.m_regdate}"
 									type="both" pattern="yyyy-MM-dd HH:mm"/>							
 						</td>
 					</tr>
@@ -95,7 +89,7 @@
 							<input class="inputbutton" type="reset"
 								value="${btn_cancel}">
 							<input class="inputbutton" type="button"
-								value="${btn_mod_cancel}" onclick="location='logonMain.do'">							
+								value="${btn_mod_cancel}" onclick="location='pensionHome.do'">							
 						</th>
 					</tr>					
 				</table>			
