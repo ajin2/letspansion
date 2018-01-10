@@ -16,6 +16,8 @@ public interface AfterDao {
 	
 	public int deleteArticle( int am_num );
 	
+	public int updateArticle( AfterDataBean afterDto );
 	
+	public int insertReply( ReplyBoardDataBean replyDto );
 	
 }
