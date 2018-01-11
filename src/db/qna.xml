@@ -6,7 +6,7 @@
   <mapper namespace="QnA">
   	<!-- list -->
   	<select id="getCount" resultType="int">
-  		select count(*) from penstion_qna
+  		select count(*) from pension_qna
   	</select>
   	
   	<select id="getArticles" parameterType="Map" resultType="qna.QnaDataBean">
@@ -14,8 +14,41 @@
   		q_regdate, q_delete, r from (select q_num, m_id, a_id, q_cate, q_subject, q_content,
   		ref, re_step, re_level, q_regdate, q_delete, rownum r from (select q_num, m_id,
   		a_id, q_cate, q_subject, q_content, ref, re_step, re_level,	q_regdate, q_delete 
- 		from pension_qna order by ref desc, re_step asc) order by ref desc, re_step asc) 
+ 		from pension_qna order by ref desc, re_step asc) order by q_cate asc, ref desc, re_step asc) 
  		where r &gt;= #{start} and r &lt;= #{end}
   	</select>
+  	
+  	
+  	<!-- Write -->
+  	<select id="maxnum" resultType="int">
+  		select max(q_num) from pension_qna
+  	</select>
+  	
+  	<update id="updateReply" parameterType="qna.QnaDataBean">
+  		update pension_qna set re_step=re_step+1 where ref=#{ref} and re_step &gt; #{re_step}
+  	</update>
+  	
+  	<insert id="insertArticle" parameterType="qna.QnaDataBean">
+		insert into pension_qna( q_num, m_id, a_id, q_cate, q_subject, q_content, ref, re_step, re_level, q_regdate, q_delete )
+		 values( SEQ_pension_qna_q_num.NEXTVAL, #{m_id}, #{a_id, jdbcType=VARCHAR}, #{q_cate}, #{q_subject},#{q_content},
+		 #{ref}, #{re_step}, #{re_level}, #{q_regdate}, #{q_delete} )
+  	</insert>
+  	
+  	
+  	<!-- content -->
+  	<select id="getArticle" parameterType="int" resultType="qna.QnaDataBean">
+  		select * from pension_qna where q_num=#{q_num}
+  	</select>
+  	
+  	<!-- delete - 0 -> 1 -->
+  	<select id="checkReply" parameterType="qna.QnaDataBean" resultType="int">
+  		select count(*) from pension_qna where ref=#{ref} and re_step=#{re_step}+1 and re_level &gt; #{re_level}
+  	</select>
+  	<update id="replyCheck" parameterType="qna.QnaDataBean">
+  		update pension_qna set re_step=re_step-1 where ref=#{ref} and re_step &gt; #{re_step}
+  	</update>
+  	<update id="delete" parameterType="int">
+  		update pension_qna set q_delete=1 where q_num=#{q_num}
+  	</update>
   	
   </mapper>

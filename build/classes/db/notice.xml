@@ -27,9 +27,13 @@
  <!-- insert -->
   	<insert id="insertArticle" parameterType="notice.NoticeDataBean">
   			insert into pension_notice( n_id, a_id, n_subject, n_content, n_regdata )
-  			 values(pension_notice_seq.NEXTVAL, #{a_id}, #{n_subject}, #{n_regdata}, 
-  			 #{n_content} )
+  			 values(SEQ_pension_notice_n_id.NEXTVAL, #{a_id}, #{n_subject}, #{n_content}, 
+  			 #{n_regdata} )
   	</insert>
+  	
+  	<select id="maxnum" resultType="int">
+  			select max(n_id) from pension_notice
+  	</select>
   
  	
  </mapper>
