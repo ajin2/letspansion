@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="After">
-	<select id="getCount" resultType="int">
+
+
+ 	<select id="getCount" resultType="int">
 		select count( * ) 
 		from pension_after_msg
+		where am_delete_date is null
 	</select>
 	
 	<select id="getArticles" parameterType="Map" resultType="after.AfterDataBean">
@@ -15,6 +18,7 @@
 		(
 			select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date, rownum r
 			from pension_after_msg
+			where am_delete_date is null
 			order by am_num desc 
 		)
 		where r &gt;= #{start} and r &lt;= #{end}
@@ -41,6 +45,18 @@
 		set am_delete_date=sysdate
 		where am_num=#{am_num}
 	</update>
+	
+	<update id="updateArticle" parameterType="after.AfterDataBean">
+		update pension_after_msg
+		set am_subject=#{am_subject}, am_content=#{am_content}, am_update_date=sysdate
+		where am_num=#{am_num}
+	</update>
+	
+	<insert id="insertReply" parameterType="after.ReplyBoardDataBean">
+	 insert into pension_reply(re_num, am_num, m_id, re_content, re_reg_date ) 
+	 values(SEQ_pension_reply_re_num.NEXTVAL, #{am_num}, #{m_id}, #{re_content}, sysdate )
+	</insert>
+	
 </mapper>
 
 

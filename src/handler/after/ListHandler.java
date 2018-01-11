@@ -26,6 +26,8 @@ public class ListHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		System.out.println("aa");
+		
 		int count = 0;				// 전체글수
 		
 		int pageBlock = 3;			// 페이지 블락 수
@@ -41,6 +43,7 @@ public class ListHandler implements CommandHandler{
 		int pageCount = 0;			// 페이지의 개수
 		
 		count = afterDao.getCount();
+		System.out.println( "count : " + count );
 		
 		request.setAttribute( "count", count );
 		
@@ -107,6 +110,7 @@ public class ListHandler implements CommandHandler{
 		
 		List<AfterDataBean> articles = afterDao.getArticles( map );
 		request.setAttribute("articles", articles );
+		
 		
 		return new ModelAndView("after/list");
 	}

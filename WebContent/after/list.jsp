@@ -9,6 +9,7 @@
 <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
 
 <%
+	System.out.println("count : " + request.getAttribute( "count") );
 	int count = (Integer) request.getAttribute( "count" );
 
 	String pageNum = (String) request.getAttribute( "pageNum" );
@@ -103,8 +104,8 @@
 		
 		if( startPage > pageBlock ) {
 			%>
-			<a href="List.do">[◀◀]</a>
-			<a href="List.do?pageNum=<%=startPage-pageBlock%>">[◀]</a>
+			<a href="list.do">[◀◀]</a>
+			<a href="list.do?pageNum=<%=startPage-pageBlock%>">[◀]</a>
 			<%
 		}
 		
@@ -115,30 +116,19 @@
 				<%				
 			} else {
 				%>
-				<a href="List.do?pageNum=<%=i%>">[<%=i%>]</a>
+				<a href="list.do?pageNum=<%=i%>">[<%=i%>]</a>
 				<%
 			}
 		}
 		
 		if( pageCount > endPage ) {
 			%>
-			<a href="List.do?pageNum=<%=startPage + pageBlock%>">[▶]</a>
-			<a href="List.do?pageNum=<%=pageCount%>">[▶▶]</a>
+			<a href="list.do?pageNum=<%=startPage + pageBlock%>">[▶]</a>
+			<a href="list.do?pageNum=<%=pageCount%>">[▶▶]</a>
 			<%
 		}
 		
 	}
 %>
-
-
-
-
-
-
-
-
-
-
-
 
 
