@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		
-		<form name="qlist">
+		<form name="qlist" >
 		 
 		<input type="hidden" name="m_id" value="${sessionScope.memId}">
 		<input type="hidden" name="a_id" value="${sessionScope.adminId}">
