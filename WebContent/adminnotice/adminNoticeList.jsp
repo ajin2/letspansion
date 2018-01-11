@@ -7,31 +7,20 @@
 		<%@ include file="setting.jsp" %>
 		<h3> 공지사항 </h3>
 	</head>
-	<body>
-		<input type="hidden" name="m_id" value="${sessionScope.memId}">
+	<body> 
+		<input type="hidden" name="a_id" value="${sessionScope.adminId}">
 	<form>
 		
 	
-	<c:if test="${m_id ne nDto.m_id}">
-		<a href="questionWrite.do"> 문의하기 </a> <br>
-		<a href="questionList.do"> 내 문의함 </a> <br>
-	</c:if> 
-	<c:if test="${m_id eq null}">
-		<a href="questionWrite.do"> 문의하기 </a> <br>
-		<a href="questionList.do"> 내 문의함 </a> <br>
-	</c:if>
+		<!-- <a href="questionWrite.do"> 문의하기 </a> <br> -->
+		<a href="adminQuestionList.do"> 내 문의함 </a> <br>
+
 	
 	<table border="1">
 		<tr>
-		<%-- <c:choose>
-		 <c:when test="${a_id == sessionScope.adminId}">
 		 	<th colspan="4" align="right">
 				<input type="button" value="글작성" onclick="location='noticeWriteForm.do'">
 			</th> 
-		 </c:when>
-		 <c:otherwise>
-		 </c:otherwise>
-		</c:choose> --%>
 		</tr>
 		
 		<tr>
@@ -69,7 +58,7 @@
 					</td>
 					<td align="center">
 						<c:if test="${article.a_id ne null}">
-							관리자
+							관리자(${article.a_id}) 
 						</c:if>
 					</td>
 					<td align="center">

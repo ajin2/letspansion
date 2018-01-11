@@ -1,4 +1,4 @@
-package handler.adminqna;
+/*package handler.adminqna;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,3 +18,4 @@ public class adminPensionQnaProHandler implements CommandHandler{
 		return new ModelAndView("adminqna/adminPensionQnaPro");
 	}
 }
+*/

@@ -7,8 +7,15 @@
 		<%@ include file="setting.jsp" %>
 	</head>
 	<body>
-	<form  name="questionform" action="questionPro.do" 
+	<form name="questionform" action="questionWritePro.do" 
 		onsubmit="return writecheck()">
+		
+		<input type="hidden" name="m_id" value="${sessionScope.memId}" />
+		<input type="hidden" name="q_num" value="${q_num}" />
+		<input type="hidden" name="ref" value="${ref}" />
+		<input type="hidden" name="re_step" value="${re_step}" />
+		<input type="hidden" name="re_level" value="${re_level}" />
+		
 		<table border="1">
 			<tr>
 				<th colspan="2">
@@ -17,12 +24,27 @@
 			</tr>
 			<tr>
 				<th>
-					<select>
-						<option > 선택해주세요. </option>
-						<option value="1"> 환불 / 교환 </option>
-						<option value="2"> 취소 </option>
-						<option value="3"> 픽업 </option>
-						<option value="4"> 기타 </option>				
+					<select name="q_cate">
+						<option> 선택해주세요. </option>
+						<c:if test="${q_cate eq 1 }">
+							<option value="1"> 환불/교환 </option>
+						</c:if>
+						<c:if test="${q_cate eq 2 }">
+							<option value="2"> 예약취소 </option>
+						</c:if>
+						<c:if test="${q_cate eq 3 }">
+							<option value="3"> 픽업문의 </option>
+						</c:if>
+						<c:if test="${q_cate eq 4 }">
+							<option value="4"> 기타문의 </option>
+						</c:if>	
+						<c:if test="${q_cate eq null }">
+							<option value="1"> 환불/교환 </option>
+							<option value="2"> 예약취소 </option>
+							<option value="3"> 픽업문의 </option>
+							<option value="4"> 기타문의 </option>
+
+						</c:if>		
 					</select>
 				</th>
 			</tr>
@@ -35,14 +57,14 @@
 			<tr>
 				<th> 이름 </th>
 					<td>
-					 <input type="text" name="name" value="이름"> </td>
+					 <input type="text" name="m_id" value="${sessionScope.memId}"> </td>
 				
 			</tr>
-			<tr>
+			<!-- <tr>
 				<th> 이메일 : </th>
 				<td><input type="text" name="email" value="이메일"> </td>
 				
-			</tr>
+			</tr> -->
 			
 			<tr>
 				<th colspan="2">	
@@ -51,7 +73,7 @@
 			</tr>
 			<tr>
 				<th> 제목 </th>
-				<td> <input type="text" name="q_subject" value="제목을 입력해주세요"> </td>
+				<td> <input type="text" name="q_subject"> </td>
 			</tr>
 			<tr>
 				<th> 내용 </th>
@@ -60,7 +82,7 @@
 			<tr>
 				<th colspan="2">
 					<input type="submit" value="문의하기" >
-					<input type="button" value="취소" onclick="location='questionlist.do'">
+					<input type="button" value="취소" onclick="location='questionList.do?pageNum=${pageNum}'">
 				</th>
 			</tr>
 		</table>
