@@ -11,10 +11,14 @@ import handler.CommandHandler;
 
 @Controller
 public class AdminPensionBookFormHandler implements CommandHandler{
-	@RequestMapping("/adminBookForm")
+	@RequestMapping("/insert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		return new ModelAndView("adminbook/adminPensionBookForm");
+		String params = request.getParameter("params");
+		
+		request.setAttribute("params", params);
+		
+		return new ModelAndView("book/insert");
 	}
 }
