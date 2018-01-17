@@ -126,13 +126,13 @@ function book_product(){
 }
 
 
-function productinsert(param){
+function orderinsert(param){
 	var params = param;
-	httpRequest = new HttpRequest(productinsertresult, "orderinsert.do", params);
+	httpRequest = new HttpRequest(orderinsertresult, "orderinsert.do", params);
 	httpRequest.sendRequest();
 }
 
-function productinsertresult(){
+function orderinsertresult(){
 	var msg = "";
 	if (httpRequest.request.readyState == 4) {
 		if (httpRequest.request.status == 200) {

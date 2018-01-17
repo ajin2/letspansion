@@ -496,7 +496,7 @@ function insertresult() {
 		        			params += "&price=" + Number($(this).text());
 		        		} else if(index % 5 == 4){
 		        			params += "&b_num=" + Number(message);
-		        			productinsert(params);
+		        			orderinsert(params);
 		        			params = "";
 		        		}
 		        		

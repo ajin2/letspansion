@@ -1,6 +1,6 @@
 /**
  *  JSON Module
- */
+ */ 
 
 function HttpRequest(callback, url, params, method){
 	this.callback = callback;
