@@ -7,11 +7,22 @@
 	<select id="check" parameterType="String" resultType="int">
 		select count(*) from pension_member where m_id=#{id}
 	</select>
-
+	<select id="idcheck" parameterType="String" resultType="int">
+		select count(*) from pension_member where m_name=#{name}
+	</select>
+	
+	<select id="findPasswd" parameterType="Map" resultType="int">
+      select count(*) from pension_member where m_id=#{id} and m_email=#{email}
+   	</select>
 	<select id="getMember" parameterType="String" resultType="member.LogonDataBean">
 		select * from pension_member where m_id=#{id}
 	</select>
-	
+	<select id="namegetMember" parameterType="String" resultType="member.LogonDataBean">
+		select * from pension_member where m_name=#{name}
+	</select>
+	<select id="emailgetMember" parameterType="String" resultType="member.LogonDataBean" >
+		select * from pension_member where m_email=#{email}
+	</select>
 	<insert id="insertMember" parameterType="member.LogonDataBean">
 		insert into pension_member (m_id,m_passwd,m_name,m_tel,m_email,m_postcode,m_address,m_detailadd,m_regdate)
 		values(#{m_id}, #{m_passwd}, #{m_name}, #{m_tel}, #{m_email},#{m_postcode},#{m_address},#{m_detailadd},#{m_regdate})
@@ -23,5 +34,8 @@
 	<update id="updateMember" parameterType="member.LogonDataBean">
 		update pension_member set m_passwd=#{m_passwd}, m_tel=#{m_tel},
 		m_email=#{m_email} where m_id=#{m_id}
+	</update>
+	<update id="updatePasswd" parameterType="member.LogonDataBean">
+		update pension_member set m_passwd=#{m_passwd} where m_id=#{m_id}
 	</update>
 </mapper>

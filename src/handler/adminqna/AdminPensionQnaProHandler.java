@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class adminPensionQnaProHandler implements CommandHandler{
+public class AdminPensionQnaProHandler implements CommandHandler{
 	@RequestMapping("/adminQnaPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {

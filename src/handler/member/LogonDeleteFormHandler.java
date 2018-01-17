@@ -1,6 +1,5 @@
 package handler.member;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,12 +11,12 @@ import handler.CommandHandler;
 
 @Controller
 public class LogonDeleteFormHandler implements CommandHandler {
-	
-	@RequestMapping("/logonDeleteForm")
+
+	@RequestMapping( "/logonDeleteForm" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
-		return new ModelAndView("member/deleteForm");
+		return new ModelAndView( "member/deleteForm" );
 	}
 }
 
