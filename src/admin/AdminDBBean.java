@@ -16,7 +16,7 @@ public class AdminDBBean implements AdminDao {
 		
 		return result;
 	}
-	
+	 
 	@Override
 	public int adminLogin(String adminId, String adminPasswd) {
 		int result = 0;
@@ -26,7 +26,7 @@ public class AdminDBBean implements AdminDao {
 			if(adminPasswd.equals(adminDto.getA_passwd())) {
 				result = 1;
 			} else {
-				result = 1;
+				result = -1;
 			}
 		} else {
 			result = 0;

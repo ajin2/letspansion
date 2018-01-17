@@ -3,8 +3,8 @@ package member;
 import java.util.Map;
 
 public interface LogonDao {
-
-  	public int insertMember( LogonDataBean memberDto );
+	public int deleteCheck(String id);					// LogonLoginProHandler
+  public int insertMember( LogonDataBean memberDto );
 	public int check( String id );
 	public int check( String id, String passwd );
 	public int idcheck( String name );
@@ -15,6 +15,5 @@ public interface LogonDao {
 	public LogonDataBean namegetMember( String name );
 	public LogonDataBean emailgetMember( String email );
 	public int updateMember( LogonDataBean memberDto );
-	public int updatePasswd( LogonDataBean memberDto );
-	
+  public int updatePasswd( LogonDataBean memberDto );	
 }

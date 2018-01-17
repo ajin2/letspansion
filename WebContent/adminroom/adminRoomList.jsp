@@ -32,7 +32,7 @@
 			<div class="w3-row-padding w3-margin-top">
 				<div class="w3-third">
 					<div class="w3-card">
-						<img src="img/roomImg/A_1.jpg" style="width: 100%" onclick="location='pensionRoomA.do'">
+						<img src="img/roomImg/A_1.jpg" class="w3-round" style="width: 100%" onclick="location='adminRoomDetail.do?r_id=1'">
 						<div class="w3-container">
 							<h4>A Room</h4>
 						</div>
@@ -40,7 +40,7 @@
 				</div>
 				<div class="w3-third">
 					<div class="w3-card">
-						<img src="img/roomImg/B_1.jpg" style="width: 100%" onclick="location='pensionRoomB.do'">
+						<img src="img/roomImg/B_1.jpg" style="width: 100%" onclick="location='adminRoomDetail.do?r_id=2">
 						<div class="w3-container">
 							<h4>B Room</h4>
 						</div>
@@ -48,7 +48,7 @@
 				</div>
 				<div class="w3-third">
 					<div class="w3-card">
-						<img src="img/roomImg/C_1.jpg" style="width: 100%" onclick="location='pensionRoomC.do'">
+						<img src="img/roomImg/C_1.jpg" style="width: 100%" onclick="location='adminRoomDetail.do?r_id=3">
 						<div class="w3-container">
 							<h4>C Room</h4>
 						</div>
@@ -76,7 +76,7 @@
 				</div>
 				<div class="w3-third">
 					<div class="w3-card">			<!-- class="w3-round" 사진 살짝 둥글게 -->
-						<img src="img/roomImg/Q_1.jpg" class="w3-round" style="width: 100%" onclick="location='adminRoomDetail.do?pId=6'"> 
+						<img src="img/roomImg/Q_1.jpg" class="w3-round" style="width: 100%" onclick="location='adminRoomDetail.do?r_id=6'"> 
 						<div class="w3-container">
 							<h4>편의시설</h4>
 						</div>

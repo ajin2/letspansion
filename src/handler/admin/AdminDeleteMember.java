@@ -1,4 +1,4 @@
-package handler.adminroom;
+package handler.admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,14 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminRoomDetailHandler implements CommandHandler{
-	@RequestMapping("/adminRoomDetail")
+public class AdminDeleteMember implements CommandHandler{
+	@RequestMapping("/deleteMember")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int r_id = Integer.parseInt(request.getParameter("r_id"));
+		String m_id = request.getParameter("m_id");
 		
-		request.setAttribute("r_id", r_id);
+		request.setAttribute("m_id", m_id);
 		
-		return new ModelAndView("adminroom/adminRoomDetail");
+		return new ModelAndView("admin/deleteMember");
 	}
 }

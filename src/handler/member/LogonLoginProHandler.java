@@ -23,12 +23,17 @@ public class LogonLoginProHandler implements CommandHandler {
 
 		String id = request.getParameter( "id" );
 		String passwd = request.getParameter( "passwd" );
-
-		int result = logonDao.check( id, passwd );
-	
-		request.setAttribute( "result", result );
-		request.setAttribute( "id", id );
+		int result = 0;
 		
+		int deleteCheck = logonDao.deleteCheck(id);
+		request.setAttribute("deleteCheck", deleteCheck);
+		
+		if (deleteCheck == 0) {
+			result = logonDao.check( id, passwd );
+			
+			request.setAttribute( "result", result );
+			request.setAttribute( "id", id );
+		}
 		return new ModelAndView( "member/loginPro" );
 	}	
 }
