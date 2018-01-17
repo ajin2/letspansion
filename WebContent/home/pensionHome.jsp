@@ -7,8 +7,7 @@
 		<%@ include file="setting.jsp" %>
 		
 		<title>Let's Pension</title>
-		<jsp:include page="pensionHeader.jsp" flush="false"/>	
-		<jsp:include page="pensionMenu.jsp" flush="false"/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <meta name="description" content="">
 	    <meta name="author" content="">
@@ -26,10 +25,16 @@
 	</head>
 	
 	<body>
-		<h2> </h2>
-		<div class="overlay"></div>
+		<table>
+         <tr>
+            <th> <jsp:include page="pensionHeader.jsp" flush="false"/> </th>	
+			<th> <jsp:include page="pensionMenu.jsp" flush="false"/> </th>
+         </tr>
+		</table>
+    	
+    	<%-- <jsp:include page="pensionMain.jsp" flush="false"/> --%>  
 		<div class="masthead">
-			<div class="masthead-bg"></div>
+			
 			<div class="container h-100">
 				<div class="row h-100">
 					<div class="col-12 my-auto">

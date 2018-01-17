@@ -87,7 +87,55 @@ function passwdcheck() {
 	}
 }
 
+function findfocus(){
+	findform.name.focus();
+}
 
+function findpfocus(){
+	findform.id.focus();
+}
+ 
+
+function findcheck(){
+  
+	/*if(!findform.name.value){
+		alert(nameerror);
+		findform.email.focus();
+		return false;
+	}*/ if(!findform.email.value){
+		alert(emailnoerror);
+		findform.email.focus();
+		return false;
+	}
+}
+
+function findpcheck(){
+	 if(!findform.email.value){
+		alert(emailnoerror);
+		findform.email.focus();
+		return false;
+	} else if(!findform.id.value){
+		alert(iderror);
+		findform.id.focus();
+		return false;
+	}
+}
+
+function findpasswdcheck(){
+	if(!findform.passwd.value){
+		alert(passwderror);
+		findform.passwd.focus();
+		return false;
+	} else if(!findform.repasswd.value){
+		alert(passwderror);
+		findform.repasswd.focus();
+		return false;
+	} else if(findform.passwd.value != findform.repasswd.value){
+		alert(repasswderror);
+		findform.repasswd.focus();
+		return false;
+	}
+}
 // 중복 확인
 function confirmid() {
 	if( ! inputform.id.value ) {
