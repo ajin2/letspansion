@@ -10,15 +10,18 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionBookFormHandler implements CommandHandler{
-	@RequestMapping("/insert")
+public class AdminPensionProductInsertHandler implements CommandHandler{
+	@RequestMapping("/orderinsert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		
+		/*request.setCharacterEncoding("utf-8");*/
 		
 		String params = request.getParameter("params");
 		
 		request.setAttribute("params", params);
 		
-		return new ModelAndView("book/insert");
+		return new ModelAndView("book/orderinsert");
 	}
+
 }

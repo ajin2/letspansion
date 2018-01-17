@@ -1,4 +1,4 @@
-package handler.adminbook;
+package handler.book;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,15 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionBookFormHandler implements CommandHandler{
-	@RequestMapping("/insert")
+public class PensionBookFormHandler implements CommandHandler{
+	@RequestMapping("/pensionBook")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		String params = request.getParameter("params");
-		
-		request.setAttribute("params", params);
-		
-		return new ModelAndView("book/insert");
+		return new ModelAndView("book/pensionBookForm");
 	}
 }

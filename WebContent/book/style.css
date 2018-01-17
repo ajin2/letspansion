@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+#a{
+	float : left;
+}
+
+#b{
+	margin-left : 650px;
+}
+
+#console{
+	margin-left : 650px;
+}
+
+#result{
+	margin-left : 650px;
+}
+
+#product{
+	width : 320px;
+}
+
+#presult{
+	width : 400px;
+}
+
+#wrap_product{
+	width : 1200px;
+}
+
+#wrap_product td{
+	text-align : center;
+}
+
+img{
+	width : 13px; 
+	height : 13px;
+}
+
+#calendar{
+	width : 600px;
+	font-size : 0.7em;
+	border-spacing : 0px 0px;
+	border : 1px solid pink;
+	border-collapse: collapse;
+}
+
+#calendar td{
+	border : 1px solie pink; 
+}
+
+#dbtable td{
+	text-align : center;
+	width : 70px;
+}
+
+#dbtable{
+	font-size : 0.7em;
+	font-align : center;
+	border-spacing : 0px 0px;
+	border-collapse: collapse;
+}
+
+td{
+	font-align : center;
+}
+
+.p {
+	color : blue;
+}
+
+.notp{
+	color : red;
+}
+
+
+
+
+	

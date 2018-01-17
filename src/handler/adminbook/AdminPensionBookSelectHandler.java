@@ -10,8 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionBookFormHandler implements CommandHandler{
-	@RequestMapping("/insert")
+public class AdminPensionBookSelectHandler implements CommandHandler{
+	@RequestMapping("/select")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
@@ -19,6 +19,6 @@ public class AdminPensionBookFormHandler implements CommandHandler{
 		
 		request.setAttribute("params", params);
 		
-		return new ModelAndView("book/insert");
+		return new ModelAndView("book/select");
 	}
 }
