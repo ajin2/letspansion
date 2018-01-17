@@ -2,19 +2,18 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<%@ include file="setting.jsp" %>
-		
-	</head>
+	<meta charset="UTF-8">
+	<%@ include file="setting.jsp" %>
+	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
+	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
+	
 	<body>
 		<h2> </h2>
-		<jsp:include page="${project}adminPensionHeader.jsp" flush="false"/>	
-		<jsp:include page="${project}adminPensionMenu.jsp" flush="false"/>
 
 		Admin Pension 예약 본문
 		
-		<jsp:include page="${project}adminPensionBottom.jsp" flush="false"/>
 	</body>
+	
+	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
 </html>
 	

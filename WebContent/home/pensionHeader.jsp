@@ -10,15 +10,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<script src="${project}home/script.js"></script>
-		
+		<link href="css/reset.css" rel="stylesheet">
 	</head>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
 		<body>
-			<a class="text-shadow text-white" href="logonMain.do">${str_login}</a>  | 
-		    <a class="text-shadow text-white" href="logonInput.do">${str_signon}</a> |  
-		    <a class="text-shadow text-white" href="pensionFindId.do">${str_findid}</a>  | 
-		    <a class="text-shadow text-white" href="pensionFindPasswd.do">${str_findpasswd}</a>     
+			<h1><a href="pensionHome.do"><img src="/LetsPension/img/LetsPensionLogo.png" alt="" width="130" height="71"></a></h1>
+			<div class="gnb">
+				<a class="text-shadow text-white" href="logonMain.do">${str_login}</a>  | 
+		    	<a class="text-shadow text-white" href="logonInputForm.do">${str_signon}</a> |  
+		    	<a class="text-shadow text-white" href="pensionFindId.do">${str_findid}</a>  | 
+		    	<a class="text-shadow text-white" href="logonFindPasswd.do">${str_findpasswd}</a>     
+			</div>
 		</body>
 	</c:if>
 	
@@ -31,4 +34,5 @@
 	</c:if>  	
 	
 </html>
+   
 	

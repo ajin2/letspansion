@@ -1,0 +1,11 @@
+/*!
+ * Start Bootstrap - Coming Soon v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/coming-soon)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
+ */
+ #header {
+	background:url(http://gonylab3.speedgabia.com/privateus7/img/images/header_bg.png) repeat-x left top;
+	position:fixed;top:0;width:100%;min-width:1200px;z-index:600;
+}
+#header h1 {float:left;margin-left:10px;}
+#header h1 a {display:block;height:71px;}

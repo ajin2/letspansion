@@ -38,4 +38,14 @@ public class AfterDBBean implements AfterDao {
 		
 		return SqlMapClient.getSqlSession().update("After.deleteArticle", am_num );
 	}
+
+	@Override
+	public int updateArticle(AfterDataBean afterDto) {
+		return SqlMapClient.getSqlSession().update("After.updateArticle", afterDto);
+	}
+
+	@Override
+	public int insertReply(ReplyBoardDataBean replyDto) {
+		return SqlMapClient.getSqlSession().insert("After.insertReply", replyDto );
+	}
 }

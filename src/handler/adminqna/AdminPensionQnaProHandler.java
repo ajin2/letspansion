@@ -1,4 +1,4 @@
-package handler.adminqna;
+/*package handler.adminqna;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class adminPensionQnaProHandler implements CommandHandler{
+public class AdminPensionQnaProHandler implements CommandHandler{
 	@RequestMapping("/adminQnaPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -18,3 +18,4 @@ public class adminPensionQnaProHandler implements CommandHandler{
 		return new ModelAndView("adminqna/adminPensionQnaPro");
 	}
 }
+*/

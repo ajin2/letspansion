@@ -49,6 +49,20 @@ function passwdcheck() {
 }*/
 
 
+// 회원 삭제 확인
+function DelCheck(q_num, ref, re_step, re_level, pageNum){
+	var delcheck = confirm("삭제하시겠습니까?");
+	
+	if(delcheck == true){
+		document.location.href="questionDelete.do?q_num="+q_num+"&ref="+ref+"&re_step="+re_step+"&re_level="+re_level+"&pageNum="+pageNum;
+	}
+	else if(delcheck == faluse){
+		document.location.href="questionlist.do?pageNum="+pageNum;
+	}
+	
+}
+
+
 function writefocus() {
 	writeform.writer.focus();
 }

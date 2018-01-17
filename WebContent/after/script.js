@@ -30,10 +30,6 @@ function modifycheck() {
 		alert( contentterror );
 		modifyform.content.focus();
 		return false;
-	} else if( ! modifyform.passwd.value ) {
-		alert( passwderror );
-		modifyform.passwd.focus();
-		return false;
 	}	
 }
 

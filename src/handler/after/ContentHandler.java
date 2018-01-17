@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import after.AfterDBBean;
 import after.AfterDao;
 import after.AfterDataBean;
 import handler.CommandHandler;
@@ -21,8 +20,8 @@ public class ContentHandler implements CommandHandler{
 	
 	@RequestMapping( "/content" )
 	@Override
-	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		
+	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable 
+	{
 		int am_num = Integer.parseInt( request.getParameter( "am_num" ) );
 		String pageNum = request.getParameter( "pageNum" );
 		
@@ -31,6 +30,7 @@ public class ContentHandler implements CommandHandler{
 		afterDao.addCount( am_num );
 	
 		request.setAttribute( "afterDto", afterDto );
+		request.setAttribute( "am_num" , am_num);
 		request.setAttribute( "pageNum", pageNum );
 		
 		return new ModelAndView("after/content");

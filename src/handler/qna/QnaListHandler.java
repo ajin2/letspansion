@@ -22,14 +22,21 @@ public class QnaListHandler implements CommandHandler {
 	@Resource
 	private QnaDao qDao;
 	
-	@RequestMapping("/questionlist")
+	@RequestMapping("/questionList")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
 		int count = 0;
+		
+		String m_id = (String) request.getSession().getAttribute("memId");
+		String a_id = (String) request.getSession().getAttribute("adminId");
+		
+		//int q_cate = 0;
+		
+//		int q_delete = Integer.parseInt(request.getParameter("q_delete"));
 
-		int pageBlock = 3;
-		int pageSize = 5;			
+		int pageBlock = 5;
+		int pageSize = 20;			
 		String pageNum = null;		
 		int currentPage = 0;		
 		int start = 0;				
@@ -42,6 +49,8 @@ public class QnaListHandler implements CommandHandler {
 	
 		count = qDao.getCount();
 		request.setAttribute("count", count);
+		
+		
 		
 		if( count > 0 ) {
 			pageNum = request.getParameter( "pageNum" );
@@ -71,7 +80,9 @@ public class QnaListHandler implements CommandHandler {
 			endPage = startPage + pageBlock - 1;
 					// 1 + 10 - 1				10
 					
-			if( endPage > pageCount ) endPage = pageCount;		
+			if( endPage > pageCount ) endPage = pageCount;	
+			
+			
 		
 			request.setAttribute( "pageNum", pageNum );
 			request.setAttribute( "currentPage", currentPage );
@@ -80,6 +91,8 @@ public class QnaListHandler implements CommandHandler {
 			request.setAttribute( "startPage", startPage );
 			request.setAttribute( "endPage", endPage );
 			request.setAttribute( "pageCount", pageCount );
+			request.setAttribute( "m_id", m_id);
+			request.setAttribute( "a_id", a_id);
 			
 			Map<String, Integer> map = new HashMap<String, Integer>();
 			map.put("start", start);
@@ -90,6 +103,6 @@ public class QnaListHandler implements CommandHandler {
 		}
 		
 		
-		return new ModelAndView("qna/questionlist");
+		return new ModelAndView("qna/questionList");
 	}
 }
