@@ -3,5 +3,30 @@
   	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Room">
+	<select id="getRoomArticle" parameterType="int" resultType="room.RoomDataBean">
+		select * from pension_room where r_id=#{r_id}
+	</select>
+	
+	<select id="getRoomPictureArticles" parameterType="int" resultType="room.RoomPictureDataBean">
+		select * from pension_pic where r_id=#{r_id} order by pict_id asc
+	</select>
+	
+	<select id="countPicNum" parameterType="int" resultType="int">
+		select count(*) from pension_pic where r_id=#{r_id}
+	</select>
+	
+	<select id="maxPicNum" parameterType="int" resultType="int">
+		select max(pict_id)+1 from pension_pic where r_id=#{r_id}
+	</select>
+	
+	<insert id="insertPicture" parameterType="room.RoomPictureDataBean">
+		insert into pension_pic(pict_id, r_id, pic_ori, pic_sys) 
+		values(#{pict_id}, #{r_id}, #{pic_ori}, #{pic_sys})
+	</insert>
+	
+	<update id="updatePicture" parameterType="room.RoomPictureDataBean">
+		update pension_pic set pic_ori=#{pic_ori}, pic_sys=#{pic_sys}
+		where pict_id=#{pict_id} and r_id=#{r_id}
+	</update>
 	
 </mapper>

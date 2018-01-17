@@ -27,6 +27,7 @@ var finderror = "아이디 / 비밀번호 찾기에 실패했습니다. \n잠시
 var delete_ok_error = "회원탈퇴가 성공적으로 완료되었습니다. \n계속하시려면 확인을 눌러주세요. \n취소버튼을 누르면 메인으로 이동합니다.";
 var deleteconfirm = "회원을 탈퇴하시겠습니까?";
 var returnValue = "false";	
+var logindeletederror = "삭제된 아이디 입니다.";
 
 function erroralert( msg ) {
 	alert( msg );

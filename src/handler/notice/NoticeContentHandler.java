@@ -23,7 +23,7 @@ public class NoticeContentHandler implements CommandHandler{
 		
 		int n_id = Integer.parseInt(request.getParameter("n_id"));
 		String n_pageNum = request.getParameter("n_pageNum");
-		String a_id = "°ü¸®ÀÚ";
+		String a_id = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		
 		NoticeDataBean nDto = nDao.getArticle(n_id);
 		

@@ -15,7 +15,6 @@
 	
 	
 	<c:if test="${(sessionScope.adminId == null || sessionScope.adminId == '')}">
-		<a href="adminLoginForm.do">관리자 로그인</a> 
 		<body onload="adminidfocus()">
 			<form name="adminhomeform" method="post" action="adminLoginPro.do" onsubmit="return adminlogincheck()">
 				<table>
@@ -36,7 +35,7 @@
 	<c:if test="${sessionScope.adminId != null}">
 		<body>
 			${sessionScope.adminId} ${msg_adminmain} &nbsp; ㅣ &nbsp;
-			<a href="adminManageMemberPro.do">${str_managemember}</a> &nbsp; ㅣ  &nbsp;
+			<a href="adminManageMember.do">${str_managemember}</a> &nbsp; ㅣ  &nbsp;
 			<a href="adminManageBookPro.do">${str_managebook}</a> &nbsp; ㅣ &nbsp;
 			<a href="adminManageProductPro.do">${str_manageproduct}</a> &nbsp; ㅣ &nbsp;
 			<a href="adminLogout.do">${str_logout}</a><br>

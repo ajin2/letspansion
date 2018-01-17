@@ -3,7 +3,12 @@ package member;
 import db.SqlMapClient;
 
 public class LogonDBBean implements LogonDao {
-		
+
+	@Override
+	public int deleteCheck(String id) {
+		return SqlMapClient.getSqlSession().selectOne("Member.deleteCheck", id);
+	}
+
 	public int insertMember( LogonDataBean logonDto ) {
 		return SqlMapClient.getSqlSession().insert( "Member.insertMember", logonDto );
 	}

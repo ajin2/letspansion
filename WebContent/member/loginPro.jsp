@@ -7,26 +7,33 @@
 
 <h2> ${page_login} </h2>
 
-<c:if test="${result == 1}">
-	${sessionScope.memId = id}
-	<c:redirect url="pensionHome.do"/>
+<c:if test="${deleteCheck == 0}">
+	<c:if test="${result == 1}">
+		${sessionScope.memId = id}
+		<c:redirect url="pensionHome.do"/>
+	</c:if>
+	<c:if test="${result == -1}">
+		<script type="text/javascript">
+			<!--
+			erroralert( loginpasserror );
+			//-->
+		</script>
+	</c:if>
+	<c:if test="${result == 0}">	
+		<script type="text/javascript">
+			<!--
+			erroralert( loginiderror );
+			//-->
+		</script>
+	</c:if>
 </c:if>
-<c:if test="${result == -1}">
+<c:if test="${deleteCheck == 1 }">
 	<script type="text/javascript">
-		<!--
-		erroralert( loginpasserror );
-		//-->
-	</script>
+			<!--
+			erroralert( logindeletederror );
+			//-->
+		</script>
 </c:if>
-<c:if test="${result == 0}">	
-	<script type="text/javascript">
-		<!--
-		erroralert( loginiderror );
-		//-->
-	</script>
-</c:if>
-
-
 
 
 

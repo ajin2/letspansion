@@ -18,7 +18,7 @@
 		<form>
 			<table>
 				<tr>
-					<th> <input type="button" value="${btn_roomAdd}" onclick="location='adminRoomWrite.do'"> </th>
+					<th> <input type="button" value="${btn_roomPictureModi}" onclick="location='adminRoomModi.do?r_id=${r_id}'"> </th>
 				</tr>
 			</table>
 		</form>
