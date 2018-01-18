@@ -8,6 +8,7 @@ public class NoticeDataBean {
 	private String n_subject;			// 力格
 	private String n_content;			// 郴侩
 	private Timestamp n_regdata;		// 累己老
+	private int n_delete;
 	
 	public int getN_id() {
 		return n_id;
@@ -39,7 +40,12 @@ public class NoticeDataBean {
 	public void setN_regdata(Timestamp n_regdata) {
 		this.n_regdata = n_regdata;
 	}
-	
+	public int getN_delete() {
+		return n_delete;
+	}
+	public void setN_delete(int n_delete) {
+		this.n_delete = n_delete;
+	}
 	
 	
 }

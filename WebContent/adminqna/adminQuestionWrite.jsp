@@ -7,10 +7,11 @@
 		<%@ include file="setting.jsp" %>
 	</head>
 	<body>
-	<form name="questionform" action="questionWritePro.do" 
+	<form name="questionform" action="adminQuestionWritePro.do" 
 		onsubmit="return writecheck()">
 		
-		<input type="hidden" name="m_id" value="${sessionScope.memId}" />
+		<input type="hidden" name="a_id" value="${sessionScope.adminId}" />
+		<input type="hidden" name="q_cate" value="${q_cate}" />
 		<input type="hidden" name="q_num" value="${q_num}" />
 		<input type="hidden" name="pageNum" value="${pageNum}" />
 		<input type="hidden" name="ref" value="${ref}" />
@@ -24,20 +25,23 @@
 				</th>
 			</tr>
 			<tr>
-				<th>
-					<c:if test="${q_cate ne null }">
-						${q_cate}
-					</c:if>
-						<c:if test="${q_cate eq null }">
-						<select name="q_cate">
-							<option value="1"> 환불/교환 </option>
-							<option value="2"> 예약취소 </option>
-							<option value="3"> 픽업문의 </option>
-							<option value="4"> 기타문의 </option>
-						</select>
-						</c:if>		
-					
-				</th>
+				<td>
+				
+					<select name="q_cate">
+						<c:if test="${q_cate eq 1}">
+							<option> 환불/교환 </option>
+						</c:if>
+						<c:if test="${q_cate eq 2}">
+							<option> 예약취소 </option>
+						</c:if>
+						<c:if test="${q_cate eq 3}">
+							<option> 픽업문의 </option>
+						</c:if>
+						<c:if test="${q_cate eq 4}">
+							<option > 기타문의 </option>
+						</c:if>
+					</select>
+				</td>
 			</tr>
 			
 			<tr>
@@ -48,7 +52,7 @@
 			<tr>
 				<th> 이름 </th>
 					<td>
-					 <input type="text" name="m_id" value="${sessionScope.memId}"> </td>
+					 <input type="text" name="a_id" value="${sessionScope.adminId}"> </td>
 				
 			</tr>
 			<!-- <tr>
@@ -73,7 +77,7 @@
 			<tr>
 				<th colspan="2">
 					<input type="submit" value="문의하기" >
-					<input type="button" value="취소" onclick="location='questionList.do?pageNum=${pageNum}'">
+					<input type="button" value="취소" onclick="location='adminPensionQna.do?pageNum=${pageNum}'">
 				</th>
 			</tr>
 		</table>

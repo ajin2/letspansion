@@ -61,11 +61,13 @@ public class QnaDBBean implements QnaDao{
 			SqlMapClient.getSqlSession().update("QnA.delete", q_num);
 		}
 		
-		
-		// deleteArticle
-			
-			
+		// deleteArticle	
 		
 		return result;
 	}
+	
+	public int updateArticle( QnaDataBean qDto ) {
+		return SqlMapClient.getSqlSession().update("QnA.updateArticle", qDto);
+	}
+	
 }

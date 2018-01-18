@@ -5,13 +5,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp"%>
-		<script src="${project}qna/script.js"></script>
+		<script src="${project}adminqna/script.js"></script>
 		
 	</head>
 	<body>
 		
 		<form name="qcontent">
-		<input type="text" name="q_num" value="${qDto.q_num}">
+		<input type="hidden" name="q_num" value="${qDto.q_num}">
 		<input type="hidden" name="q_cate" value="${qDto.q_cate}">
 		<input type="hidden" name="pageNum" value="${pageNum}">
 		<input type="hidden" name="q_delete" value="${qDto.q_delete}">
@@ -48,41 +48,22 @@
 			</table>
 			
 				<!-- 목록 -->
-			<input type="button" value="목록" onclick="location='questionList.do'">
+			<input type="button" value="목록" onclick="location='adminPensionQna.do'">
 			
 				<!-- 답글 -->
 			<c:if test="${qDto.re_step eq 0}">
 			<input type="button" value="답글"
-			  onclick="location='questionWrite.do?m_id=${qDto.m_id}&q_cate=${qDto.q_cate}&q_num=${qDto.q_num}&ref=${qDto.ref}&re_step=${qDto.re_step}&re_level=${qDto.re_level}&pageNum=${pageNum}'">
+			  onclick="location='adminQuestionWrite.do?m_id=${qDto.m_id}&q_cate=${qDto.q_cate}&q_num=${qDto.q_num}&ref=${qDto.ref}&re_step=${qDto.re_step}&re_level=${qDto.re_level}&pageNum=${pageNum}'">
 			</c:if>
 			  
 				<!-- 수정 -->
-			<c:if test="${sessionScope.memId eq qDto.m_id}">
+			<c:if test="${sessionScope.adminId eq qDto.a_id}">
 				<input type="button" value="수정" 
-					onclick="location='questionModify.do?q_num=${qDto.q_num}&pageNum=${pageNum}'">	
-				
+					onclick="location='adminQuestionModify.do?q_num=${qDto.q_num}&pageNum=${pageNum}'">	
+			</c:if>	
 				<!-- 삭제 -->
-				<input type="button" value="삭제" onclick="DelCheck('${qDto.q_num}', '${qDto.ref}', '${qDto.re_step}', '${qDto.re_level}' ,'${pageNum}')">	
-			</c:if>
+			<input type="button" value="삭제" onclick="adminDelCheck('${qDto.q_num}', '${qDto.ref}', '${qDto.re_step}', '${qDto.re_level}' ,'${pageNum}')">	
 			
-		<%-- <c:if test="${article.ref eq qDto.ref && qDto.re_step == 1 }">
-			<table border="1" width="900px"> 
-				<tr>
-					<th colspan="2"> 관리자 </th>
-				</tr>
-				<tr>
-					<th> 제목 </th>
-					<td> Re : ${qDto.q_subject} </td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						${qDto.q_content}
-					</td>
-				</tr>
-			</table>
-		</c:if> --%>
-			
-				
 		</form>
 	</body>
 </html>

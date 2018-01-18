@@ -62,6 +62,19 @@ function DelCheck(q_num, ref, re_step, re_level, pageNum){
 	
 }
 
+// 관리자 삭제
+function adminDelCheck(q_num, ref, re_step, re_level, pageNum){
+	var adelcheck = confirm("삭제하시겠습니까?");
+	
+	if(adelcheck == true){
+		document.location.href="adminQuestionDelete.do?q_num="+q_num+"&ref="+ref+"&re_step="+re_step+"&re_level="+re_level+"&pageNum="+pageNum;
+	}
+	else if(adelcheck == faluse){
+		document.location.href="adminPensionQna.do?pageNum="+pageNum;
+	}
+	
+}
+
 
 function writefocus() {
 	writeform.writer.focus();
