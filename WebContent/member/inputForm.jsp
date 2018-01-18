@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<%@ include file="setting.jsp" %>
 
-<%@ include file="setting.jsp" %>
 <script src="${project}member/script.js"></script>
    
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-       <style type="text/css">
-			button{
-				color:red;
-				}
-		</style>
-		
-    <body onload="inputfocus()">
-   
-      <article class="container">
-        <div class="page-header">
-          <h1>회원가입 <small>Let's Pension</small></h1>
-        </div>
-        <div class="col-md-6 col-md-offset-3">
+	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
+	</head>
+    
+    <body onload="inputfocus()" id="talk">
+    <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+      <div class="top_bg"><h3><span>회원가입</span></h3></div>
+      <div class="board">
+      <div class="snb">
+      <div class="center"><div class="col-md-6 col-md-offset-3">
           <form method="post" action="logonInputPro.do" name="inputform" onsubmit="return inputcheck()">
             <input type="hidden" name="confirm" value="0">
        		<input type="hidden" name="emailconfirm_value" value="0">
@@ -176,8 +178,13 @@
               <button type="reset" class="btn btn-warning" onclick="location='pensionHome.do'">가입취소<i class="fa fa-times spaceLeft"></i></button>
             </div>
           </form>
-        </div>
-      </article>
- </body>
+        </div></div>
+      </div>
+      </div>
+      </div>
+        
 
+
+ </body>
+</html>
     
