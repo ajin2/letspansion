@@ -10,4 +10,5 @@ public interface QnaDao {
 	public int insertArticle(QnaDataBean qDto);
 	public QnaDataBean getArticle(int q_num);
 	public int deleteArticle(int q_num);
+	public int updateArticle(QnaDataBean qDto);
 }

@@ -18,6 +18,21 @@ function erroralert( msg ) {
 	history.back();
 }
 
+
+//관리자 삭제
+function adminDel(n_id, n_pageNum){
+	var adelcheck = confirm("삭제하시겠습니까?");
+	
+	if(adelcheck == true){
+		document.location.href="adminNoticeDelete.do?n_id="+n_id+"&n_pageNum="+n_pageNum;
+	}
+	else if(adelcheck == faluse){
+		document.location.href="adminNoticeList.do?n_pageNum="+n_pageNum;
+	}
+	
+}
+
+
 function modifyfocus() {
 	modifyform.subject.focus();
 }

@@ -11,9 +11,9 @@
  	</select>
  	
  	<select id="getArticles" parameterType="Map" resultType="notice.NoticeDataBean">
- 		select n_id, a_id, n_subject, n_content, n_regdata, r 
- 		from (select n_id, a_id, n_subject, n_content, n_regdata, rownum r 
- 		from (select n_id, a_id, n_subject, n_content, n_regdata 
+ 		select n_id, a_id, n_subject, n_content, n_regdata, n_delete, r 
+ 		from (select n_id, a_id, n_subject, n_content, n_regdata, n_delete, rownum r 
+ 		from (select n_id, a_id, n_subject, n_content, n_regdata, n_delete
  		from pension_notice order by n_regdata desc) order by n_regdata desc ) 
  		where r &gt;= #{start} and r &lt;= #{end}
  	</select>
@@ -26,14 +26,29 @@
   	
  <!-- insert -->
   	<insert id="insertArticle" parameterType="notice.NoticeDataBean">
-  			insert into pension_notice( n_id, a_id, n_subject, n_content, n_regdata )
+  			insert into pension_notice( n_id, a_id, n_subject, n_content, n_regdata, n_delete )
   			 values(SEQ_pension_notice_n_id.NEXTVAL, #{a_id}, #{n_subject}, #{n_content}, 
-  			 #{n_regdata} )
+  			 #{n_regdata}, #{n_delete} )
   	</insert>
   	
   	<select id="maxnum" resultType="int">
   			select max(n_id) from pension_notice
   	</select>
+  	
+ <!-- delete - 0 -> 1 -->
+  	<!-- <select id="checkReply" parameterType="notice.NoticeDataBean" resultType="int">
+  		select count(*) from pension_notice where n_id=#{n_id}
+  	</select> -->
+  	
+  	<update id="delete" parameterType="int">
+  		update pension_notice set n_delete=1 where n_id=#{n_id}
+  	</update>
   
+ <!-- update - modify -->
+ 	<update id="updateArticle" parameterType="notice.NoticeDataBean">
+		update pension_notice set n_subject=#{n_subject}, n_content=#{n_content}
+		where n_id=#{n_id}
+	</update>	
+ 	
  	
  </mapper>

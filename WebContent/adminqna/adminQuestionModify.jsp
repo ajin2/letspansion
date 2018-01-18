@@ -7,10 +7,10 @@
 		<%@ include file="setting.jsp" %>
 	</head>
 	<body>
-	<form method="post" name="questionform" action="questionModifyPro.do" 
+	<form method="post" name="questionform" action="adminQuestionModifyPro.do" 
 		onsubmit="return writecheck()">
 		
-		<input type="hidden" name="m_id" value="${qDto.m_id}" />
+		<input type="hidden" name="a_id" value="${qDto.a_id}" />
 		<input type="hidden" name="q_num" value="${q_num}" />
 		<input type="hidden" name="pageNum" value="${pageNum}" />
 		
@@ -45,7 +45,7 @@
 			<tr>
 				<th> 이름 </th>
 					<td>
-						${qDto.m_id}
+						${qDto.a_id}
 					</td>
 				
 			</tr>
@@ -66,12 +66,12 @@
 			</tr>
 			<tr>
 				<th> 내용 </th>
-				<td> <textarea name="q_content" rows="15" cols="65" ></textarea> </td>
+				<td> <textarea name="q_content" rows="15" cols="65" >${qDto.q_content}</textarea> </td>
 			</tr>
 			<tr>
 				<th colspan="2">
 					<input type="submit" value="수정하기" >
-					<input type="button" value="취소" onclick="location='questionList.do?pageNum=${pageNum}'">
+					<input type="button" value="취소" onclick="location='adminPensionQna.do?pageNum=${pageNum}'">
 				</th>
 			</tr>
 		</table>

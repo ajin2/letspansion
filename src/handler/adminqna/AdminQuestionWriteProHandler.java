@@ -1,4 +1,4 @@
-package handler.qna;
+package handler.adminqna;
 
 import java.sql.Timestamp;
 
@@ -15,16 +15,16 @@ import qna.QnaDao;
 import qna.QnaDataBean;
 
 @Controller
-public class QuestionWriteProHandler implements CommandHandler{
+public class AdminQuestionWriteProHandler implements CommandHandler{
 	
 	@Resource
 	private QnaDao qDao;
 	
-	@RequestMapping("/questionWritePro")
+	@RequestMapping("/adminQuestionWritePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 	
-		String m_id = (String)request.getSession().getAttribute("memId");
+		String a_id = (String)request.getSession().getAttribute("adminId");
 		
 		int q_delete = 0;
 		
@@ -43,8 +43,8 @@ public class QuestionWriteProHandler implements CommandHandler{
 		
 		QnaDataBean qDto = new QnaDataBean();
 		qDto.setQ_num(Integer.parseInt(request.getParameter("q_num")));
-		qDto.setM_id(m_id);
-		qDto.setA_id(request.getParameter("adminId"));
+		qDto.setM_id(request.getParameter("m_id"));
+		qDto.setA_id(a_id);
 		qDto.setQ_cate(Integer.parseInt(request.getParameter("q_cate")));
 		qDto.setQ_subject(request.getParameter("q_subject"));
 		qDto.setQ_content(request.getParameter("q_content"));
@@ -57,6 +57,6 @@ public class QuestionWriteProHandler implements CommandHandler{
 		int result = qDao.insertArticle(qDto);
 		request.setAttribute("result", result);
 		
-		return new ModelAndView("qna/questionWritePro");
+		return new ModelAndView("adminqna/adminQuestionWritePro");
 	}
 }

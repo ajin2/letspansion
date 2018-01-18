@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp" %>
+		<script src="${project}adminnotice/script.js"></script>
 		<h3 align="center"> 글 읽기 </h3>
 	</head>
 	<body>
@@ -36,19 +37,19 @@
 	<tr>
 		<th> 내용 </th>
 		<td colspan="3">
-			<pre>${nDto.n_content}</pre>
+			${nDto.n_content}
 		</td>
 	</tr>
 
 </table>
 		<c:if test="${nDto.a_id eq sessionScope.adminId}">
 			<input class="inputbutton" type="button" value="수정"
-				onclick="location='noticeModifyForm.do?n_id=${nDto.n_id}&n_pageNum=${n_pageNum}'">
+				onclick="location='adminNoticeModify.do?n_id=${nDto.n_id}&n_pageNum=${n_pageNum}'">
 			<input class="inputbutton" type="button" value="삭제"
-				onclick="location='noticeDeleteForm.do?num=${nDto.n_id}&n_pageNum=${n_pageNum}'">
+				onclick="adminDel('${nDto.n_id}','${n_pageNum}')">
 		</c:if>	
 		<input class="inputbutton" type="button" value="목록"
-				onclick="location='noticeList.do?n_pageNum=${n_pageNum}'">
+				onclick="location='adminNoticeList.do?n_pageNum=${n_pageNum}'">
 </form>
 	</body>
 </html>

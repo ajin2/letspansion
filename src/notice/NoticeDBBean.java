@@ -33,21 +33,24 @@ public class NoticeDBBean implements NoticeDao {
 		int result = 0;
 		NoticeDataBean nDto = getArticle( n_id );
 		
-		// checkReply
-		int count = SqlMapClient.getSqlSession().selectOne("Notice.checkReply",nDto);
+		/*int count = SqlMapClient.getSqlSession().selectOne("Notice.checkReply", nDto);
 		
 		if(count != 0) {
 			result = -1;
 		} else {
-			// replyCheck
-			SqlMapClient.getSqlSession().update("Board.replyCheck", nDto);
-			
-			// deleteArticle
-			
-			SqlMapClient.getSqlSession().delete("Board.deleteArticle",  n_id);
-		}		
+			SqlMapClient.getSqlSession().update("Notice.replyCheck", nDto);
+			*/
+			SqlMapClient.getSqlSession().update("Notice.delete", n_id);
+		//}
+		
+		// deleteArticle	
 		
 		return result;
 	}
+
+	public int updateArticle( NoticeDataBean nDto ) {
+		return SqlMapClient.getSqlSession().update("Notice.updateArticle", nDto);
+	}
+	
 	
 }

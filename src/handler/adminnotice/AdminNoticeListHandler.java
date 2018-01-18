@@ -22,7 +22,7 @@ public class AdminNoticeListHandler implements CommandHandler{
 	@Resource
 	private NoticeDao nDao;
 	
-	@RequestMapping("adminNoticeList")
+	@RequestMapping("/adminNoticeList")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
@@ -30,7 +30,7 @@ public class AdminNoticeListHandler implements CommandHandler{
 		
 		int n_pageBlock = 5;		
 		int n_pageSize = 15;		
-		String n_pageNum= null;	
+		String n_pageNum = null;	
 		int n_currentPage = 0;	
 		int n_start = 0;			
 		int n_end = 0;			

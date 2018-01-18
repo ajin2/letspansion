@@ -30,7 +30,7 @@
   	
   	<insert id="insertArticle" parameterType="qna.QnaDataBean">
 		insert into pension_qna( q_num, m_id, a_id, q_cate, q_subject, q_content, ref, re_step, re_level, q_regdate, q_delete )
-		 values( SEQ_pension_qna_q_num.NEXTVAL, #{m_id}, #{a_id, jdbcType=VARCHAR}, #{q_cate}, #{q_subject},#{q_content},
+		 values( SEQ_pension_qna_q_num.NEXTVAL, #{m_id, jdbcType=VARCHAR}, #{a_id, jdbcType=VARCHAR}, #{q_cate}, #{q_subject},#{q_content},
 		 #{ref}, #{re_step}, #{re_level}, #{q_regdate}, #{q_delete} )
   	</insert>
   	
@@ -51,4 +51,10 @@
   		update pension_qna set q_delete=1 where q_num=#{q_num}
   	</update>
   	
+  	
+  	<!-- modify -->
+	<update id="updateArticle" parameterType="qna.QnaDataBean">
+		update pension_qna set q_subject=#{q_subject}, q_content=#{q_content}
+		where q_num=#{q_num}
+	</update>
   </mapper>

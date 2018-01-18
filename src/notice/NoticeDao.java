@@ -11,4 +11,5 @@ public interface NoticeDao {
 	public int insertArticle(NoticeDataBean nDto);
 	/*public int check(int n_id);*/
 	public int deleteArticle(int n_id);
+	public int updateArticle(NoticeDataBean nDto);
 }

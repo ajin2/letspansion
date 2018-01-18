@@ -1,4 +1,4 @@
-package handler.qna;
+package handler.adminqna;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -14,12 +14,12 @@ import qna.QnaDao;
 import qna.QnaDataBean;
 
 @Controller
-public class QuestionModifyHandler implements CommandHandler{
+public class AdminQuestionModifyHandler implements CommandHandler{
 	
 	@Resource
 	private QnaDao qDao;
 	
-	@RequestMapping("/questionModify")
+	@RequestMapping("/adminQuestionModify")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 	
@@ -34,6 +34,6 @@ public class QuestionModifyHandler implements CommandHandler{
 		QnaDataBean qDto = qDao.getArticle(q_num);
 		request.setAttribute("qDto", qDto);
 		
-		return new ModelAndView("qna/questionModify");
+		return new ModelAndView("adminqna/adminQuestionModify");
 	}
 }

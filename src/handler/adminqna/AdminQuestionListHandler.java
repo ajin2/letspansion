@@ -22,7 +22,7 @@ public class AdminQuestionListHandler implements CommandHandler {
 	@Resource
 	private QnaDao qDao;
 	
-	@RequestMapping("/adminQuestionList")
+	@RequestMapping("/adminPensionQna")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
@@ -103,6 +103,6 @@ public class AdminQuestionListHandler implements CommandHandler {
 		}
 		
 		
-		return new ModelAndView("adminqna/adminQuestionList");
+		return new ModelAndView("adminqna/adminPensionQna");
 	}
 }

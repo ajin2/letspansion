@@ -47,7 +47,7 @@
 		
 			<tr>
 				
-				  <c:if test="${ article.m_id eq sessionScope.memId}">
+				  <%-- <c:if test="${ article.m_id eq sessionScope.memId || article.a_id eq sessionScope.adminId}"> --%>
 					<c:if test="${article.re_step >= 0}" > 
 						<c:if test="${article.q_cate == 1}">
 							<td align="center" style="background-color:purple">
@@ -77,12 +77,11 @@
 				
 				<c:if test="${article.q_delete eq 0}">
 					<td>
-						<%-- <c:set var="wid" value="${(article.re_level - 1) * 10 }" /> --%>
+						 <c:set var="wid" value="${(article.re_level - 1) * 10 }" /> 
 					 
 						
 							<c:if test="${article.re_step > 0}" >
-								&nbsp;&nbsp;&nbsp; ㄴ 답글 : &nbsp;
-								<%-- <img src="${project}buy/images/re.gif" width='20' height='15'> --%>
+								&nbsp;&nbsp;&nbsp; ㄴ Re : &nbsp;
 							</c:if>
 						
 					 
@@ -117,7 +116,7 @@
 						${article.a_id}
 					</td>
 				</c:if>
-				<c:if test="${article.a_id eq null }"> 
+				<c:if test="${article.m_id ne null }"> 
 					<td align="center">
 						${article.m_id}
 					</td>
@@ -129,7 +128,7 @@
 				<%-- <c:if test="${article.q_delete eq 1}">
 			 / 글이 삭제되었습니다.
 				</c:if> --%>
-				</c:if>
+				<%-- </c:if> --%>
 			</tr>
 			<%-- </c:if> --%>
 		</c:forEach>
