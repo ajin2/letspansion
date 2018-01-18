@@ -9,28 +9,132 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<script src="${project}home/script.js"></script>
-		<link href="css/reset.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
 	</head>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
-		<body>
+		<body id="index">
+		<div id="header">
 			<h1><a href="pensionHome.do"><img src="/LetsPension/img/LetsPensionLogo.png" alt="" width="130" height="71"></a></h1>
 			<div class="gnb">
-				<a class="text-shadow text-white" href="logonMain.do">${str_login}</a>  | 
-		    	<a class="text-shadow text-white" href="logonInputForm.do">${str_signon}</a> |  
-		    	<a class="text-shadow text-white" href="pensionFindId.do">${str_findid}</a>  | 
-		    	<a class="text-shadow text-white" href="logonFindPasswd.do">${str_findpasswd}</a>     
+				<ul>
+					<li><a>펜션 소개</a>
+						<ul>
+							<li><a href=".do">주변 놀거리</a></li>
+							<li><a href=".do">오시는 길</a></li>
+							
+						</ul>
+					</li>
+					<li><a>룸보기</a>
+						<ul>
+							<li><a href=".do">room1</a></li>
+							<li><a href=".do">room2</a></li>
+							<li><a href=".do">room3</a></li>
+							<li><a href=".do">room4</a></li>
+							<li><a href=".do">room5</a></li>
+						</ul>
+					</li>
+					<li><a>실시간 예약</a>
+						<ul>
+							<li><a href=".do">예약</a></li>
+						</ul>
+					</li>
+					<li><a>QnA</a>
+						<ul>
+							<li><a href=".do">QnA</a></li>
+					
+						</ul>
+					</li>
+					<li><a>후기</a>
+						<ul>
+							<li><a href=".do">후기</a></li>
+						</ul>
+					</li>
+					<li><a>펜션 소개</a>
+						<ul>
+							<li><a href=".do">주변 놀거리</a></li>
+							<li><a href=".do">오시는 길</a></li>
+							
+						</ul>
+					</li>
+					</ul>
 			</div>
+				<div class="sns">
+					<ul>
+						<li><a><img src="/LetsPension/img/LetsPensionLogo.png" alt="" width="40" height="40" /></a></li>
+						<ul>
+							<li><a>aaaaaa</a></li>
+							<li><a>aaaaaa</a></li>
+						</ul>
+					</ul>
+				</div>
+		</div>
 		</body>
 	</c:if>
 	
 	<c:if test="${sessionScope.memId != null}">
-	    <body>
+		<body id="index">
+		<div id="header">
+			<h1><a href="pensionHome.do"><img src="/LetsPension/img/LetsPensionLogo.png" alt="" width="130" height="71"></a></h1>
+			<div class="gnb">
+				<ul>
+					<li><a>펜션 소개</a>
+						<ul>
+							<li><a href=".do">주변 놀거리</a></li>
+							<li><a href=".do">오시는 길</a></li>
+							
+						</ul>
+					</li>
+					<li><a>룸보기</a>
+						<ul>
+							<li><a href=".do">room1</a></li>
+							<li><a href=".do">room2</a></li>
+							<li><a href=".do">room3</a></li>
+							<li><a href=".do">room4</a></li>
+							<li><a href=".do">room5</a></li>
+						</ul>
+					</li>
+					<li><a>실시간 예약</a>
+						<ul>
+							<li><a href=".do">예약</a></li>
+						</ul>
+					</li>
+					<li><a>QnA</a>
+						<ul>
+							<li><a href=".do">QnA</a></li>
+					
+						</ul>
+					</li>
+					<li><a>후기</a>
+						<ul>
+							<li><a href=".do">후기</a></li>
+						</ul>
+					</li>
+					<li><a>마이페이지</a>
+						<ul>
+							<li><a href=".do">회원수정</a></li>
+							<li><a href=".do">회원탈퇴</a></li>
+							<li><a href=".do">예약조회</a></li> 
+							<li><a href=".do">예약수정</a></li>
+							<li><a href=".do">예약삭제</a></li>
+						</ul>
+					</li>			
+					</ul>
+			</div>
+		</div>
+		</body>
+
+
+<%-- 	    <body>
 		    <a class="text-shadow text-white" >${sessionScope.memId} 님</a> |
 		    <a class="text-shadow text-white" href="pensionMypage.do">${str_mypage}</a> | 
 		    <a class="text-shadow text-white" href="logonLogout.do">${str_logout}</a>
-		</body>
+		</body> --%>
 	</c:if>  	
 	
 </html>

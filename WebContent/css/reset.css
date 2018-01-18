@@ -3,9 +3,80 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
  */
+@charset "UTF-8";
+@font-face {
+	font-family: 'nanumbarungothicregular';
+	font-style: normal;
+	src: url('/font/nanumbarungothicregular.eot');
+	src: url('/font/nanumbarungothicregular.ttf');
+	src: url('/font/nanumbarungothicregular.woff');
+}
+
+@font-face {
+	font-family: 'OpenSans';
+	font-style: normal;
+	src: url('/font/OpenSans.eot');
+	src: url('/font/OpenSans.ttf');
+	src: url('/font/OpenSans.woff');
+}
+ html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{
+	margin:0;border:0;outline:0;padding:0;
+	background:transparent;
+	font-family:'OpenSans','nanumbarungothicregular',Arial,'돋움', Dotum, sans-serif;
+	font-style:normal; font-weight:normal;
+	vertical-align:baseline;
+}
+
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body					{line-height:1}
+ol,ul				{list-style:none}
+blockquote,q 		{quotes:none}
+blockquote:before,
+blockquote:after,
+q:before,q:after		{content:'';content:none}
+table				{border-collapse:collapse;border-spacing:0}
+hr					{display:none}
+
+a:link				{color:#000;text-decoration:none}
+a:visited			{color:#000;text-decoration:none}
+a:hover				{color:#000;text-decoration:none}
+a:active				{color:#000;text-decoration:none}
+ 
  #header {
-	background:url(http://gonylab3.speedgabia.com/privateus7/img/images/header_bg.png) repeat-x left top;
+ 	background:url(/LetsPension/img/header_bg.png) repeat-x left top;
 	position:fixed;top:0;width:100%;min-width:1200px;z-index:600;
 }
-#header h1 {float:left;margin-left:10px;}
+#header h1 {float:left;margin-left:0px;margin-top:0px;}
+/* #header ul {float:right;margin-right:0px;margin-top:0px;} */
 #header h1 a {display:block;height:71px;}
+#header h1 a {display:block;height:71px;}
+#header .gnb {width:750px;margin:0 auto;}
+#header .gnb > ul {width:100%;}
+#header .gnb > ul > li {float:left;width:20%;}
+#header .gnb > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .gnb > ul > li > ul {background:#fff;display:none;}
+#header .gnb > ul > li > ul > li.gt {padding-top:15px;}
+#header .gnb > ul > li > ul > li.gb {padding-bottom:15px;}
+#header .gnb > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
+#header .gnb ul li a {display:block;text-align:center;}
+#header .sns {float:right;margin-right:10px;padding:15px 0 13px;overflow:hidden;}
+#header .sns ul {width:100%;}
+#header .sns ul >li  {float:left;width:20%;}

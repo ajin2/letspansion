@@ -22,15 +22,14 @@
 	
 	    <!-- Custom styles for this template -->
 	    <link href="css/coming-soon.min.css" rel="stylesheet">
+	    
 	</head>
 	
 	<body>
-		<table>
-         <tr>
-            <th> <jsp:include page="pensionHeader.jsp" flush="false"/> </th>	
-			<th> <jsp:include page="pensionMenu.jsp" flush="false"/> </th>
-         </tr>
-		</table>
+			
+             <jsp:include page="pensionHeader.jsp" flush="false"/>
+<%-- 			<th> <jsp:include page="pensionMenu.jsp" flush="false"/> </th> --%>
+
     	
     	<%-- <jsp:include page="pensionMain.jsp" flush="false"/> --%>  
 		<div class="masthead">
@@ -38,21 +37,7 @@
 			<div class="container h-100">
 				<div class="row h-100">
 					<div class="col-12 my-auto">
-						<div class="masthead-content text-white py-5 py-md-0">
-							<h1 class="mb-3">Coming Soon!</h1>
-							<p class="mb-5">
-								We're working hard to finish the development of this site. Our
-								target launch date is <strong>August 2018</strong>! Sign up for
-								updates using the form below!
-							</p>
-							<div class="input-group input-group-newsletter">
-								<input type="email" class="form-control"
-									placeholder="Enter email..." aria-label="Search for...">
-								<span class="input-group-btn">
-									<button class="btn btn-secondary" type="button">Notify Me!</button>
-								</span>
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div>
@@ -69,8 +54,8 @@
 	    <script src="js/coming-soon.min.js"></script>
 		<%-- <%@include file="pensionMain.html" %>  --%>
 		<%-- <jsp:include page="pensionMain.jsp" flush="false"/> --%>
-		
+	<jsp:include page="pensionBottom.jsp" flush="false"/>	
 	</body>
-	<jsp:include page="pensionBottom.jsp" flush="false"/>
+	
 </html>
 	
