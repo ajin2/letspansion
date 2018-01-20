@@ -32,11 +32,13 @@
 					</li>
 					<li><a>룸보기</a>
 						<ul>
-							<li><a href=".do">room1</a></li>
-							<li><a href=".do">room2</a></li>
-							<li><a href=".do">room3</a></li>
-							<li><a href=".do">room4</a></li>
-							<li><a href=".do">room5</a></li>
+							<li><a href="pensionRoomList.do">방 둘러보기</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=1">room1</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=2">room2</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=3">room3</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=4">room4</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=5">room5</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=6">편의시설</a></li>
 						</ul>
 					</li>
 					<li><a>실시간 예약</a>

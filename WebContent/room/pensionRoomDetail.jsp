@@ -4,21 +4,11 @@
 <html>
 	<meta charset="UTF-8">
 	<%@ include file="setting.jsp" %>
-	<script src="${project}adminroom/script.js"></script>
+	<script src="${project}room/script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<body>
-		<table>
-			<tr>
-				<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
-				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
-			</tr>
-		</table>
-	
 		<table border="1">
-			<tr>
-					<th colspan="2"> <input type="button" value="${btn_roomPictureModi}" onclick="location='adminRoomModi.do?r_id=${r_id}'"> </th>
-			</tr>
 			<tr> 
 				<th> ${str_roomName} : </th>
 				<td> ${roomDto.r_name}</td>
@@ -38,7 +28,7 @@
 		</table>
 		
 		<!-- 360 picture -->
-		<input type="button" value="${btn_room360}" onclick="location='adminRoom360.do?r_id=${r_id}'">
+		<input type="button" value="${btn_room360}" onclick="location='pensionRoom360.do?r_id=${r_id}'">
 		
 		<div class="w3-content w3-display-container" style="max-width: 80%">
 			<!-- Main Picture -->
@@ -67,12 +57,12 @@
 			</c:forEach>
 		</div>
 	</body>
-	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
+	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 	
-	<script type="text/javascript">
-		//<!--
+	<script>
+		//
 		showDivs(slideIndex);
-		//-->
+		//
 	</script>
 </html>
 

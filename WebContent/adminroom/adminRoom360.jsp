@@ -72,7 +72,10 @@
 	<body>
 		<div id="panorama"></div>
 		<script>
-			var sImageFileName = "roomVRimg/images.jpg";
+			var urlSplit = document.location.href.split("?");
+			var r_idSplit = urlSplit[1].split("=");
+			var r_id = r_idSplit[1];
+			var sImageFileName = "/LetsPension/img/roomVRimg/" + r_id + "_360.jpg";
 			pannellum.viewer('panorama', {
 			"type": "equirectangular",
 			"panorama": sImageFileName

@@ -8,6 +8,7 @@
 <c:set var="project" value = "/LetsPension/"/>
 
 <c:set var="btn_roomPictureModi" value= "방 사진 수정"/>
+<c:set var="btn_room360" value="360º 방 구경하기"/>
 
 <c:set var="str_roomName" value="방 이름"/>
 <c:set var="str_person" value= "수용 인원"/>
