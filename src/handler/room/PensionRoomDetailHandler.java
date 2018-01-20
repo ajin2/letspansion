@@ -16,21 +16,24 @@ import room.RoomDataBean;
 import room.RoomPictureDataBean;
 
 @Controller
-public class PensionRoomListHandler implements CommandHandler{
-	
+public class PensionRoomDetailHandler implements CommandHandler{
+
 	@Resource
 	private RoomDao roomDao;
 	
-	@RequestMapping("/pensionRoomList")
+	@RequestMapping("/pensionRoomDetail")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
-		List<RoomPictureDataBean> pictures = roomDao.getRoomsPictureArticles();
-		request.setAttribute("pictures", pictures);
-
-		List<RoomDataBean> roomDto = roomDao.getRoomsArticle();
-		request.setAttribute("roomDto", roomDto);
+		int r_id = Integer.parseInt(request.getParameter("r_id"));
+		int countPicture = roomDao.getCountPicture(r_id);
+		List<RoomPictureDataBean> pictures = roomDao.getRoomPictureArticles(r_id);
+		RoomDataBean roomDto = roomDao.getRoomArticle(r_id);
 		
-		return new ModelAndView("room/pensionRoomList");
+		request.setAttribute("roomDto", roomDto);
+		request.setAttribute("countPicture", countPicture);
+		request.setAttribute("r_id", r_id);
+		request.setAttribute("pictures", pictures);
+		
+		return new ModelAndView("room/pensionRoomDetail");
 	}
 }
