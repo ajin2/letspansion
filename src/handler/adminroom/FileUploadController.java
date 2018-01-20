@@ -31,13 +31,13 @@ public class FileUploadController implements CommandHandler{
     	request.setAttribute("formData", formData);
 		
     	String path = request.getSession().getServletContext().getRealPath("/roomupload");
-		File dir = new File(path);
+    	request.setAttribute("path", path);
+    	File dir = new File(path);
 		if(!dir.isDirectory()) {
 			new File(path).mkdir();
 		}
-		request.setAttribute("path", path);
-		int sizeLimit = 10 * 1024 * 1024;
 		
+		int sizeLimit = 10 * 1024 * 1024;
 		MultipartRequest multiRequest = new MultipartRequest(request, path, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 		request.setAttribute("multiRequest", multiRequest);
 		

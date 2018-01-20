@@ -9,7 +9,7 @@
 
 <c:set var="btn_roomPictureModi" value= "방 사진 수정"/>
 
-
+<c:set var="str_roomName" value="방 이름"/>
 <c:set var="str_person" value= "수용 인원"/>
 <c:set var="str_price" value= "방 가격"/>
 <c:set var="str_content" value= "방 설명"/>

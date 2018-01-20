@@ -26,11 +26,11 @@
 				if (httpRequest.request.status == 200) {
 					var xmldoc = httpRequest.request.responseXML;
 					var code = xmldoc.getElementsByTagName("code").item(0).firstChild.nodeValue;
-					var message = xmldoc.getElementsByTagName("message").item(0).firstChild.nodeValue;
 					
 					if (code == "success") {
 						selectMember();
 					} else {
+						var message = xmldoc.getElementsByTagName("message").item(0).firstChild.nodeValue;
 						msg += "회원탈퇴 : " + message;
 					}
 				} else {
@@ -73,7 +73,7 @@
 						
 						for(var i = 0; i < data.member.length; i++) {
 							m += "<tr>";
-							m += "<td> <input type='text' name='memid"+i+"' value='"+data.member[i].m_id+"'></td>";
+							m += "<td> <input type='text' readonly name='memid"+i+"' value='"+data.member[i].m_id+"'></td>";
 							m += "<td>" + data.member[i].m_name + "</td>";
 							m += "<td>" + data.member[i].m_tel + "</td>";
 							m += "<td>" + data.member[i].m_email + "</td>";

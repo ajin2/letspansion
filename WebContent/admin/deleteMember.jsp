@@ -5,10 +5,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %> 
 
-<sql:query var="result" dataSource="jdbc/kh">
-	update into pension_member set m_del=0 where m_id=?
+<sql:update var="result" dataSource="jdbc/kh">
+	update pension_member set m_del=1 where m_id=?
 	<sql:param value="${param.m_id}"/>
-</sql:query>
+</sql:update>
 
 <c:if test="${result == 0}">
 	<result>

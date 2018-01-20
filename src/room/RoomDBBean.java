@@ -34,4 +34,24 @@ public class RoomDBBean implements RoomDao {
 	public void updatePicture(RoomPictureDataBean picDto) {
 		SqlMapClient.getSqlSession().update("Room.updatePicture", picDto);
 	}
+	
+	@Override
+	public int getCountPicture(int r_id) {
+		return SqlMapClient.getSqlSession().selectOne("Room.getCountPicture", r_id);
+	}
+	
+	@Override
+	public List<RoomPictureDataBean> getRoomsPictureArticles() {
+		return SqlMapClient.getSqlSession().selectList("Room.getRoomsPictureArticles");
+	}
+	
+	@Override
+	public List<RoomDataBean> getRoomsArticle() {
+		return SqlMapClient.getSqlSession().selectList("Room.getRoomsArticle");
+	}
+	
+	@Override
+	public void roomUpdate(RoomDataBean roomDto) {
+		SqlMapClient.getSqlSession().update("Room.roomUpdate", roomDto);
+	}
 }
