@@ -29,4 +29,20 @@
 		where pict_id=#{pict_id} and r_id=#{r_id}
 	</update>
 	
+	<select id="getCountPicture" parameterType="int" resultType="int">
+		select count(*) from pension_pic where r_id=#{r_id}
+	</select>	
+	
+	<select id="getRoomsPictureArticles" resultType="room.RoomPictureDataBean">
+		select * from pension_pic where pict_id=1 order by r_id asc
+	</select>
+	
+	<select id="getRoomsArticle" resultType="room.RoomDataBean">
+		select * from pension_room order by r_id asc
+	</select>
+	
+	<select id="roomUpdate" parameterType="room.RoomDataBean">
+		update pension_room set r_minperson=#{r_minperson}, r_maxperson=#{r_maxperson}, 
+		r_price=#{r_price}, r_content=#{r_content} where r_id=#{r_id}
+	</select>
 </mapper>

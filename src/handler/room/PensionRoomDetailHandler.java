@@ -1,4 +1,4 @@
-package handler.adminroom;
+package handler.room;
 
 import java.util.List;
 
@@ -16,12 +16,12 @@ import room.RoomDataBean;
 import room.RoomPictureDataBean;
 
 @Controller
-public class AdminRoomDetailHandler implements CommandHandler{
-	
+public class PensionRoomDetailHandler implements CommandHandler{
+
 	@Resource
 	private RoomDao roomDao;
 	
-	@RequestMapping("/adminRoomDetail")
+	@RequestMapping("/pensionRoomDetail")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
@@ -34,6 +34,6 @@ public class AdminRoomDetailHandler implements CommandHandler{
 		request.setAttribute("r_id", r_id);
 		request.setAttribute("pictures", pictures);
 		
-		return new ModelAndView("adminroom/adminRoomDetail");
+		return new ModelAndView("room/pensionRoomDetail");
 	}
 }

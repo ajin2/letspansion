@@ -24,25 +24,28 @@ public class FileModifyController implements CommandHandler {
 	@RequestMapping("/fileModify")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+		request.setCharacterEncoding("utf-8");
 		String formData = request.getParameter("formData");
-    	request.setAttribute("formData", formData);
-    	
-    	String path = request.getSession().getServletContext().getRealPath("/roomupload");
-    	request.setAttribute("path", path);
-		int sizeLimit = 10 * 1024 * 1024;
+		request.setAttribute("formData", formData);
 		
+		String path = request.getSession().getServletContext().getRealPath("/roomupload");
+		request.setAttribute("path", path);
+		
+		int sizeLimit = 10 * 1024 * 1024;
 		MultipartRequest multiRequest = new MultipartRequest(request, path, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 		request.setAttribute("multiRequest", multiRequest);
     	
 		int pict_id = Integer.parseInt(request.getParameter("pict_id"));
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		
-		if (multiRequest.getOriginalFileName("file2") != null) {
+		String fdsa = "fdsa" + pict_id;
+		System.out.println(fdsa);
+		System.out.println("file2 11111111111111111");
+		if (multiRequest.getOriginalFileName("file" + pict_id) != null) {
 			System.out.println("file2 : 2222222222222222222");
 			RoomPictureDataBean picDto = new RoomPictureDataBean();
-			String pic_ori = multiRequest.getOriginalFileName("file2");
-			String pic_sys = multiRequest.getFilesystemName("file2");
+			String pic_ori = multiRequest.getOriginalFileName("file" + pict_id);
+			String pic_sys = multiRequest.getFilesystemName("file" + pict_id);
 			
 			request.setAttribute("pic_ori", pic_ori);
 			request.setAttribute("pic_sys", pic_sys);
