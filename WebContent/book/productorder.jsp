@@ -7,6 +7,7 @@
 	<script src="${project}book/jquery-3.2.1.js"></script>
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/productlist.js"></script>
+	<script src="${project}book/bookscript.js"></script>
 	<link href="${project}book/style.css" rel="stylesheet" type="text/css">
 	
 	<script type="text/javascript">
