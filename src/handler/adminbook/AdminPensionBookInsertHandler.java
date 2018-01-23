@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionBookFormHandler implements CommandHandler{
+public class AdminPensionBookInsertHandler implements CommandHandler{
 	@RequestMapping("/insert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {

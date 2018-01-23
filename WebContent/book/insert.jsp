@@ -17,8 +17,8 @@
 	<c:set var="max" value="${max+1}"/>
 	
 	<sql:update var="result" dataSource="jdbc/kh">
-		insert into pension_book(b_num, m_id, r_id, b_person, b_totalprice, b_payway, b_status, b_reg_date, b_book_date) 
-		values(?, ?, ?, ?, ?, ?, ?, to_Date(?, 'mm/dd/yyyy'), sysdate)
+		insert into pension_book(b_num, m_id, r_id, b_person, b_totalprice, b_payway, b_status, b_reg_date, b_book_date, b_term) 
+		values(?, ?, ?, ?, ?, ?, ?, to_Date(?, 'mm/dd/yyyy'), sysdate, ?)
 		<sql:param value="${max}" />
 		<sql:param value="${param.m_id}" />
 		<sql:param value="${param.r_id}" />
@@ -27,6 +27,7 @@
 		<sql:param value="${param.b_payway}" />
 		<sql:param value="${param.b_status}" />
 		<sql:param value="${param.date}" />
+		<sql:param value="${param.term}" />
 	</sql:update>
 	
 	<c:choose>
