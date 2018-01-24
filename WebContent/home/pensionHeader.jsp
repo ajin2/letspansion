@@ -26,7 +26,7 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
@@ -88,7 +88,7 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
