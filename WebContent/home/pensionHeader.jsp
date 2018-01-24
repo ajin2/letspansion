@@ -26,7 +26,7 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
@@ -67,6 +67,7 @@
 							<li><a href="logonInputForm.do">회원가입</a></li>
 							<li><a href=".do">id 찾기</a></li>
 							<li><a href=".do">비번 찾기</a></li>
+              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 						</ul>
 						</li>
 
@@ -85,7 +86,7 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
@@ -123,6 +124,7 @@
 							<li><a href=".do">예약조회</a></li> 
 							<li><a href=".do">예약수정</a></li>
 							<li><a href=".do">예약삭제</a></li>
+              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
 					</li>			
@@ -140,5 +142,5 @@
 	</c:if>  	
 	
 </html>
-   
+  
 	

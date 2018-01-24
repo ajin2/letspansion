@@ -34,6 +34,9 @@
 			newdiv.picture = picture;
 			newdiv.setAttribute("id", "picId_" + picture.pict_id);
 			newdiv.setAttribute("class", "row text-center text-lg-left");
+		
+			
+			
 			return newdiv;
 		}
 		
