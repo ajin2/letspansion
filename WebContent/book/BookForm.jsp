@@ -7,6 +7,7 @@
 	<script src="${project}book/jquery-3.2.1.js"></script>
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/calendar.js"></script>
+	<script src="${project}book/bookscript.js"></script>
 	<link href="${project}book/style.css" rel="stylesheet" type="text/css">
 	<body onload="memId('${sessionScope.memId}')">
 		<form name="inputform">
@@ -40,13 +41,23 @@
 			<input type="text" name="m" style="width:30px; text-align:center">${str_month}
 			<input type="text" name="day" style="width:30px; text-align:center">${str_day}
 			
+			<select id="book_term" onchange="daily()">
+			  <option value="1" selected="selected">${term_12}</option>
+			  <option value="2">${term_23}</option>
+			  <option value="3">${term_34}</option>
+			  <option value="4">${term_45}</option>
+			  <option value="5">${term_56}</option>
+			  <option value="6">${term_67}</option>
+			</select>
+			
 			<input type="button" value="${btn_ok}" onclick="daily()">
+			
 		</div>
 		</form>
 		
 		<br><br>
 		<div id="console"></div>
-		
+				
 		<br>
 		<div id="result"></div>
 		

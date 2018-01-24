@@ -35,7 +35,7 @@ time, mark, audio, video
 {
 	margin:0;border:0;outline:0;padding:0;
 	background:transparent;
-	font-family:'OpenSans','nanumbarungothicregular',Arial,'돋움', Dotum, sans-serif;
+	font-family:'OpenSans','nanumbarungothicregular',Arial,돋움, Dotum, sans-serif;
 	font-style:normal; font-weight:normal;
 	vertical-align:baseline;
 }
@@ -67,16 +67,22 @@ a:active				{color:#000;text-decoration:none}
 #header h1 {float:left;margin-left:0px;margin-top:0px;}
 /* #header ul {float:right;margin-right:0px;margin-top:0px;} */
 #header h1 a {display:block;height:71px;}
-#header h1 a {display:block;height:71px;}
 #header .gnb {width:750px;margin:0 auto;}
 #header .gnb > ul {width:100%;}
 #header .gnb > ul > li {float:left;width:20%;}
-#header .gnb > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
-#header .gnb > ul > li > ul {background:#fff;display:none;}
+#header .gnb > ul > li > a { padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .gnb > ul > li > ul { background:#fff;display:none; }
 #header .gnb > ul > li > ul > li.gt {padding-top:15px;}
 #header .gnb > ul > li > ul > li.gb {padding-bottom:15px;}
 #header .gnb > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
 #header .gnb ul li a {display:block;text-align:center;}
-#header .sns {float:right;margin-right:10px;padding:15px 0 13px;overflow:hidden;}
-#header .sns ul {width:100%;}
-#header .sns ul >li  {float:left;width:20%;}
+#header .sns {float:right;margin-right:20px;margin-bottom:12px}
+#header .sns ul {float:left;}
+#header .sns ul li a {display:block;padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .sns ul li ul { background:#fff;display:none;width:100px;}
+#header .sns ul li ul li a {padding:8px 0;font-size:15px;color:black;font-weight:bold;text-align:center;}
+/* #header .sns ul >li {width:20%;}
+#header .sns > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .sns > ul > li > ul {background:#fff;display:none;}
+#header .sns > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
+#header .sns ul li a {display:block;text-align:center;}   */

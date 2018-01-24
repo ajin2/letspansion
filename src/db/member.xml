@@ -33,8 +33,8 @@
 	</update>
 	
 	<update id="updateMember" parameterType="member.LogonDataBean">
-		update pension_member set m_passwd=#{m_passwd}, m_tel=#{m_tel},
-		m_email=#{m_email} where m_id=#{m_id}
+		update pension_member set m_passwd=#{m_passwd}, m_tel=#{m_tel},m_postcode=#{m_postcode},m_address=#{m_address},m_detailadd=#{m_detailadd}
+		where m_id=#{m_id}
 	</update>
 	<update id="updatePasswd" parameterType="member.LogonDataBean">
 		update pension_member set m_passwd=#{m_passwd} where m_id=#{m_id}

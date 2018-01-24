@@ -12,8 +12,6 @@ function p_list(param){
 	var params = "cate=" + param;
 	httpRequest = new HttpRequest(p_listresult, "productselect.do", params);
 	httpRequest.sendRequest();
-	
-	console.log(params);
 }
 
 function p_listresult(){
@@ -30,7 +28,7 @@ function p_listresult(){
 	        	
         		t += "<tr>"+
         			"<td style='width:140px;'>"+ data.product[i].p_name +"</td>"+
-        			"<td><img src='/LetsPension/book/img/"+ data.product[i].p_ori +"' style='width:100px; height:100px'></td>";
+        			"<td><img src='/LetsPension/book/img/"+ data.product[i].p_sys +"' style='width:100px; height:100px'></td>";
         		t += "<input type='hidden' name='pid"+i+"' value='"+data.product[i].p_id+"'>";
         		
         		if(data.product[i].p_cate == 'b'){
@@ -52,7 +50,7 @@ function p_listresult(){
 }
 
 
-var totalprice = 0;
+var totalprice =  Number($('#book_total').html());
 
 function orderlist(pname, price, cnt, pid){
 	$('#presult').css('display', '');
@@ -63,8 +61,6 @@ function orderlist(pname, price, cnt, pid){
 	totalprice += (price * cnt);
 	price = parseInt(price);
 	cnt = parseInt(cnt);
-	
-	console.log($("#"+pname+":contains("+pname+")").length);
 	
  	if($("#"+pname+":contains("+pname+")").length == 1){
  		cnt_2 = $("#"+pname+":contains("+pname+")").next().text();
@@ -79,8 +75,6 @@ function orderlist(pname, price, cnt, pid){
  		$("#"+pname+":contains("+pname+")").next().next().text(price);
  		$("#"+pname+":contains("+pname+")").next().next().next().html(newtext);
  		
- 		console.log("if를 탄다");
- 		
  	} else {
  		t = "<tr>";
  		t += "<td style='display:none'>"+pid+"</td>";
@@ -89,8 +83,6 @@ function orderlist(pname, price, cnt, pid){
  		t += "<td>" + (price * cnt) + "</td>" ;
  		t += "<td> <input type='button' name='btn_del' value='삭제' onclick='orderlistremove("+pname+","+(price * cnt)+")'> </td></tr>";
  		$('#p_body').append(t);
- 		console.log("else를 탄다");
- 		console.log(pname);
  	}
  	
 	
@@ -105,7 +97,6 @@ function orderlist(pname, price, cnt, pid){
 function orderlistremove(pname, dayprice){
 	
 	dayprice = Number(dayprice);
-	console.log(dayprice);
 	
 	totalprice = totalprice - dayprice;
 	
@@ -146,7 +137,7 @@ function orderinsertresult(){
 	       	}else{
 	       		msg = message ;
 	       	}
-	       	console.log(msg);
+	       	alert("상품" + msg);
 		}
 	}
 }
