@@ -26,7 +26,6 @@ public class ListHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		System.out.println("aa");
 		
 		int count = 0;				// 전체글수
 		
@@ -43,7 +42,6 @@ public class ListHandler implements CommandHandler{
 		int pageCount = 0;			// 페이지의 개수
 		
 		count = afterDao.getCount();
-		System.out.println( "count : " + count );
 		
 		request.setAttribute( "count", count );
 		

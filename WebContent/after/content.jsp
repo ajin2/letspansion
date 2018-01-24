@@ -1,115 +1,148 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="after.ReplyBoardDataBean"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="after.AfterDataBean"%>
 <%@page import="after.AfterDBBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="setting.jsp"%>
 <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+<script src="/LetsPension/after/request.js"></script>
+<script src="/LetsPension/jquery-3.2.1.js"></script>
+
+<%
+	request.setCharacterEncoding("utf-8");
+
+	int am_num = (Integer) request.getAttribute( "am_num" );
+	String pageNum = (String) request.getAttribute( "pageNum" );
+	AfterDataBean afterDto = (AfterDataBean) request.getAttribute( "afterDto" );
+	int re_num = (Integer) request.getAttribute( "re_num" );
+	ArrayList<ReplyBoardDataBean> replyDto = (ArrayList<ReplyBoardDataBean>)request.getAttribute("replyDto");
+%>
+
 <script>
-	/* $(document).ready(function(){
-		$.ajax({
-			url: ~~~, // 자바 .do 경로
-			type: ~~~
-			data:~~~
-			success:function(data)
-			{
-				$('#댓글 div').Append(
-					""	
-				);
-			}
-		});
-	}); */
-	/* function addComment(){
-		alert("Aaa");
-		var re_content = document.addForm.re_content.value;
-		var params = "re_content="+ encodeURIComponent(re_content);
-		alert("ccc");
-		new ajax.xhr.Request('content.jsp', params, addResult, 'POST' );
-	}
-	function addResult( req ) {
-		alert("bbb");
-		if( req.readyState == 4) {
-			if( req.status == 200 ){
-				var xmlDoc = req.responseXML;
-				var code = xmlDoc.getElementsByTagName('code').item(0).firstChild.nodeValue;
-				
-				if( code == 'success' ){
-					var comment = eval( "(" +xmlDoc.getElementByTagName('data').item(0).firstChild.nodeValue + ")" );
-					var listDiv = document.getElementById("commentList");
-					var commentDiv = makeCommentView(comment);
-					listDiv.appendChild(commentDiv);
-					
-					document.addForm.m_id.value = "";
-					document.addForm.re_content.value = "";
-					
-					alert("등록했습니다!["+comment.id+"]");
-				} else if( code == 'fail' ) {
-					var message = xmlDoc.getElementByTagName("message").item(0).firstChild.nodeValue;
-					alert("에러발생 : " + message );
-				}
-			} else {
-				alert("서버 에러 발생 : " + req.status );
-			}
-		}
-	} */
+	$(document).ready(function(){
+		alert("시작");
+		makecomment();
+	});
+
 	var httpRequest = null;
 	var number = 0;
 	function insert() {
-		alert("aaa");
-		var params = "name=" + inputform.m_id.value
-					+ "&content=" + inputform.re_content.value;
-		httpRequest = new HttpRequest(insertresult, "insert.jsp", params );
-		httpRequest.sendRequest();
-	}
-	function insertresult() {
-		alert("bbb");
+		alert("추가 시작");
+		$('#inputform').attr('action', './insert.do');
+		$('#inputform').submit();
 	}
 	
-	function makecomment( comment, setnumber ){
-		alert("ccc");
-		var newdiv = document.createElement("div");
-		if( setnumber ){
-			number = setnumber;
-		} else {
-			++number;
-		}
-		new div.innerHTML
-		= "<table>"
-		+ 	"<tr>"
-		+		"<th style='width: 20px'>" + number + "</th>"
-		+		"<th style='width: 50px'>" + comment.m_id + "</th>"
-		+		"<td>&nbsp;" + comment.re_content + "</td>"
-		+		"<th style='width: 200px'>"
-		+			"<input class='inputbutton' type='button' value='수정' onclick='javascript:mod("+comment.num+")'>"
-		+			"<input class='inputbutton' type='button' value='삭제' onclick='javascript:del("+comment.num+")'>"
-		+		"</th>"
-		+	"</tr>"
-		+ "</table>";
+	
+	function makecomment(){
 		
-		newdiv.comment = comment;
-		newdiv.number = number;
-		newdiv.setAttribute("m_id", "comment_" + comment.num );
-		return newdiv;
+		$('#listcomment').empty();
+		<%
+			for( int i=0; i<replyDto.size(); i++) {
+				int replyNum = replyDto.get(i).getRe_num();
+				String content = replyDto.get(i).getRe_content();
+				String m_id = replyDto.get(i).getM_id();
+				
+		%>
+			if ( "${sessionScope.memId}" == "<%=m_id%>" ){
+				$('#listcomment').append(
+					"<div id='re_"+<%=replyNum%>+"'>"
+					+ 	"<table>"
+					+ 		"<tr>"
+					+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
+					+			"<th style='width: 50px' id='<%=m_id%>'><%=m_id%></th>"
+					+			"<td>"
+					+				"<p class='staticContent' id='re_content_<%=replyNum%>' name='re_content_<%=replyNum%>'><%=content%></p>"
+					+				"<input type='text' class='editBoxContent' value='<%=content%>' style='display:none;'>"
+					+			"</td>"
+					+			"<th style='width: 200px'>"
+					+				"<input class='inputbutton' type='button' value='수정' onclick='javascript:mod(<%=replyNum%>,<%=m_id%>,re_content_<%=replyNum%>)'>"
+					+				"<input class='inputbutton' type='button' value='삭제' onclick='javascript:del("+<%=replyNum%>+")'>"
+					+			"</th>"
+					+		"</tr>"
+					+ 	"</table>"
+					+"</div>"
+					);
+			} else {
+				$('#listcomment').append(
+						"<div>"
+						+ 	"<table>"
+						+ 		"<tr>"
+						+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
+						+			"<th style='width: 50px'><%=m_id%></th>"
+						+			"<td>"
+						+				"<p class='staticContent'><%=content%></p>"
+						+				"<input type='text' class='editBoxContent' value='<%=content%>' style='display:none;'>"
+						+			"</td>"
+						+		"</tr>"
+						+ 	"</table>"
+						+"</div>"
+						);
+			}
+			<%
+			}
+		 %>
 	}
 	
-	// 글목록
-	function select() {
-		httpRequest = new HttpRequest(selectresult, "select.jsp");
-		httpRequest.sendRequest();
+	// 글 삭제
+	function del( replyNum ){
+		
+		$('input[name=re_num]').val( replyNum );
+		
+		$('#inputform').attr('action', './delete.do');
+		$('#inputform').submit();
 	}
-	function selectresult() {
-		var result = document.getElementById("result");
+	
+	// 글 수정
+	function mod( replyNum, m_id, content ) {
+		var content = document.getElementById("re_content_" + replyNum ).textContent;
+		
+        var m_id = document.getElementById("m_id").value;
+        
+         var newdiv = document.createElement("div");
+         newdiv.innerHTML = "<form id='modifyform' name='modifyform' action=''>"
+         				+"<input type='hidden' name='am_num' value='<%=afterDto.getAm_num()%>'>"
+         				+"<input type='hidden' name='re_num' value='"+replyNum+"'>"
+         				+"<table>"
+         				+	"<tr>"
+         				+		"<th> 아이디 </th>"
+         				+		"<td> <input type='text' name='m_id' value='"+m_id+"' readonly> </td>"
+         				+	"</tr>"
+         				+	"<tr>"
+         				+		"<th> 내용 </th>"
+         				+		"<td> <input type='text' name='re_content' value='"+content+"'> </td>"
+         				+	"</tr>"
+         				+	"<tr>"
+         				+		"<th colspan='3'>"
+         				+			"<input type='button' value='수정' onclick='modify()'>"
+         				+			"<input type='reset' value='취소'>"
+         				+			"<input type='button' value='수정취소'>"
+         				+		"</th>"
+         				+	"</tr>"
+         				+"</table>"
+         				+"</form>";
+         				
+         newdiv.setAttribute("id", "rep_" + replyNum);
+         
+         var renum = document.getElementById("re_" + replyNum);
+         renum.appendChild(newdiv);
+		
 	}
+	
+	function modify() {
+		$('#modifyform').attr('action', './modify.do');
+		$('#modifyform').submit();
+	}
+	
 </script>
 
 <h2> <%=page_content%> </h2>
     
-<%
-	int am_num = (Integer) request.getAttribute( "am_num" );
-	String pageNum = (String) request.getAttribute( "pageNum" );
-	AfterDataBean afterDto = (AfterDataBean) request.getAttribute( "afterDto" );
-%>
 
 <table>
 	<tr>
@@ -119,7 +152,7 @@
 		</td>
 		<th style="width: 10%"> <%=str_readcount%> </th>
 		<td style="width: 10%" align="center"> 
-			<%=afterDto.getAm_readcount()%> 
+			<%=afterDto.getAm_readcount()%>
 		</td>
 	</tr>
 	<tr>
@@ -162,72 +195,24 @@
 </table>
 
 <!--  댓글 시작  -->
-<%-- <form method="post" name="replyform" action="reply.do">
-	<input type="hidden" name="am_num" value="<%=am_num%>">
-	<input type="hidden" name="pageNum" value="${pageNum}">
-	<table style="width:100%;">
-		<tr>
-			<th> 아이디 </th>
-			<td> <input type="text" name="m_id" value="${sessionScope.memId}" readonly>
-		</tr>
-		<tr>
-			<th style="width: 20%;"> 댓글 </th>
-			<td>
-				<textarea name="re_content" rows="4" cols="34" style="width:90%;"></textarea>
-				<input class="inputbutton" type="submit" name="reply_save" value="저장" style="width: 70px; height: 30px; position:relative; right:-10px; top:-25px; ">
-			</td>
-		</tr>
-	</table>
-</form>
-<div id="reply_div">
-<c:set var="counting" value="0"/>
 
-</div> --%>
-
-<%-- <div id="commentAdd">
-	<form action="reply.do" name="addForm">
-		<table border="1">
-			<tr>
-				<th> 아이디 </th>
-				<td> <input type="text" name="m_id" value="${sessionScope.memId}" size="10" readonly> </td>
-			</tr>
-			<tr>
-				<th> 내용 </th>
-				<td> <textarea name="re_content" cols="20" rows="2"></textarea></td>
-			</tr>
-			<tr>
-				<th colspan="2">
-					<input type="button" value="등록" onclick="addComment()">
-				</th>
-			</tr>
-		</table>
-	</form>
-</div>
-
-<div id="commentUpdate" style="display:none">
-	<form action="replyUpdate" name="updateForm">
-		<input type="hidden" name="am_num" value="<%=am_num%>"/>
-		이름 : <input type="text" name="name" size="10"> <br/>
-		내용 : <textarea name="re_content" cols="20" rows="2"></textarea><br/>
-		<input type="button" value="등록" onclick="updateComment()">
-		<input type="button" value="취소" onclick="cancelUpdate()">
-	</form>
-</div> --%>
-
-<body onload="select()">
-
+<body>
 	<!-- 글 작성 -->
 	<hr color="red" size="2" align="left" width="50%">
-	<form name="inputform">
+	<form action="" id="inputform" name="inputform">
+		<input type="hidden" id="am_num" name="am_num" value="<%=afterDto.getAm_num()%>">
+		<input type="hidden" id="pageNum" name="pageNum" value="<%=pageNum%>">
+		<input type="hidden" name="re_num" value="">
+		<!-- <input type="hidden" name="mid" value=""> -->
 		<table>
 			<tr>
 				<th> 이름 </th>
-				<td> <input class="input" type="text" name="m_id" value="${sessionScope.memId}" readonly> </td>
+				<td> <input class="input" type="text" id="m_id" name="m_id" value="${sessionScope.memId}" readonly> </td>
 			</tr>
 			<tr>
 				<th> 내용 </th>
 				<td>
-					&nbsp;<textarea name="re_content" rows="3" cols="21"></textarea>
+					&nbsp;<textarea id="re_content" name="re_content" rows="3" cols="21"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -245,20 +230,14 @@
 	
 	
 	<!-- 글 목록 -->
+	<!-- <div id="listcomment" style="display:'none'"> -->
+	<form id="listcommentform">
 	<div id="listcomment">
 	</div>
+	</form>
 	<br><br>
 </body>
 <!-- 댓글 끝 -->
-
-
-
-
-
-
-
-
-
 
 
 
