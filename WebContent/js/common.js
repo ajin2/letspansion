@@ -242,7 +242,7 @@ $("body#reserve .top_bg").css("height",dht / 10 * 6);
 });
 	
 //footer
-$("#footer .inner").append(
+/*$("#footer .inner").append(
 	"<address>" +
 		"상호명:" + add01 + " / " +
 		"대표자:" + add02 + " / " +
@@ -252,7 +252,7 @@ $("#footer .inner").append(
 		"통신판매업번호:" + add06 + " / " +
 		"계좌번호:" + add07 + 
 	"</address>"
-);
+);*/
 });
 
 function getInternetExplorerVersion() {    
