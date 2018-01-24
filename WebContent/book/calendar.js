@@ -207,14 +207,13 @@ function showresult() {
 	        	if(cstr == data.book[i].b_reg_date){ 
 	        		var a = data.book[i].b_reg_date.toString().split('-');
 	        		if(restatus == p){
-	        			t += "<label class='p' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+");'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
-	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label>";
+	        			t += "<label class='p' onclick='daily()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
+	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>";
 	        		} else{
 	        			t += "<label class='notp' onclick='premake("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
-	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label>"; 
+	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>"; 
 	        		}
 	        	}
-	        	console.log(data.book[i].restatus);
 	        }
 			$('#daylabel'+cstr).append(t);
 		}

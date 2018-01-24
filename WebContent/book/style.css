@@ -16,20 +16,20 @@
 	margin-left : 650px;
 }
 
-#product{
-	width : 320px;
+#total-btn {
+	float : left;
+	margin-left : 50px;
 }
 
-#presult{
-	width : 400px;
+.banner {
+	float : left;
+	margin-left : 50px;
 }
 
-#wrap_product{
-	width : 1200px;
-}
-
-#wrap_product td{
-	text-align : center;
+#presult {
+	float : left;
+	margin-left : 50px;
+	margin-top : 30px;
 }
 
 img{

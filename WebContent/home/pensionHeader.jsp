@@ -10,7 +10,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<script src="${project}home/script.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -41,7 +40,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href=".do">예약</a></li>
+							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>QnA</a>
@@ -100,7 +99,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href=".do">예약</a></li>
+							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>QnA</a>
@@ -118,9 +117,7 @@
 						<ul>
 							<li><a href=".do">회원수정</a></li>
 							<li><a href=".do">회원탈퇴</a></li>
-							<li><a href=".do">예약조회</a></li> 
-							<li><a href=".do">예약수정</a></li>
-							<li><a href=".do">예약삭제</a></li>
+							<li><a href="PensionManageBook.do">예약관리</a></li> 
 						</ul>
 					</li>			
 					</ul>
