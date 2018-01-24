@@ -76,12 +76,13 @@ a:active				{color:#000;text-decoration:none}
 #header .gnb > ul > li > ul > li.gb {padding-bottom:15px;}
 #header .gnb > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
 #header .gnb ul li a {display:block;text-align:center;}
-#header .sns {float:right;width:500px;}
-#header .sns ul {width:100%;}
-#header .sns ul >li {width:20%;}
+#header .sns {float:right;margin-right:20px;margin-bottom:12px}
+#header .sns ul {float:left;}
+#header .sns ul li a {display:block;padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .sns ul li ul { background:#fff;display:none;width:100px;}
+#header .sns ul li ul li a {padding:8px 0;font-size:15px;color:black;font-weight:bold;text-align:center;}
+/* #header .sns ul >li {width:20%;}
 #header .sns > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
 #header .sns > ul > li > ul {background:#fff;display:none;}
-#header .sns > ul > li > ul > li.gt {padding-top:15px;}
-#header .sns > ul > li > ul > li.gb {padding-bottom:15px;}
 #header .sns > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
-#header .sns ul li a {display:block;text-align:center;}
+#header .sns ul li a {display:block;text-align:center;}   */

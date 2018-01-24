@@ -8,22 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import handler.CommandHandler;
-
 @Controller
-public class LogonLogoutHandler implements CommandHandler {
-
+public class LogonLogoutHandler implements CommandHandler{
 	@RequestMapping("/logonLogout")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		request.getSession().removeAttribute( "memId" );		
+		request.getSession().removeAttribute("memId");
+		
 		return new ModelAndView("home/pensionHome");
-	}	
+	}
+
 }
-
-
-
-
-
-
-
