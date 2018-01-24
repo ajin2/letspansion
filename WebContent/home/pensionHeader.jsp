@@ -43,7 +43,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href=".do">예약</a></li>
+							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>QnA</a>
@@ -103,7 +103,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href=".do">예약</a></li>
+							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>QnA</a>
@@ -121,9 +121,7 @@
 						<ul>
 							<li><a href="logonModifyForm.do">회원수정</a></li>
 							<li><a href=".do">회원탈퇴</a></li>
-							<li><a href=".do">예약조회</a></li> 
-							<li><a href=".do">예약수정</a></li>
-							<li><a href=".do">예약삭제</a></li>
+							<li><a href="PensionManageBook.do">예약관리</a></li> 
               <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
@@ -142,5 +140,4 @@
 	</c:if>  	
 	
 </html>
-  
 	

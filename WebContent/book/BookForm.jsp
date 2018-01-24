@@ -4,7 +4,7 @@
 <html>
 	<meta charset="utf-8" />
 	<%@ include file="setting.jsp" %>
-	<script src="${project}book/jquery-3.2.1.js"></script>
+	<script src="${project}js/jquery-3.2.1.js"></script>
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/calendar.js"></script>
 	<script src="${project}book/bookscript.js"></script>

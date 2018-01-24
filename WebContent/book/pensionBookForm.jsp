@@ -9,7 +9,7 @@
 	<%@ include file="/book/setting.jsp" %>
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
 	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
-	<script src="${project}book/jquery-3.2.1.js"></script>
+	<script src="${project}js/jquery-3.2.1.js"></script>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
 		<script type="text/javascript">
@@ -23,13 +23,7 @@
 		//-->
 		</script>
 		 <body>
-	    	<jsp:include page="/book/BookForm.jsp" flush="false"/>
-		
-			<br><br><br>
-			<jsp:include page="/book/productorder.jsp" flush="false"/>
-			
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
-			<br><br><br><br><br><br><br><br><br>
+		 	<div style="margin-bottom:600px"></div>
 		</body>
 	</c:if>
 	
@@ -41,9 +35,10 @@
 			<jsp:include page="/book/productorder.jsp" flush="false"/>
 			
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
-			<br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br> 
 		</body>
 	</c:if>  
+	<br><br><br>
 	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 </html>
 	
