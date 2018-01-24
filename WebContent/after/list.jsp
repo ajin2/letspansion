@@ -9,7 +9,6 @@
 <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
 
 <%
-	System.out.println("count : " + request.getAttribute( "count") );
 	int count = (Integer) request.getAttribute( "count" );
 
 	String pageNum = (String) request.getAttribute( "pageNum" );
@@ -61,13 +60,13 @@
 			<%
 		} else {
 			// 글이 있는 경우
-			ArrayList<AfterDataBean> articles
+			 ArrayList<AfterDataBean> articles
 				= (ArrayList<AfterDataBean>) request.getAttribute( "articles" );
-				
+			
 			for( int i=0; i<articles.size(); i++ ) {
 				AfterDataBean article = articles.get(i);
 				%>
-				<tr>	
+				<tr>
 					<td align="center">
 						<%=number--%>	
 					</td>

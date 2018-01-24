@@ -1,5 +1,6 @@
 package handler.after;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -16,35 +17,37 @@ import after.ReplyBoardDataBean;
 import handler.CommandHandler;
 
 @Controller
-public class ContentHandler implements CommandHandler{
+public class ReplySelectHandler implements CommandHandler{
 	
 	@Resource
 	private AfterDao afterDao;
 	
-	@RequestMapping( "/content" )
+	@RequestMapping( "/select" )
 	@Override
-	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable 
-	{	
-		System.out.println("content controller");
-		
+	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+				
 		int am_num = Integer.parseInt( request.getParameter( "am_num" ) );
 		String pageNum = request.getParameter( "pageNum" );
-		
 		
 		AfterDataBean afterDto = afterDao.getArticle( am_num );
 		afterDao.addCount( am_num );
 		
 		List<ReplyBoardDataBean> replyDto = afterDao.selectReply( am_num );
 		
+		
 		request.setAttribute( "afterDto", afterDto );
 		request.setAttribute( "am_num" , am_num);
 		request.setAttribute( "pageNum", pageNum );
-		request.setAttribute("replyDto", replyDto );
+		request.setAttribute( "replyDto", replyDto );
 		
 		return new ModelAndView("after/content");
 	}
 
 }
+
+
+
+
 
 
 
