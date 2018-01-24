@@ -1,4 +1,4 @@
-package handler.adminqna;
+package handler.location;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,11 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class AdminPensionQnaFormHandler implements CommandHandler{
-	@RequestMapping("/adminQnaForm")
+public class PensionLocationHandler implements CommandHandler{
+	
+	@RequestMapping("/pensionLocation")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		return new ModelAndView("adminqna/adminPensionQnaForm");
+		
+		return new ModelAndView("location/pensionLocation");
 	}
 }

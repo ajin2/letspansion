@@ -45,7 +45,39 @@ public class AfterDBBean implements AfterDao {
 	}
 
 	@Override
-	public int insertReply(ReplyBoardDataBean replyDto) {
+	public int insertReply(ReplyBoardDataBean replyDto ) {
 		return SqlMapClient.getSqlSession().insert("After.insertReply", replyDto );
 	}
+
+	/*@Override
+	public ReplyBoardDataBean selectReply(int re_num) {
+		return SqlMapClient.getSqlSession().selectOne( "After.selectReply", re_num );
+	}*/
+
+	/*@Override
+	public void selectReply(ReplyBoardDataBean replyDto) {
+		SqlMapClient.getSqlSession().selectOne( "After.selectReply", replyDto );
+	}*/
+	
+	@Override
+	public List<ReplyBoardDataBean> selectReply(int am_num) {
+		return SqlMapClient.getSqlSession().selectList("After.selectReply", am_num);
+	}
+
+	@Override
+	public void deleteReply(int re_num) {
+		SqlMapClient.getSqlSession().update("After.deleteReply", re_num );
+	}
+
+	/*@Override
+	public void modifyReply(int re_num) {
+		SqlMapClient.getSqlSession().update("After.modifyReply", re_num );
+	}*/
+
+	@Override
+	public void modifyReply(ReplyBoardDataBean replyDto) {
+		SqlMapClient.getSqlSession().update("After.modifyReply", replyDto );
+	}
+
 }
+

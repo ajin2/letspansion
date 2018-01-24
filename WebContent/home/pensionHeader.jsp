@@ -10,6 +10,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<script src="${project}home/script.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -25,17 +26,19 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
 					<li><a>룸보기</a>
 						<ul>
-							<li><a href=".do">room1</a></li>
-							<li><a href=".do">room2</a></li>
-							<li><a href=".do">room3</a></li>
-							<li><a href=".do">room4</a></li>
-							<li><a href=".do">room5</a></li>
+							<li><a href="pensionRoomList.do">방 둘러보기</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=1">room1</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=2">room2</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=3">room3</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=4">room4</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=5">room5</a></li>
+							<li><a href="pensionRoomDetail.do?r_id=6">편의시설</a></li>
 						</ul>
 					</li>
 					<li><a>실시간 예약</a>
@@ -51,7 +54,7 @@
 					</li>
 					<li><a>후기</a>
 						<ul>
-							<li><a href=".do">후기</a></li>
+							<li><a href="list.do">후기</a></li>
 						</ul>
 					</li>
 					</ul>
@@ -64,6 +67,7 @@
 							<li><a href="logonInputForm.do">회원가입</a></li>
 							<li><a href=".do">id 찾기</a></li>
 							<li><a href=".do">비번 찾기</a></li>
+              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 						</ul>
 						</li>
 
@@ -82,7 +86,7 @@
 					<li><a>펜션 소개</a>
 						<ul>
 							<li><a href=".do">주변 놀거리</a></li>
-							<li><a href=".do">오시는 길</a></li>
+							<li><a href="pensionLocation.do">오시는 길</a></li>
 							
 						</ul>
 					</li>
@@ -115,9 +119,11 @@
 					</li>
 					<li><a>마이페이지</a>
 						<ul>
-							<li><a href=".do">회원수정</a></li>
+							<li><a href="logonModifyForm.do">회원수정</a></li>
 							<li><a href=".do">회원탈퇴</a></li>
 							<li><a href="PensionManageBook.do">예약관리</a></li> 
+              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
 					</li>			
 					</ul>
@@ -134,5 +140,4 @@
 	</c:if>  	
 	
 </html>
-   
 	

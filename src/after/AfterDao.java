@@ -19,5 +19,29 @@ public interface AfterDao {
 	public int updateArticle( AfterDataBean afterDto );
 	
 	public int insertReply( ReplyBoardDataBean replyDto );
-	
+
+	/*public ReplyBoardDataBean selectReply(int re_num );*/
+
+	/*public void selectReply(ReplyBoardDataBean replyDto);*/
+
+	public List<ReplyBoardDataBean> selectReply(int am_num);
+
+	public void deleteReply(int re_num);
+
+	/*public void modifyReply(int re_num);*/
+
+	public void modifyReply(ReplyBoardDataBean replyDto);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

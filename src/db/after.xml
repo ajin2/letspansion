@@ -13,7 +13,7 @@
 	</select>
 	
 	<select id="getArticles" parameterType="Map" resultType="after.AfterDataBean">
-		select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date
+		<!-- select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date
 		from
 		(
 			select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date, rownum r
@@ -21,6 +21,11 @@
 			where am_delete_date is null
 			order by am_num desc 
 		)
+		where r &gt;= #{start} and r &lt;= #{end} -->
+		select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date, r 
+		from ( select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date, rownum r 
+		from ( select am_num, m_id, am_subject, am_content, am_readcount, am_reg_date 
+                from pension_after_msg where am_delete_date is null order by am_num desc )) 
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	
@@ -57,7 +62,34 @@
 	 values(SEQ_pension_reply_re_num.NEXTVAL, #{am_num}, #{m_id}, #{re_content}, sysdate )
 	</insert>
 	
+	<select id="selectReply" parameterType="int" resultType="after.ReplyBoardDataBean">
+		select * from pension_reply
+		where am_num = #{am_num} and re_delete_date is null
+		order by re_num desc
+	</select>
+	
+	<update id="deleteReply" parameterType="after.ReplyBoardDataBean">
+		update pension_reply
+		set re_delete_date = sysdate
+		where re_num = #{re_num}
+	</update>
+	
+	<update id="modifyReply" parameterType="after.ReplyBoardDataBean">
+		update pension_reply
+		set am_num = #{am_num}, m_id = #{m_id}, re_content = #{re_content, jdbcType=VARCHAR}, re_update_date = sysdate
+		where re_num = #{re_num}
+	</update>
 </mapper>
+
+
+
+
+
+
+
+
+
+
 
 
 
