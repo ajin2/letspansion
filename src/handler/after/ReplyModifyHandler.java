@@ -22,7 +22,7 @@ public class ReplyModifyHandler implements CommandHandler{
 	@Resource
 	private AfterDao afterDao;
 	
-	@RequestMapping( "/modify" )
+	@RequestMapping( "/modifyReply" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("modifyController");

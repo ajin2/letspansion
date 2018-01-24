@@ -5,9 +5,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="setting.jsp"%>
-<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<%@ include file="setting.jsp"%>
+		
+	<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 
+</head>
 <%
 	int count = (Integer) request.getAttribute( "count" );
 
@@ -20,6 +33,13 @@
 	int pageCount = (Integer) request.getAttribute( "pageCount" );
 	
 %>
+	<body onload="inputfocus()" id="talk">
+    <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+      <div class="top_bg"><h3><span>후기</span></h3></div>
+      <div class="board">
+      <div class="snb">
+      <div class="center">
 
 <h2> <%=page_list%> ( <%=str_count%> : <%=count%> ) </h2>
 
@@ -129,5 +149,9 @@
 		
 	}
 %>
+
+</div></div></div></div>
+
+</body>
 
 

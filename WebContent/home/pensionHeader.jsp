@@ -54,7 +54,7 @@
 					</li>
 					<li><a>후기</a>
 						<ul>
-							<li><a href=".do">후기</a></li>
+							<li><a href="list.do">후기</a></li>
 						</ul>
 					</li>
 					</ul>

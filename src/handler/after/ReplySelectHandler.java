@@ -22,7 +22,7 @@ public class ReplySelectHandler implements CommandHandler{
 	@Resource
 	private AfterDao afterDao;
 	
-	@RequestMapping( "/select" )
+	@RequestMapping( "/selectReply" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 				

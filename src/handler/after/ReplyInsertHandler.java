@@ -21,7 +21,7 @@ public class ReplyInsertHandler implements CommandHandler{
 	@Resource
 	private AfterDao afterDao;
 	
-	@RequestMapping( "/insert" )
+	@RequestMapping( "/insertReply" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("insert controller");

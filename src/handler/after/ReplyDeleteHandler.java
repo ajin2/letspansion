@@ -21,7 +21,7 @@ public class ReplyDeleteHandler implements CommandHandler{
 	@Resource
 	private AfterDao afterDao;
 	
-	@RequestMapping( "/delete" )
+	@RequestMapping( "/deleteReply" )
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("aaa");
