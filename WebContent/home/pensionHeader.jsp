@@ -102,7 +102,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href=".do">예약</a></li>
+							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>QnA</a>

@@ -1,16 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<meta charset="utf-8" />
-	<%@ include file="setting.jsp" %>
+	<head>
+		<meta charset="UTF-8">
+		<%@ include file="setting.jsp" %>
+
+<script src="${project}member/script.js"></script>
+   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script src="${project}book/jquery-3.2.1.js"></script>
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/calendar.js"></script>
 	<script src="${project}book/bookscript.js"></script>
 	<link href="${project}book/style.css" rel="stylesheet" type="text/css">
-	<body onload="memId('${sessionScope.memId}')">
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
+	</head>
+	
+	<body id="talk" onload="memId('${sessionScope.memId}')">
+	<div class="reser">
 		<form name="inputform">
+		<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+		<div class="top_bg"><h3><span>예약</span></h3></div>
+		<div class="board">
+      	<div class="snb">
+      	<div class="center">
 		<div id="a">
 			<table id="calendar" border="1"> 
 				<tr style="height:40px; background:pink; font-size:1.3em">
@@ -32,14 +50,17 @@
 			    </tr>
 			</table>
 		</div>
-		<div id="b">
+		</div>
+		</div>
+		</div>
+		<div class="form-group" id="b" style="float:right; margin-right:550px;margin-top:100px;">
 			<br>${today_date} : 
-			<input type="text" name="todayDate" style="width:120px; text-align:center">
+			<input class="form-control" type="text" name="todayDate" style="width:150px; text-align:center">
 			
 			<br>${select_date} : 
-			<input type="text" name="y" style="width:40px; text-align:center">${str_year}
-			<input type="text" name="m" style="width:30px; text-align:center">${str_month}
-			<input type="text" name="day" style="width:30px; text-align:center">${str_day}
+			<input class="form-control" type="text" name="y" style="width:150px; text-align:center">${str_year}
+			<input class="form-control" type="text" name="m" style="width:150px; text-align:center">${str_month}
+			<input class="form-control" type="text" name="day" style="width:150px; text-align:center">${str_day}
 			
 			<select id="book_term" onchange="daily()">
 			  <option value="1" selected="selected">${term_12}</option>
@@ -69,7 +90,7 @@
 								  + (today.getMonth()+1) + "${str_month}" 
 								  + today.getDate() + "${str_day}" ;
 		</script>
-		
+		</div>
 	</body>
 </html>
 
