@@ -18,8 +18,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 		
 
-		<script type="text/javascript">
-		
+		<script>
 		function sendFile(file, editor, welEditable) {
 			 
             // 파일 전송을 위한 폼생성

@@ -11,7 +11,7 @@
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp"%>
 		
-	<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+	<%-- <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css"> --%>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -43,28 +43,27 @@
 
 <h2> <%=page_list%> ( <%=str_count%> : <%=count%> ) </h2>
 
-<table>
+<table border="1">
 	<tr>
 		<th colspan="6" align="right">
-			<a href="writeForm.do">
-				<%=str_write%>
-			</a>&nbsp;&nbsp;&nbsp;
+			<input type="button" class='btn btn-info' value='글쓰기' onclick="location='writeForm.do'">
+				 &nbsp;&nbsp;&nbsp;
 		</th> 
 	</tr>
 	<tr>
-		<th style="width: 8%;"> 
+		<th style="width: 8%; text-align: center; font-size: 15px"> 
 			<%=str_num%> 
 		</th>
-		<th style="width: 40%;"> 
+		<th style="width: 40%; text-align: center; font-size: 15px"> 
 			<%=str_subject%>
 		</th>	
-		<th style="width: 10%;">
+		<th style="width: 10%; text-align: center; font-size: 15px">
 			<%=str_writer%>
 		</th>
-		<th style="width: 15%;">
+		<th style="width: 15%; text-align: center; font-size: 15px">
 			<%=str_reg_date%>
 		</th>
-		<th style="width: 8%;">
+		<th style="width: 8%; text-align: center; font-size: 15px">
 			<%=str_readcount%>
 		</th>
 	</tr>
