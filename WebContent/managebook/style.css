@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+
+img{
+	width : 13px; 
+	height : 13px;
+}
+
+#calendar{
+	margin-top : 10px;
+	width : 600px;
+	font-size : 0.7em;
+	border-spacing : 0px 0px;
+	border : 1px solid pink;
+	border-collapse: collapse;
+	margin-bottom : 100px;
+}
+
+#calendar td{
+	border : 1px solie pink; 
+}
+
+td{
+	font-align : center;
+}
+
+#a{
+	float : left;
+}
+
+#b{
+	margin-top : 20px;
+	margin-left : 650px;
+}
+
+#modbook{
+	margin-top : 50px;
+	margin-left : 650px;
+}
+
+#modbookresult{
+	margin-left : 650px;
+}
+
+#btn_mod{
+	margin-left : 650px;
+	margin-top : 10px;
+}
+
+#result{
+	margin-left : 650px;
+	margin-top : 50px;
+}
+
+
+.banner1{
+	float : left;	
+	width : 450px;
+}
+
+.banner2{
+	float : left;
+	width : 450px;
+	margin-left : 50px;
+	margin-top : -5px;
+}
+
+.sub{
+}
+
+#pconsole{
+	float : left;
+	width : 500px;
+}
+
+#presult{
+	margin-top : 25px;
+	margin-left : 1000px;
+	width : 250px;
+}
+
+#aaa{
+	clear : both;
+}
+
+#bmoddel{
+	margin-bottom : 5px;
+} 
+#omoddel{
+	margin-bottom : 5px;
+}
+
+table td{
+	font-align : center;
+}
+
+.p {
+	color : blue;
+}
+
+.notp{
+	color : red;
+}
+
