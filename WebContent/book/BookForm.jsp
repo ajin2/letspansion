@@ -14,6 +14,7 @@ pageEncoding="UTF-8"%>
 	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script src="${project}book/jquery-3.2.1.js"></script>
+
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/calendar.js"></script>
 	<script src="${project}book/bookscript.js"></script>

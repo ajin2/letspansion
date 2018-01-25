@@ -6,10 +6,10 @@
 <html>
 	<meta charset="UTF-8">
 	<%@ include file="setting.jsp" %>
-	<%@ include file="/book/setting.jsp" %>
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-	<script src="${project}book/jquery-3.2.1.js"></script>
-
+	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
+	<script src="${project}managebook/request.js"></script>
+	<script src="${project}js/jquery-3.2.1.js"></script>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
 		<script type="text/javascript">
@@ -23,22 +23,14 @@
 		//-->
 		</script>
 		 <body>
-		 	<div style="margin-bottom:600px"></div>
 		</body>
 	</c:if>
 	
 	<c:if test="${sessionScope.memId != null}">
 	    <body>
-	    	<jsp:include page="/book/BookForm.jsp" flush="false"/>
-		
-			<br><br><br>
-			<jsp:include page="/book/productorder.jsp" flush="false"/>
-			
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
-			<br><br><br><br><br><br><br><br><br> 
+	    	<jsp:include page="/managebook/managebook.jsp" flush="false"/>
 		</body>
 	</c:if>  
-	<br><br><br>
 	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 </html>
 	

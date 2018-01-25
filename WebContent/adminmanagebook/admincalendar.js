@@ -210,7 +210,7 @@ function showresult() {
 	        			t += "<label class='p' onclick='daily()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
 	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>";
 	        		} else{
-	        			t += "<label class='notp' onclick='premake("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
+	        			t += "<label class='notp' onclick='daily()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
 	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>"; 
 	        		}
 	        	}

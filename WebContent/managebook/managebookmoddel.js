@@ -2,6 +2,10 @@
  * 
  */
 
+/**
+ * 
+ */
+
 var today = new Date(); // 오늘 날짜
 
 var httpRequest = null;
@@ -28,7 +32,6 @@ var memid = "";
 function memId(id){
 	memid = id;
 }
-
 
 function prevCalendar() {
 	// 이전 달을 today에 값을 저장하고 달력을 뿌려줍니다.
@@ -210,8 +213,8 @@ function showresult() {
 	        			t += "<label class='p' onclick='daily()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
 	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>";
 	        		} else{
-	        			t += "<label class='notp' onclick='premake("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
-	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>"; 
+	        			t += "<label class='notp' onclick='daily()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + restatus ;
+	        			t += "&nbsp;&nbsp;&nbsp;" + data.book[i].r_id + "<br></label><br>";
 	        		}
 	        	}
 	        }
