@@ -39,6 +39,123 @@
 	ArrayList<ReplyBoardDataBean> replyDto = (ArrayList<ReplyBoardDataBean>)request.getAttribute("replyDto");
 %>
 
+<script>
+	$(document).ready(function(){
+		alert("시작");
+		makecomment();
+	});
+
+	var httpRequest = null;
+	var number = 0;
+	function insert() {
+		alert("추가 시작");
+		$('#inputform').attr('action', './insert.do');
+		$('#inputform').submit();
+	}
+	
+	
+	function makecomment(){
+		
+		$('#listcomment').empty();
+		<%
+			for( int i=0; i<replyDto.size(); i++) {
+				int replyNum = replyDto.get(i).getRe_num();
+				String content = replyDto.get(i).getRe_content();
+				String m_id = replyDto.get(i).getM_id();
+				
+		%>
+			if ( "${sessionScope.memId}" == "<%=m_id%>" ){
+				$('#listcomment').append(
+					"<div id='re_"+<%=replyNum%>+"'>"
+					+ 	"<table>"
+					+ 		"<tr>"
+					+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
+					+			"<th style='width: 50px' id='<%=m_id%>'><%=m_id%></th>"
+					+			"<td>"
+					+				"<p class='staticContent' id='re_content_<%=replyNum%>' name='re_content_<%=replyNum%>'><%=content%></p>"
+					+				"<input type='text' class='editBoxContent' value='<%=content%>' style='display:none;'>"
+					+			"</td>"
+					+			"<th style='width: 200px'>"
+					+				"<input class='inputbutton' type='button' value='수정' onclick='javascript:mod(<%=replyNum%>,<%=m_id%>,re_content_<%=replyNum%>)'>"
+					+				"<input class='inputbutton' type='button' value='삭제' onclick='javascript:del("+<%=replyNum%>+")'>"
+					+			"</th>"
+					+		"</tr>"
+					+ 	"</table>"
+					+"</div>"
+					);
+			} else {
+				$('#listcomment').append(
+						"<div>"
+						+ 	"<table>"
+						+ 		"<tr>"
+						+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
+						+			"<th style='width: 50px'><%=m_id%></th>"
+						+			"<td>"
+						+				"<p class='staticContent'><%=content%></p>"
+						+				"<input type='text' class='editBoxContent' value='<%=content%>' style='display:none;'>"
+						+			"</td>"
+						+		"</tr>"
+						+ 	"</table>"
+						+"</div>"
+						);
+			}
+			<%
+			}
+		 %>
+	}
+	
+	// 글 삭제
+	function del( replyNum ){
+		
+		$('input[name=re_num]').val( replyNum );
+		
+		$('#inputform').attr('action', './delete.do');
+		$('#inputform').submit();
+	}
+	
+	// 글 수정
+	function mod( replyNum, m_id, content ) {
+		var content = document.getElementById("re_content_" + replyNum ).textContent;
+		
+        var m_id = document.getElementById("m_id").value;
+        
+         var newdiv = document.createElement("div");
+         newdiv.innerHTML = "<form id='modifyform' name='modifyform' action=''>"
+         				+"<input type='hidden' name='am_num' value='<%=afterDto.getAm_num()%>'>"
+         				+"<input type='hidden' name='re_num' value='"+replyNum+"'>"
+         				+"<table>"
+         				+	"<tr>"
+         				+		"<th> 아이디 </th>"
+         				+		"<td> <input type='text' name='m_id' value='"+m_id+"' readonly> </td>"
+         				+	"</tr>"
+         				+	"<tr>"
+         				+		"<th> 내용 </th>"
+         				+		"<td> <input type='text' name='re_content' value='"+content+"'> </td>"
+         				+	"</tr>"
+         				+	"<tr>"
+         				+		"<th colspan='3'>"
+         				+			"<input type='button' value='수정' onclick='modify()'>"
+         				+			"<input type='reset' value='취소'>"
+         				+			"<input type='button' value='수정취소'>"
+         				+		"</th>"
+         				+	"</tr>"
+         				+"</table>"
+         				+"</form>";
+         				
+         newdiv.setAttribute("id", "rep_" + replyNum);
+         
+         var renum = document.getElementById("re_" + replyNum);
+         renum.appendChild(newdiv);
+		
+	}
+	
+	function modify() {
+		$('#modifyform').attr('action', './modify.do');
+		$('#modifyform').submit();
+	}
+	
+</script>
+
 
 
 <body onload="inputfocus()" id="talk">
@@ -53,7 +170,7 @@
 <h2> <%=page_content%> </h2>
     
 
-<table>
+<table width="700px">
 	<tr>
 		<th style="width: 10%"> <%=str_writer%> </th>
 		<td style="width: 10%" align="center"> 
@@ -66,7 +183,7 @@
 	</tr>
 	<tr>
 		<th> <%=str_reg_date%> </th>
-		<td align="center">
+		<td colspan="3" align="center">
 			<%
 				SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
 			%>
