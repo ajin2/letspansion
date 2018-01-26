@@ -12,9 +12,10 @@
 		<a href="#" onclick="managerbookchk();">관리자 Book</a> &nbsp; ㅣ &nbsp; 
 		<a href="#" onclick="managerqnachk();">관리자 Q & A</a> &nbsp; ㅣ &nbsp; 
 		<a href="#" onclick="managerafterchk();">관리자 후기</a> &nbsp; ㅣ &nbsp; 		
-		<a href="findPension.do"> 찾아 오는 길 </a> &nbsp; ㅣ &nbsp;
+		<a href="pensionLocation.do"> 찾아 오는 길 </a> &nbsp; ㅣ &nbsp;
 		<a href="serviceAgreement.do"> 서비스 이용약관 </a> &nbsp; ㅣ &nbsp;
-
+    <a href="adminChatting.do"> 1:1 채팅하기 </a> &nbsp; ㅣ &nbsp;
+    
 		<script type="text/javascript">
 		//<!-- 에러 아니니 신경 X
 			function managerroomchk(){
@@ -61,4 +62,3 @@
 		</script>
 	</body>
 </html>
-

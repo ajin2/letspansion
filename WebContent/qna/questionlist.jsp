@@ -31,7 +31,7 @@
 		<input type="hidden" name="re_step" value="${article.re_step}">
 		<input type="hidden" name="q_delete" value="${article.q_delete}">
 		
-			<table width="800px" border="1" >
+			<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
 				<!-- <colgroup>
 						<col width="10%" align="center"/>
 						<col width="*" />
@@ -68,22 +68,22 @@
 				  <%-- <c:if test="${ article.m_id eq sessionScope.memId || article.a_id eq sessionScope.adminId}"> --%>
 					<c:if test="${article.re_step >= 0}" > 
 						<c:if test="${article.q_cate == 1}">
-							<td align="center" style="background-color:pink">
+							<td align="center" style="color:#93DAFF">
 							[환불/교환] 
 							</td> 
 						</c:if>
 						<c:if test="${article.q_cate == 2}">
-							<td align="center" style="background-color:aqua">
+							<td align="center" style="color:#00AFFF">
 							 [예약취소]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 3}">
-							<td align="center" style="background-color:gold">
+							<td align="center" style="color:#0078FF">
 							 [픽업문의]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 4}">
-							<td align="center" style="background-color:silver">
+							<td align="center" style="color:#0000ff">
 							 [기타문의]
 							 </td>
 						</c:if>
@@ -142,7 +142,7 @@
 <br>
 
 	<c:if test="${sessionScope.memId ne null}">
-		<input class="btn btn-info" type="button" value="문의하기" 
+		<input class="btn btn-success" type="button" value="문의하기" 
 			onclick="location='questionWrite.do'"> &nbsp;&nbsp;&nbsp;
 	</c:if> 
 

@@ -46,10 +46,10 @@
 							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
-					<li><a>QnA</a>
+					<li><a>공지사항</a>
 						<ul>
-							<li><a href=".do">QnA</a></li>
-					
+							<li><a href="noticeList.do">공지사항</a></li>
+							<li><a href="pensionChatting.do">1:1 문의</a></li>
 						</ul>
 					</li>
 					<li><a>후기</a>
@@ -99,17 +99,18 @@
 							<li><a href="pensionRoomDetail.do?r_id=4">room4</a></li>
 							<li><a href="pensionRoomDetail.do?r_id=5">room5</a></li>
 							<li><a href="pensionRoomDetail.do?r_id=6">편의시설</a></li>
-						</ul>
+						</ul> 
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
 							<li><a href="pensionBook.do">예약</a></li>
 						</ul>
 					</li>
-					<li><a>QnA</a>
+					<li><a>공지사항</a>
 						<ul>
-							<li><a href=".do">QnA</a></li>
-					
+							<li><a href="questionlist.do">Q&A</a></li>
+							<li><a href="noticeList.do">공지사항</a></li>
+							<li><a href="pensionChatting.do">1:1 문의</a></li>
 						</ul>
 					</li>
 					<li><a>후기</a>
@@ -122,7 +123,7 @@
 							<li><a href="logonModifyForm.do">회원수정</a></li>
 							<li><a href=".do">회원탈퇴</a></li>
 							<li><a href="PensionManageBook.do">예약관리</a></li> 
-              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+              				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
 					</li>			
