@@ -35,11 +35,11 @@
 		<div class="banner">
 			<table id="product">
 				<tr>
-					<th> <input class="title" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
-					<th> <input class="title" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
-					<th> <input class="title" type="button" value="${str_d}" onclick="p_list('${str_d}')"> </th>
-					<th> <input class="title" type="button" value="${str_a}" onclick="p_list('${str_a}')"> </th>
-					<th> <input class="title" type="button" value="${btn_close}" onclick="order_cancel()"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
+					<th> <input class="btn btn-success" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_d}" onclick="p_list('${str_d}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_a}" onclick="p_list('${str_a}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${btn_close}" onclick="order_cancel()"> </th>
 				</tr>
 			</table>
 			<div class="sub"></div><div id="pconsole"></div>
@@ -68,7 +68,7 @@
 				${str_total} : <label id="book_total"></label>
 			</div>	
 			<div id="btn">
-				<input type="button" name="bookbtn" value="${btn_pay}" onclick="bookinsert()">
+				<input class="btn btn-success" type="button" name="bookbtn" value="${btn_pay}" onclick="bookinsert()">
 			</div>
 		</div>
 		
