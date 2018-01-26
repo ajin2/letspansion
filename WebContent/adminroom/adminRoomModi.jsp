@@ -53,13 +53,8 @@
 				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
 			</tr>
 		</table>
-
-		<form name="roomform" method="post" action="adminRoomModifyDone.do?r_id=${r_id}&r_minperson=${roomform.r_minperson.value}&r_maxperson=${r_maxperson}&r_price=${r_price}&r_content=${r_content}">
-			<!-- location adminRoomDetail after saving edited data -->
-			//////////////// 방 정보 수정하는 건 아직 미완성 
-		<%-- 	<input class="inputbutton" type="button" value="방 수정 완료" onclick="alertCheck(${roomDto.r_minperson})">	
-			<input class="inputbutton" type="submit" value="이건되냐"> --%>
-			
+		<%-- 
+		<form name="roomform" method="post" action="adminRoomModifyDone.do?r_id=${r_id}&r_minperson=${roomform.r_minperson.value}&r_maxperson=${r_maxperson}&r_price=${r_price}&r_content=${r_content}">	
 			<!-- Room Information from pension_room table -->
 			<table border="1">
 				<tr> 
@@ -83,12 +78,13 @@
 				</tr>
 			</table>
 		</form>
+		 --%>
 		<!-- FileUpload -->
 		<form id="fileForm" action="fileUpload.do" method="post" enctype="multipart/form-data">
 			<table border="1">
 				<tr>
 					<td>
-						사진 테스트 : <input type="file" id="file1" name="file1"/>
+						사진 추가하기 : <input type="file" id="file1" name="file1"/>
 						<input type="button" value="사진 등록하기" onClick="fileSubmit();">
 					</td>
 				</tr>
