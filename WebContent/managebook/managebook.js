@@ -52,7 +52,7 @@ function booklistresult(){
 			var cnt = 0;
 			var msg = "";
 			
-			var t = "<table border='1'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1' id='sc'>";
 			t += "<tr>";
 			t += "<th> 숙박 일수 </th>";
 			t += "<th> 입실 날짜 </th>";
@@ -163,7 +163,7 @@ function orderlistresult(){
 			var xmldoc = httpRequest.request.responseXML;
 			var data = eval("("+ xmldoc.getElementsByTagName("data").item(0).firstChild.nodeValue+ ")");
 			
-			var t = "<table border='1' width='450px'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1' width='450px'>";
 			t += "<tr>";
 			t += "<th> 상품명 </th>";
 			t += "<th> 이미지 </th>";

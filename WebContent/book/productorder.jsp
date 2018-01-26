@@ -33,7 +33,7 @@
 	<body>
 	
 		<div class="banner">
-			<table id="product">
+			<table class="table table-striped table-bordered table-hover" id="product">
 				<tr>
 					<th> <input class="btn btn-success" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
 					<th> <input class="btn btn-success" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
@@ -46,7 +46,7 @@
 		</div>
 	
 	
-		<table border="1" id="presult" style="display: none">
+		<table class="table table-striped table-bordered table-hover" border="1" id="presult" style="display: none">
 			<thead>
 				<tr>
 					<th> ${str_productname} </th>
@@ -68,10 +68,11 @@
 				${str_total} : <label id="book_total"></label>
 			</div>	
 			<div id="btn">
-				<input class="btn btn-success" type="button" name="bookbtn" value="${btn_pay}" onclick="bookinsert()">
+				<input class="btn btn-success" type="button" name="bookbtn" value="${btn_pay}" onclick="bookinsert(1)">
+				<input class="btn btn-success" type="button" name="bookbtn" value="${btn_cardpay}" onclick="bookinsert(2)">
 			</div>
 		</div>
-		
+		<div id="person" style="display:none"></div>
 		<script type="text/javascript">
 			$('#product').css('display','none');
 			$('#pconsole').css('display','none');

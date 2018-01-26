@@ -9,6 +9,9 @@
 	<script src="${project}managebook/request.js"></script>
 	<script src="${project}js/jquery-3.2.1.js"></script>
 	<link href="${project}managebook/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<%@ include file="setting.jsp" %>
 	
 	<script type="text/javascript">
@@ -53,8 +56,8 @@
 		
 		<div id="str_msg"></div>
 		<div id="bmoddel">
-			<input type="button" value="${btn_modd}" onclick="location='managebookmoddel.do'">
-			<input type="button" value="${btn_del}" onclick="booklistdel()">
+			<input class="btn btn-success" type="button" value="${btn_modd}" onclick="location='managebookmoddel.do'">
+			<input class="btn btn-success" type="button" value="${btn_del}" onclick="booklistdel()">
 		</div>
 		
 		<div id="mid"></div>
@@ -63,9 +66,9 @@
 		
 		<br>
 		<div id="omoddel">
-			<input type="button" value="${btn_orderadd}" onclick="orderaddbtn()">
-			<input type="button" value="${btn_orderdel}" onclick="ordermoddel()">
-			<input type="button" value="${btn_close}" onclick="ordermoddel_cancel()">
+			<input class="btn btn-success" type="button" value="${btn_orderadd}" onclick="orderaddbtn()">
+			<input class="btn btn-success" type="button" value="${btn_orderdel}" onclick="ordermoddel()">
+			<input class="btn btn-success" type="button" value="${btn_close}" onclick="ordermoddel_cancel()">
 		</div>
 		<div class="banner1">
    			<div class="title"> ${str_order} </div>
@@ -75,16 +78,16 @@
 		<div class="banner2">
 			<table id="product">
 				<tr>
-					<th> <input class="title" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
-					<th> <input class="title" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
-					<th> <input class="title" type="button" value="${str_d}" onclick="p_list('${str_d}')"> </th>
-					<th> <input class="title" type="button" value="${str_a}" onclick="p_list('${str_a}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
+					<th> <input class="btn btn-success" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_d}" onclick="p_list('${str_d}')"> </th>
+					<th> <input class="btn btn-success" type="button" value="${str_a}" onclick="p_list('${str_a}')"> </th>
 				</tr>
 			</table>
 			<div class="sub"></div><div id="pconsole"></div>
 		</div>
 		
-		<table border="1" id="presult" style="display: none">
+		<table class='table table-striped table-bordered table-hover' border="1" id="presult" style="display: none">
 			<thead>
 				<tr>
 					<th> ${str_productname} </th>

@@ -43,7 +43,7 @@
 <c:set var="btn_ok" value="확인"/>
 <c:set var="btn_cancel" value="취소"/>
 <c:set var="btn_close" value="닫기"/>
-<c:set var="btn_pay" value="결제"/>
-    
+<c:set var="btn_pay" value="무통장입금"/>
+<c:set var="btn_cardpay" value="카드결제"/>    
 
     
