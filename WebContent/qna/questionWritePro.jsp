@@ -17,7 +17,7 @@
 		</script>
 	</c:if>
 	<c:if test="${result != 0}" >
-		<c:redirect url="questionList.do" />
+		<c:redirect url="questionlist.do" />
 	</c:if>
 	</body>
 </html>

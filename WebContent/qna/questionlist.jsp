@@ -1,16 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<meta charset="UTF-8">	
 		<%@ include file="setting.jsp" %>
-		
-		
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 	</head>
-	<body>
-		
-		<form name="qlist" >
+
+<center>
+<body id="talk">
+    <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+      <div class="top_bg"><h3><span> 문의함 </span></h3></div>
+      <div class="board">
+      <div class="snb">
+      <div class="center">
+		<form name="qlist">
 		 
 		<input type="hidden" name="m_id" value="${sessionScope.memId}">
 		<input type="hidden" name="a_id" value="${sessionScope.adminId}">
@@ -18,24 +31,29 @@
 		<input type="hidden" name="re_step" value="${article.re_step}">
 		<input type="hidden" name="q_delete" value="${article.q_delete}">
 		
-			<table width="1120px" border="1" >
-				<tr>   
-					<th colspan="4" align="right"> &nbsp;
-						<c:if test="${sessionScope.memId ne null}">
-							<input type="button" value="글작성" 
-								onclick="location='questionWrite.do'">
-						</c:if>
-					</th> 
+			<table width="800px" border="1" >
+				<!-- <colgroup>
+						<col width="10%" align="center"/>
+						<col width="*" />
+						<col width="15%" />
+						<col width="10%" />
+				</colgroup>
+				<thead>
+					<th> 구분 </th>
+					<th> 제목 </th>
+					<th> 날짜 </th>
+					<th> 작성자 </th>
+				</thead> -->
+				
+				<tr style="height:40px">  
+					<th width="10%" style="text-align:center; font-size:15px;"> 카테고리 </th>
+					<th width="58%" style="text-align:center; font-size:15px;"> 제목 </th>
+					<th width="10%" style="text-align:center; font-size:15px;"> 작성자 </th>
+					<th width="25%" style="text-align:center; font-size:15px;"> 작성일 </th>
 				</tr>
-				<tr> 
-					<th width="10%"> 카테고리 </th>
-					<th width="58%"> 제목 </th>
-					<th width="10%"> 작성자 </th>
-					<th width="25%"> 작성일 </th>
-				</tr>
-
+ 
 	<c:if test="${count == 0}">
-		<tr>
+		<tr style="height:30px">
 			<td colspan="6" align="center">
 				글이 없습니다.
 			</td>
@@ -45,12 +63,12 @@
 		<c:forEach var="article" items="${articles}">
 		<%-- <c:if test="${article.m_id eq sessionScope.memId || article.a_id ne null}"> --%>
 		
-			<tr>
+			<tr style="height:30px">
 				
 				  <%-- <c:if test="${ article.m_id eq sessionScope.memId || article.a_id eq sessionScope.adminId}"> --%>
 					<c:if test="${article.re_step >= 0}" > 
 						<c:if test="${article.q_cate == 1}">
-							<td align="center" style="background-color:purple">
+							<td align="center" style="background-color:pink">
 							[환불/교환] 
 							</td> 
 						</c:if>
@@ -60,12 +78,12 @@
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 3}">
-							<td align="center" style="background-color:magenta">
+							<td align="center" style="background-color:gold">
 							 [픽업문의]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 4}">
-							<td align="center" style="background-color:pink">
+							<td align="center" style="background-color:silver">
 							 [기타문의]
 							 </td>
 						</c:if>
@@ -76,42 +94,25 @@
 					 --%>
 				
 				<c:if test="${article.q_delete eq 0}">
-					<td>
+					<td >
 						 <c:set var="wid" value="${(article.re_level - 1) * 10 }" /> 
-					 
-						
+
 							<c:if test="${article.re_step > 0}" >
 								&nbsp;&nbsp;&nbsp; ㄴ Re : &nbsp;
 							</c:if>
-						
-					 
-						<%-- <c:if test="${article.re_step >= 0}" >
-							<c:if test="${article.q_cate == 1}">
-								&nbsp;&nbsp; [환불/교환]&nbsp;
-							</c:if>
-							<c:if test="${article.q_cate == 2}">
-								&nbsp;&nbsp; [예약취소]&nbsp;
-							</c:if>
-							<c:if test="${article.q_cate == 3}">
-								&nbsp;&nbsp; [픽업문의]&nbsp;
-							</c:if>
-							<c:if test="${article.q_cate == 4}">
-								&nbsp;&nbsp; [기타문의]&nbsp;
-							</c:if>
-						</c:if> --%>
-						
-		
-						<a href="questionContent.do?q_num=${article.q_num}&pageNum=${pageNum}&ref=${article.ref}&re_step=${article.re_step}">
+
+						<a style="text-decoration:none;" href="questionContent.do?q_num=${article.q_num}&pageNum=${pageNum}&ref=${article.ref}&re_step=${article.re_step}">
 							&nbsp;&nbsp; ${article.q_subject}
 						</a>	
 					</td>
 				</c:if>
 				<c:if test="${article.q_delete eq 1}">
-					<td style="background-color:silver;">
-						&nbsp;&nbsp;&nbsp; -- 삭제된 글입니다. -- 
+					<td style="color:silver;">
+						&nbsp; <img src="${project}qna/image/delete.png" width='25' height='25'> &nbsp; 삭제된 게시글입니다.
 					</td>
 				</c:if>
-				<c:if test="${article.a_id ne null }">
+				
+				<c:if test="${article.m_id eq null }">
 					<td align="center">
 						${article.a_id}
 					</td>
@@ -122,8 +123,9 @@
 					</td>
 				</c:if>
 				<td align="center">
-					${article.q_regdate}
+					<fmt:formatDate value="${article.q_regdate}" type="both" pattern="yyyy-MM-dd" />
 				</td>
+				
 			
 				<%-- <c:if test="${article.q_delete eq 1}">
 			 / 글이 삭제되었습니다.
@@ -134,32 +136,45 @@
 		</c:forEach>
 		
 		</c:if>
-		
-		
 		 	
 			</table>
 		</form>
-	</body>
+<br>
+
+	<c:if test="${sessionScope.memId ne null}">
+		<input class="btn btn-info" type="button" value="문의하기" 
+			onclick="location='questionWrite.do'"> &nbsp;&nbsp;&nbsp;
+	</c:if> 
+
+
+<br><br><br><br>
 	
 <c:if test="${count > 0}">
 	<c:if test="${startPage > pageBlock}">
-		<a href="questionList.do">[◀◀]</a>
-		<a href="questionList.do?pageNum=${startPage-pageBlock}">[◀]</a>
+		<a href="questionlist.do">[◀◀]</a>
+		<a href="questionlist.do?pageNum=${startPage-pageBlock}">[◀]</a>
 	</c:if>
 	<c:forEach var="i" begin="${startPage}" end="${endPage}">	
 		<c:if test="${i == currentPage}">
 			<b>[${i}]</b>
 		</c:if>	
 		<c:if test="${i != currentPage}">
-			<a href="questionList.do?pageNum=${i}">[${i}]</a>
+			<a href="questionlist.do?pageNum=${i}">[${i}]</a>
 		</c:if>	
 	</c:forEach>	
 	<c:if test="${pageCount > endPage}">
-		<a href="questionList.do?pageNum=${startPage + pageBlock}">[▶]</a>
-		<a href="questionList.do?pageNum=${pageCount}">[▶▶]</a>
+		<a href="questionlist.do?pageNum=${startPage + pageBlock}">[▶]</a>
+		<a href="questionlist.do?pageNum=${pageCount}">[▶▶]</a>
 	</c:if>
 </c:if> 
+ 
 
-   
-	
+</div>
+</div>
+</div>
+</div>
+</body>
+
+ </center>
+
 </html>

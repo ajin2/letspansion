@@ -6,11 +6,11 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<%@ include file="setting.jsp" %>
 		<h3> 공지사항 </h3>
 	</head>
 	
 	<body>
-		
 		<form method="post" action="adminNoticeWritePro.do" name="noticeWriteForm" 
 			onsubmit="return noticewritecheck()">
 			
