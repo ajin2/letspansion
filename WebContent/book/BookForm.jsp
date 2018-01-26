@@ -86,12 +86,13 @@ pageEncoding="UTF-8"%>
 			<jsp:include page="/book/productorder.jsp" flush="false"/>
 
 		</div>
-		
+		</form>
 		 </div>
 		
 		</div>
+		
 		</div>
-
+		
 		<script type="text/javascript">
 		buildCalendar();
 		
@@ -100,7 +101,7 @@ pageEncoding="UTF-8"%>
 								  + (today.getMonth()+1) + "${str_month}" 
 								  + today.getDate() + "${str_day}" ;
 		</script>
-		</form>
+		
 		</div> 
 		
 	</body>

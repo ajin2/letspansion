@@ -174,7 +174,7 @@ function dailyresult() {
 					if(book_p[i] == 1){
 						restatus = p;
 						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+						t += "<td><input type='button' class='btn btn-success' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 					} else{
 						t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 					}
@@ -196,7 +196,7 @@ function dailyresult() {
 function insertform(a1,a2,a3, r_id){
 	$('#result').css('display','');
 	$('#btn').css('display','');
-	
+	var term = Number($("#book_term > option:selected").val());
 	a_1 = a1;
 	a_2 = a2;
 	a_3 = a3;
@@ -228,13 +228,13 @@ function insertform(a1,a2,a3, r_id){
 	}
 	
 	var t = "<br>";
-		t += "<form name='form'>";
+		t += "<form name='formdd'>";
 		t += "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
 		t += "<tr>";
 		t += "<th> 날짜 </th>";
 		t += "<th> 방 번호 </th>";
 		t += "<th> 인원 </th>";
-		t += "<th> 결제 방법 </th>";
+		/*t += "<th> 결제 방법 </th>";*/
 		t += "<th> 예약 금액 </th>";
 		t += "<th> 상품 주문 </th>";
 		t += "</tr>";
@@ -242,13 +242,13 @@ function insertform(a1,a2,a3, r_id){
 		t += "<tr>";
 		t += "<td><input type='text' name='b_reg_date' value='"+date+"' style='width:100px' readonly></td>";
 		t += "<td><input type='text' name='r_id' value='"+r_id+"' style='width:60px' readonly></td>";
-		t += "<td><input type='number' name='b_person' value='"+person+"' " +
+		t += "<td><input type='number' id='b_person' name='b_person' value='"+person+"' " +
 			 "min='"+person+"' max='"+(person+2)+"' onclick='total("+r_id+",b_person.value)'></td>";
-		t += "<td style='width:100px'>";
+		/*t += "<td style='width:100px'>";
 		t += "<input type='radio' name='b_payway' value='1' style='width:10px'>무통장입금<br>";
 		t += "<input type='radio' name='b_payway' value='2' style='width:10px'>카드결제";
-		t += "</td>";
-		t += "<td id='tp'>"+(price * Number($("#book_term > option:selected").val()))+"</td>";
+		t += "</td>";*/
+		t += "<td id='tp'>"+(price * term)+"</td>";
 		t += "<td style='width:100px'>";
 		t += "<input type='radio' name='orderP' value='1' style='width:10px' onclick='orderok(1)'>O<br>";
 		t += "<input type='radio' name='orderP' value='2' style='width:10px' onclick='orderok(2)'>X";
@@ -258,7 +258,7 @@ function insertform(a1,a2,a3, r_id){
 		t += "</form>";
 		
 	$('#result').html(t);
-	
+	$('#person').html(person);
 	/*$("[type='number']").keypress(function(evt){
 		evt.preventDefault();
 	});*/
@@ -317,10 +317,11 @@ function total(r_id, person){
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
-function bookinsert(){
+function bookinsert(payway){
 	var term = Number($("#book_term > option:selected").val());
-	var b_person = form.b_person.value;
-	var b_payway = form.b_payway.value;
+	var b_person = Number($('#person').html());
+	var b_payway = payway;
+	
 	var a1 = a_1;
 	var a2 = a_2;
 	var a3 = a_3;

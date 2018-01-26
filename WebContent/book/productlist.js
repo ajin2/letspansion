@@ -6,6 +6,8 @@ var httpRequest = null;
 
 var path = "/LetsPension/adminmanage/productimg/";
 
+var totalprice =  Number($('#book_total').html());
+
 function order_cancel(){
 	$('#pconsole').html('');
 }
@@ -52,8 +54,6 @@ function p_listresult(){
 }
 
  
-var totalprice =  Number($('#book_total').html());
-
 function orderlist(pname, price, cnt, pid){
 	$('#presult').css('display', '');
 	
@@ -112,8 +112,8 @@ function orderlistremove(pname, dayprice){
 }
 
 function book_product(){
-	var bookprice = $('#tp').text();
-	var payprice = totalprice + Number(bookprice);
+	var bookprice = Number($('#tp').text());
+	var payprice = Number(totalprice) + Number(bookprice);
 	$('#book_total').html(payprice);
 	setInterval("book_product()", 1000);
 }

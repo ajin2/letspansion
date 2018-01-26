@@ -6,8 +6,29 @@
 <body> 
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
 	
-	<!-- googleMap 크기를 프로젝트 크기에 맞게 조절해주세요 -->
-	<div id="googleMap" style="width: 100%; height: 400px;"></div>
+	<table>
+		<tr>
+			<th> 주소 </th>
+			<td> 서울특별시 강남구 테헤란로 14길 6 남도빌딩 4F Q강의실 (Tel: +82 10-4500-1723 / F: 070-1234-5678) </td>
+		</tr>
+		<tr>
+			<th> 버스 </th>
+			<td> 역삼역.포스코P&S타워 정류장 <br>
+				<img src="${project}img/location/sub01_06_busB.jpg" alt="지선">  146 / 740 / 341 / 360 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="${project}img/location/sub01_06_busR.jpg" alt="간선">  1100 / 1700 / 2000 / 7007 / 8001
+			</td>
+		</tr>
+		<tr>
+			<th> 지하철 </th>
+			<td> 지하철 2호선 역삼역 3번출구 100m </td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<!-- googleMap 크기를 프로젝트 크기에 맞게 조절해주세요 -->
+				<div id="googleMap" style="width: 100%; height: 400px;"></div>
+			</td>
+		</tr>
+	</table>
 
 	<script>
  		function myMap() {

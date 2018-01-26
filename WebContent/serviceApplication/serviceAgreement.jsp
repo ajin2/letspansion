@@ -6,7 +6,33 @@
 		<meta charset=UTF-8>
 	</head>
 	<body>
-		<h2> 서비스 이용 약관 </h2>
+	
+	<!-- 설명은... 누가 좀 부가설명좀 더 해주세요 ㅠㅠ -->
+	<table border="1">
+		<tr>
+			<th>
+				어플명
+			</th>
+			<td>
+				Pension Ground
+			</td>
+			<td rowspan="2" width=100>
+				<img src="${project}img/PensionQR.png" class="w3-round" style="width: 100%;">
+			</td>
+		</tr>
+		<tr>
+			<th>
+				설명
+			</th>
+			<td>
+				LetsPension에서만 사용할 수 있는 AR 체험 Mobile Application (Android)<br>
+				펜션 내에 있는 블루투스와 연결하면 펜션 내에 사용하는 사용자들에게 알림을 주어 <br>
+				고객들이 화재로부터 안전하게 숙박할 수 있도록 도와주는 Application 
+			</td>
+		</tr>
+		
+	</table>
+		<h2> 어플리케이션 사용 및 서비스 이용 약관 </h2>
 			<table border=1>
 				<tr>
 					<th> 서비스 이용약관 </th>
