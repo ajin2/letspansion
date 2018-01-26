@@ -20,6 +20,8 @@ var bookprice = 0;
 var cnt = 0;
 var total = 0;
 
+var delbnum = [];
+
 function datemake(){
 	if(m < 10)	m = "0"+m;
 	if(d < 10)	d = "0"+d;
@@ -70,6 +72,7 @@ function booklistresult(){
 			}else{
 				for (var i = 0; i < data.book.length; i++) {
 					cnt = Number(data.book[i].b_term);
+					delbnum[i] = data.book[i].b_num;
 					
 					if(data.book[i].b_payway == 1){
 						payway = "무통장 입금";
@@ -139,6 +142,9 @@ function booklistresult(){
 			}
 			t += "</table>";
 			$('#result1').html(t);
+			for(var i=0; i<delbnum.length; i++){
+				console.log(delbnum[i]+"<br>");
+			}
 			orderlist_select();
 		}
 	}

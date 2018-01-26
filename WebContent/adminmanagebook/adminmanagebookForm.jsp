@@ -9,7 +9,41 @@
 	<script src="${project}adminmanagebook/admincalendar.js"></script>
 	<script src="${project}adminmanagebook/adminbookscript.js"></script>
 	<script src="${project}adminmanagebook/adminmanagebook.js"></script>
-	<link href="${project}book/style.css" rel="stylesheet" type="text/css">
+	<link href="${project}adminmanagebook/style.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript">
+	//<!--
+		$(document).ready(function(){
+			$(".banner .title").click(function() {
+	            if($(this).next("div").is(":visible")){
+	            $(this).next("div").slideUp("fast");
+	            } else {
+	                $(".banner .sub").slideUp("fast");
+	                $(this).next("div").slideToggle("fast");
+	            }
+	        });
+	        
+			$('#mid').css('display','none');
+			$('#bnum').css('display','none');
+			$('#totalprice').css('display','none');
+			$('#price').css('display','none');
+			$('#regdate').css('display','none');
+			
+	        $('.title').css('background','gray');
+	        $('.banner').css('display','none');
+	        $('.sub').css('display','none');
+			
+			$('#omoddel').css('display','none');
+			$('#orderlist').css('display','none');
+			
+			$('#product').css('display','none');
+			$('#pconsole').css('display','none');
+			$('#presult').css('display','none');
+			
+		});
+	//-->
+	</script>
+	
 	<body>
 		<form name="inputform">
 		<div id="a">
@@ -48,21 +82,53 @@
 		</form>
 		
 		<div id="totalprice"></div>
+		<div id="price"></div>
 		<div id="mid"></div>
 		<div id="bnum"></div>
 		<div id="regdate"></div>
 		
 		<br><br>
 		<div id="console"></div>
-				
-		<br>
-		<div id="result"></div>
+		
+		<div id="omoddel">
+			<input type="button" value="${btn_orderadd}" onclick="orderaddbtn()">
+			<input type="button" value="${btn_orderdel}" onclick="ordermoddel()">
+			<input type="button" value="${btn_close}" onclick="ordermoddel_cancel()">
+			<input type="button" value="${btn_ok}" onclick="ordermoddel_ok()">
+		</div>
+		
+		<div id="orderlist"></div>
+		
+		<div class="banner">
+			<table id="product">
+				<tr>
+					<th> <input class="title" type="button" value="${str_b}" onclick="p_list('${str_b}')"> </th> 
+					<th> <input class="title" type="button" value="${str_r}" onclick="p_list('${str_r}')"> </th>
+					<th> <input class="title" type="button" value="${str_d}" onclick="p_list('${str_d}')"> </th>
+					<th> <input class="title" type="button" value="${str_a}" onclick="p_list('${str_a}')"> </th>
+				</tr>
+			</table>
+			<div class="sub"></div><div id="pconsole"></div>
+		</div>
+		
+		<table border="1" id="presult" style="display: none">
+			<thead>
+				<tr>
+					<th> ${str_productname} </th>
+					<th> ${str_productcnt} </th>
+					<th> ${str_productprice} </th>
+					<th> ${btn_cancel} </th>
+				</tr>
+			</thead>
+			
+			<tbody id="p_body">
+			</tbody>
+			
+			<tfoot id="p_foot">
+			</tfoot>
+		</table>	
 		
 		<script type="text/javascript">
-		$('#totalprice').css('display','none');
-		$('#regdate').css('display','none');
-		$('#mid').css('display','none');
-		$('#bnum').css('display','none');
 		buildCalendar();
 		
 		var today = new Date();

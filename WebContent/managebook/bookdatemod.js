@@ -143,19 +143,23 @@ function dailyresult() {
 				}
 				
 				var enddate = a[0] + "-" + a1 + "-" + a2;
+				var payway = "";
 				
 				if (data.book[i].b_payway == 1) {
 					if (data.book[i].b_status == 2) {
 						restatus = n;
+						payway = "무통장입금";
 					} else {
 						restatus = pn;
+						payway = "무통장입금";
 					}
 				} else if (data.book[i].b_payway == 2) {
 					restatus = n;
+					payway = "카드결제";
 				} else {
 					restatus = p;
 				}
-
+				
 				t += "<tr>";
 				t += "<td>" + term + " 박 " + (term + 1) + " 일</td>";
 				
@@ -165,11 +169,13 @@ function dailyresult() {
 					t += "<td>" + data.book[i].r_id + "</td>";
 					if(restatus == p){
 						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' value='변경하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+						t += "<td><input type='button' value='변경하기' " +
+								"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 					} else{
 						if($('#mid').html() == data.book[i].m_id){
 							t += "<td>" + restatus + "</td>";
-							t += "<td><input type='button' value='변경하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+							t += "<td><input type='button' value='변경하기' " +
+									"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 						}else{
 							t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 						}
@@ -181,11 +187,13 @@ function dailyresult() {
 					if(book_p[i] == 1){
 						restatus = p;
 						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' value='변경하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+						t += "<td><input type='button' value='변경하기' " +
+								"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 					} else{
 						if($('#mid').html() == data.book[i].m_id){
 							t += "<td>" + restatus + "</td>";
-							t += "<td><input type='button' value='변경하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+							t += "<td><input type='button' value='변경하기' " +
+									"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 						}else{
 							t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 						}
@@ -225,17 +233,17 @@ function insertform(a1,a2,a3, r_id){
 	
 	var date = a1 + "-" + a2 + "-" + a3 ;
 	
-	var dd = 0;
-	var mm = a2;
-	
 	var lastDate = new Date(a1, a2, 0);
 	lastDate = lastDate.getDate();
+	
+	var dd = Number(a3) + (term-1);
+	var mm = a2;
 	
 	if(dd > lastDate){
 		mm = Number(a2)+1;
 		if(mm < 10)	mm = "0" + mm;
-		dd = Number(a3) - lastDate;
-		if(dd < 10)	dd = "0"+dd;
+		dd = dd - lastDate;
+		if(dd < 10)	dd = "0" + dd;
 	}else{
 		dd = Number(a3) + (term-1);
 		if(dd < 10){
@@ -277,12 +285,12 @@ function insertform(a1,a2,a3, r_id){
 		
 		t += "<tr>";
 		t += "<td>" + term + " 박 " + (term + 1) + " 일</td>";
-		t += "<td><input type='text' name='b_reg_date' value='"+date+"' style='width:100px' readonly></td>";
+		t += "<td>"+date+"</td>";
 		t += "<td>" + enddate + "</td>";
 		t += "<td><input type='text' name='r_id' value='"+r_id+"' style='width:60px' readonly></td>";
 		t += "<td><input type='number' name='b_person' value='"+person+"' " +
 			 "min='"+person+"' max='"+(person+2)+"' onclick='total("+r_id+",b_person.value)'></td>";
-		t += "<td>무통장입금</td>";
+		t += "<td>" + $('#payway').html() + "</td>";
 		t += "<td id='tp'>"+(price * Number($("#book_term > option:selected").val()))+"</td>";
 		t += "</tr>";
 		t += "</table>";

@@ -77,6 +77,10 @@ function booklistresult(){
 					payway = "카드 결제";
 					status = "결제 완료"; 
 				}
+				
+				$('#payway').html(payway);
+				$('#status').html(status);
+				
 				if(data.book[i].m_id == $('#mid').html()){
 					var price = Number(data.book[i].b_totalprice) * cnt; 
 					if(cnt > 1){
@@ -177,9 +181,23 @@ function booklist_moddel(){
 			
 			var date = a2 + "/" + a3 + "/" + a1;
 			
+			var payway = 0;
+			if($('#payway').html() == '카드 결제'){
+				payway = 2;
+			}else{
+				payway = 1;
+			}
+			var status = 0;
+			if($('#status').html() == '결제 완료'){
+				status = 2;
+			}else{
+				status = 1;
+			}
+			
 			var params = "bnum=" + $('#bnum').html() + "&date=" + date + "&r_id=" + parseInt(r_id) 
 			+ "&m_id=" + $('#mid').html() + "&b_person=" + b_person 
-			+ "&b_totalprice=" + price + "&term=" + term + "&b_payway=1&b_status=1";
+			+ "&b_totalprice=" + price + "&term=" + term 
+			+ "&b_payway=" + Number(payway) + "&b_status=" + Number(status);
 			
 			if(i == 0){
 				// update = b_num 유지, b_num을 제외한 예약 삭제

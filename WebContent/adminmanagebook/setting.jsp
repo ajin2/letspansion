@@ -44,6 +44,13 @@
 <c:set var="btn_cancel" value="취소"/>
 <c:set var="btn_close" value="닫기"/>
 <c:set var="btn_pay" value="결제"/>
+<c:set var="btn_modd" value="예약 변경"/>     
+<c:set var="btn_del" value="예약 취소"/>    
+<c:set var="btn_bookshow" value="예약 조회"/>
+<c:set var="btn_orderdel" value="주문 삭제"/>
+<c:set var="btn_orderadd" value="주문 추가"/>
+<c:set var="btn_mod" value="변경"/>
+<c:set var="btn_managebook" value="예약 관리"/>
     
 
     
