@@ -15,7 +15,6 @@ public class AdminDeleteMember implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		String m_id = request.getParameter("m_id");
-		
 		request.setAttribute("m_id", m_id);
 		
 		return new ModelAndView("admin/deleteMember");

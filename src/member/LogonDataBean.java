@@ -12,7 +12,7 @@ public class LogonDataBean {
 	private String m_address;
 	private String m_detailadd;
 	private Timestamp m_regdate;
-	private String extra;
+	private int m_del;
 	
 	
 	public String getM_id() {
@@ -69,11 +69,11 @@ public class LogonDataBean {
 	public void setM_regdate(Timestamp m_regdate) {
 		this.m_regdate = m_regdate;
 	}
-	public String getExtra() {
-		return extra;
+	public int getM_del() {
+		return m_del;
 	}
-	public void setExtra(String extra) {
-		this.extra = extra;
+	public void setM_del(int m_del) {
+		this.m_del = m_del;
 	}
 	
 }

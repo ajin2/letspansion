@@ -5,11 +5,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="setting.jsp"%>
-<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<%@ include file="setting.jsp"%>
+		
+	<%-- <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css"> --%>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 
+</head>
 <%
-	System.out.println("count : " + request.getAttribute( "count") );
 	int count = (Integer) request.getAttribute( "count" );
 
 	String pageNum = (String) request.getAttribute( "pageNum" );
@@ -21,31 +33,37 @@
 	int pageCount = (Integer) request.getAttribute( "pageCount" );
 	
 %>
+	<body onload="inputfocus()" id="talk">
+    <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+      <div class="top_bg"><h3><span>후기</span></h3></div>
+      <div class="board">
+      <div class="snb">
+      <div class="center">
 
 <h2> <%=page_list%> ( <%=str_count%> : <%=count%> ) </h2>
 
-<table>
+<table border="1">
 	<tr>
 		<th colspan="6" align="right">
-			<a href="writeForm.do">
-				<%=str_write%>
-			</a>&nbsp;&nbsp;&nbsp;
+			<input type="button" class='btn btn-info' value='글쓰기' onclick="location='writeForm.do'">
+				 &nbsp;&nbsp;&nbsp;
 		</th> 
 	</tr>
 	<tr>
-		<th style="width: 8%;"> 
+		<th style="width: 8%; text-align: center; font-size: 15px"> 
 			<%=str_num%> 
 		</th>
-		<th style="width: 40%;"> 
+		<th style="width: 40%; text-align: center; font-size: 15px"> 
 			<%=str_subject%>
 		</th>	
-		<th style="width: 10%;">
+		<th style="width: 10%; text-align: center; font-size: 15px">
 			<%=str_writer%>
 		</th>
-		<th style="width: 15%;">
+		<th style="width: 15%; text-align: center; font-size: 15px">
 			<%=str_reg_date%>
 		</th>
-		<th style="width: 8%;">
+		<th style="width: 8%; text-align: center; font-size: 15px">
 			<%=str_readcount%>
 		</th>
 	</tr>
@@ -61,13 +79,13 @@
 			<%
 		} else {
 			// 글이 있는 경우
-			ArrayList<AfterDataBean> articles
+			 ArrayList<AfterDataBean> articles
 				= (ArrayList<AfterDataBean>) request.getAttribute( "articles" );
-				
+			
 			for( int i=0; i<articles.size(); i++ ) {
 				AfterDataBean article = articles.get(i);
 				%>
-				<tr>	
+				<tr>
 					<td align="center">
 						<%=number--%>	
 					</td>
@@ -130,5 +148,9 @@
 		
 	}
 %>
+
+</div></div></div></div>
+
+</body>
 
 

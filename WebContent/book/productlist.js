@@ -4,6 +4,8 @@
 
 var httpRequest = null;
 
+var path = "/LetsPension/adminmanage/productimg/";
+
 function order_cancel(){
 	$('#pconsole').html('');
 }
@@ -12,47 +14,45 @@ function p_list(param){
 	var params = "cate=" + param;
 	httpRequest = new HttpRequest(p_listresult, "productselect.do", params);
 	httpRequest.sendRequest();
-	
-	console.log(params);
 }
 
 function p_listresult(){
-	var con = document.getElementById("pconsole");
 	if (httpRequest.request.readyState == 4) {
 		if (httpRequest.request.status == 200) {
 			var xmldoc = httpRequest.request.responseXML;
 	        var data = eval("(" + xmldoc.getElementsByTagName("data").item(0).firstChild.nodeValue + ")");
 	        
-	        var t = "<form name='productform'>";
+	        var t = "<form>";
 	        	t += "<table border='1'>";
 	        
 	        for(var i = 0; i < data.product.length; i++){
 	        	
         		t += "<tr>"+
         			"<td style='width:140px;'>"+ data.product[i].p_name +"</td>"+
-        			"<td><img src='/LetsPension/book/img/"+ data.product[i].p_ori +"' style='width:100px; height:100px'></td>";
+        			"<td><img src='" + path + data.product[i].p_sys +"' style='width:100px; height:100px'></td>";
         		t += "<input type='hidden' name='pid"+i+"' value='"+data.product[i].p_id+"'>";
         		
-        		if(data.product[i].p_cate == 'b'){
+        		if(data.product[i].p_cate == '고기'){
         			t += "<td>"+ data.product[i].p_amount +" g </td>" ;
         		} else{
         			t += "<td>"+ data.product[i].p_amount +" 개 </td>" ;
         		}
-        			
-        		t += "<td>"+ data.product[i].p_price +" 원 </td>"+
-        			"<input type='hidden' name='name"+i+"' value='"+data.product[i].p_name+"'>"+
+        		t += "<td>"+ data.product[i].p_price +" 원 </td>";
+        		
+        		t +="<input type='hidden' name='name"+i+"' value='"+data.product[i].p_name+"'>"+
         			"<input type='hidden' name='price"+i+"' value='"+data.product[i].p_price+"'>";
         		t += "<td> 수량 <input type='number' name='cnt"+i+"' value='1' min='1' style='width:40px'> </td>";
         		t += "<td> <input type='button' value='주문' onclick='orderlist(name"+i+".value, price"+i+".value, cnt"+i+".value, pid"+i+".value)'> </td></tr>";
 	        }
 	        t += "</table></form>";
-	        con.innerHTML = t;
+	        
+	        $('#pconsole').html(t);
 		}
 	}
 }
 
-
-var totalprice = 0;
+ 
+var totalprice =  Number($('#book_total').html());
 
 function orderlist(pname, price, cnt, pid){
 	$('#presult').css('display', '');
@@ -63,8 +63,6 @@ function orderlist(pname, price, cnt, pid){
 	totalprice += (price * cnt);
 	price = parseInt(price);
 	cnt = parseInt(cnt);
-	
-	console.log($("#"+pname+":contains("+pname+")").length);
 	
  	if($("#"+pname+":contains("+pname+")").length == 1){
  		cnt_2 = $("#"+pname+":contains("+pname+")").next().text();
@@ -79,8 +77,6 @@ function orderlist(pname, price, cnt, pid){
  		$("#"+pname+":contains("+pname+")").next().next().text(price);
  		$("#"+pname+":contains("+pname+")").next().next().next().html(newtext);
  		
- 		console.log("if를 탄다");
- 		
  	} else {
  		t = "<tr>";
  		t += "<td style='display:none'>"+pid+"</td>";
@@ -89,8 +85,6 @@ function orderlist(pname, price, cnt, pid){
  		t += "<td>" + (price * cnt) + "</td>" ;
  		t += "<td> <input type='button' name='btn_del' value='삭제' onclick='orderlistremove("+pname+","+(price * cnt)+")'> </td></tr>";
  		$('#p_body').append(t);
- 		console.log("else를 탄다");
- 		console.log(pname);
  	}
  	
 	
@@ -105,7 +99,6 @@ function orderlist(pname, price, cnt, pid){
 function orderlistremove(pname, dayprice){
 	
 	dayprice = Number(dayprice);
-	console.log(dayprice);
 	
 	totalprice = totalprice - dayprice;
 	
@@ -146,7 +139,6 @@ function orderinsertresult(){
 	       	}else{
 	       		msg = message ;
 	       	}
-	       	console.log(msg);
 		}
 	}
 }

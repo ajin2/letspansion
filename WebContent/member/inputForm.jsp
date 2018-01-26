@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp" %>
 
-<script src="${project}member/script.js"></script>
+	<script src="${project}member/script.js"></script>
    
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -22,7 +22,9 @@
       <div class="top_bg"><h3><span>회원가입</span></h3></div>
       <div class="board">
       <div class="snb">
-      <div class="center"><div class="col-md-6 col-md-offset-3">
+      
+      <div class="center">
+      <div class="col-md-6 col-md-offset-3">
           <form method="post" action="logonInputPro.do" name="inputform" onsubmit="return inputcheck()">
             <input type="hidden" name="confirm" value="0">
        		<input type="hidden" name="emailconfirm_value" value="0">

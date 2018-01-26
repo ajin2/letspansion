@@ -4,9 +4,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <c:set var="project" value = "/LetsPension/"/>
 
+<c:set var="str_login" value="로그인 후 이용해 주세요."/>
+
 <c:set var="str_year" value="년"/>    
 <c:set var="str_month" value="월"/>    
 <c:set var="str_day" value="일"/>    
+
+<c:set var="term_12" value="1박 2일"/>
+<c:set var="term_23" value="2박 3일"/>
+<c:set var="term_34" value="3박 4일"/>
+<c:set var="term_45" value="4박 5일"/>
+<c:set var="term_56" value="5박 6일"/>
+<c:set var="term_67" value="6박 7일"/>
 
 <c:set var="str_mon" value="월"/>    
 <c:set var="str_tue" value="화"/>    

@@ -30,18 +30,11 @@ public class LogonModifyProHandler implements CommandHandler {
 		memberDto.setM_id( id );
 	
 		memberDto.setM_tel( request.getParameter( "tel1" ));
-
 		
-	
-		String email = null;
-		String email1 = request.getParameter( "email1" );
-		String email2 = request.getParameter( "email2" );
-		if( ! email1.equals( "" ) 
-			&& ! email2.equals( "" ) ) {
-			email = email1 + "@" + email2;
-		}
-		memberDto.setM_email( email );
-	
+    	memberDto.setM_postcode(request.getParameter("postcode"));
+		memberDto.setM_address(request.getParameter("address"));
+		memberDto.setM_detailadd(request.getParameter("detailadd"));
+		
 		int result = logonDao.updateMember( memberDto );
 
 		request.setAttribute( "result", result );

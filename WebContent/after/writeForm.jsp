@@ -7,60 +7,59 @@
 		<%@ include file="setting.jsp"%>
 		<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
 		<script src="<%=project%>after/script.js"></script>
-		
+				
 		<!-- include libraries(jQuery, bootstrap) -->
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-		<!-- include summernote css/js-->
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+		
+		<!-- include summernote css/js -->
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 		
 
-		<script type="text/javascript">
-			$(document).ready(
-				function () {
-					$('#summernote').summernote({
+		<script>
+		function sendFile(file, editor, welEditable) {
+			 
+            // 파일 전송을 위한 폼생성
+	 		data = new FormData();
+	 	    data.append("uploadFile", file);
+	 	    $.ajax({ // ajax를 통해 파일 업로드 처리
+	 	        data : data,
+	 	        type : "POST",
+	 	        url : "image.do",
+	 	        enctype: 'multipart/form-data',
+	 	        cache : false,
+	 	        contentType : false,
+	 	        processData : false,
+	 	        success : function(data) { // 처리가 성공할 경우
+                    // 에디터에 이미지 출력
+                    var originContent = $('#summernote').summernote('code'); 
+	 	        	$('#summernote').summernote('code', originContent + '<img src=\"'+data+'\">');
+	 	        },
+	 	       error:function(request,status,error){
+	 	          alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	 	       }
+	 	    });
+	 	} 
+		
+			$(document).ready(function (){
+				
+				$('#summernote').summernote({
 				        height : 350,
-				        onImageUpload : function(files, editor, welEditable) {
-				            sendFile(files[0], editor, welEditable);
-				        },
 				        lang : 'ko-KR',
 			        	height : 300,
 						minHeight : null,
 						maxHeight : null,
-						focus : true
+						focus : true,
+						callbacks: {
+					       onImageUpload: function(files, editor, welEditable) {
+					    	   sendFile(files[0],editor,welEditable);
+					        }
+					     }
 				    });
-					
-					$('#summernote').summernote();
-					
-					/*  $('#summernote').summernote({ // summernote를 사용하기 위한 선언
-		                 	height: 400,
-						    onImageUpload: function(files, editor, welEditable) {
-						    	sendFile(files[0], editor, welEditable);
-							}
-						}); */
-					
-					/* function sendFile(file, editor, welEditable) {
-						var data = new FormData();
-
-				        data.append("file", file);
-
-				        $.ajax({
-				            type: "post",
-				            cache: false,
-				            contentType:false,
-				            processData: false,
-				            url: 'uploadImage',
-				            data: data,
-				            success: function(data) {
-								editor.insertImage(welEditable, data);
-				            },
-				         });
-				     } */
-				}
-			);
+				});
+			
 		</script>
 	</head>
 	<body onload="writefocus()">
@@ -68,6 +67,7 @@
 		
 		<%
 		int am_num = (Integer) request.getAttribute( "am_num" );
+		/* int am_num = 46; */
 		/* int ref = (Integer) request.getAttribute( "ref" );
 		int re_step = (Integer) request.getAttribute( "re_step" );
 		int re_level = (Integer) request.getAttribute( "re_level" ); */
