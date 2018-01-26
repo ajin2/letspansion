@@ -28,10 +28,10 @@ function p_listresult(){
 	        
 	        for(var i = 0; i < data.product.length; i++){
 	        	if(i == 0){
-	        		if(data.product[i].p_cate == 'b') divid = "sub_b";
-	        		else if(data.product[i].p_cate == 'r') divid = "sub_r";
-	        		else if(data.product[i].p_cate == 'd') divid = "sub_d";
-	        		else if(data.product[i].p_cate == 'a') divid = "sub_a";
+	        		if(data.product[i].p_cate == '고기') divid = "sub_b";
+	        		else if(data.product[i].p_cate == '라면') divid = "sub_r";
+	        		else if(data.product[i].p_cate == '음료') divid = "sub_d";
+	        		else if(data.product[i].p_cate == '주류') divid = "sub_a";
 	        	}
 	        	
         		t += "<tr>"+
@@ -44,7 +44,7 @@ function p_listresult(){
         		}
         		t += "<input type='hidden' name='pid"+i+"' value='"+data.product[i].p_id+"'>";
         		
-        		if(data.product[i].p_cate == 'b'){
+        		if(data.product[i].p_cate == '고기'){
         			t += "<td>"+ data.product[i].p_amount +" g </td>" ;
         		} else{
         			t += "<td>"+ data.product[i].p_amount +" 개 </td>" ;
@@ -109,11 +109,6 @@ function addproduct(pcate, pname, pic, amount, price){
 		alert("가격을 입력하세요");
 		return;
 	}
-	
-	if(pcate == '고기')	pcate = 'b';
-	else if(pcate == '라면') pcate = 'r';
-	else if(pcate == '음료') pcate = 'd';
-	else if(pcate == '주류') pcate = 'a';
 	
 	amount = Number(amount);
 	price = Number(price);

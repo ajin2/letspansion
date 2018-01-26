@@ -101,13 +101,13 @@
 		<tr>
 		<td>
 		<div class="banner">
-		    <div class="title" onclick="plist('b')"> ${str_b} </div>
+		    <div class="title" onclick="plist('${str_b}')"> ${str_b} </div>
 		    <div class="sub"><div id="sub_b"></div></div>
-		    <div class="title" onclick="plist('r')"> ${str_r} </div>
+		    <div class="title" onclick="plist('${str_r}')"> ${str_r} </div>
 		    <div class="sub"><div id="sub_r"></div></div>
-		    <div class="title" onclick="plist('d')"> ${str_d} </div>
+		    <div class="title" onclick="plist('${str_d}')"> ${str_d} </div>
 		    <div class="sub"><div id="sub_d"></div></div>
-		    <div class="title" onclick="plist('a')"> ${str_a} </div>
+		    <div class="title" onclick="plist('${str_a}')"> ${str_a} </div>
 		    <div class="sub"><div id="sub_a"></div></div>
 		</div>
 		</td>

@@ -12,7 +12,7 @@
 	
 	<c:if test="${sessionScope.adminId != null}">
 	    <body>
-	    	<jsp:include page="/book/BookForm.jsp" flush="false"/>
+	    	<jsp:include page="/adminbook/adminBookForm.jsp" flush="false"/>
 		
 			<br><br><br>
 			<jsp:include page="/book/productorder.jsp" flush="false"/>

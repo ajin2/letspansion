@@ -12,6 +12,8 @@
 		
 		<jsp:include page="/adminmanagebook/adminmanagebookForm.jsp" flush="false"/>		
 	</body>
+	<br><br><br>
+	<div id="aaa" style="clear:both" ></div>
 	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
 </html>
 

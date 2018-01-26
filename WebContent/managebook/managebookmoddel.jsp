@@ -24,6 +24,8 @@
 			booklist_select();
 			$('#btn_mod').css('display','none');
 			$('#bnum').css('display','none');
+			$('#payway').css('display','none');
+			$('#status').css('display','none');
 		});
 	//-->
 	</script>
@@ -35,6 +37,8 @@
 		<input type="button" value="${btn_bookshow}" onclick="location='PensionManageBook.do'"><br>
 		<div id="mid"></div> 
 		<div id="bnum"></div>
+		<div id="payway"></div>
+		<div id="status"></div>
 
 		<div id="a">
 			<table id="calendar" border="1"> 
