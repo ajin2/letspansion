@@ -112,7 +112,7 @@ function dailyresult() {
 
 			var term = Number($("#book_term > option:selected").val());
 			
-			var t = "<table border='1' id='dbtable'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
 			t += "<tr>";
 			t += "<th> 방 번호 </th>";
 			t += "<th> 숙박 일수 </th>";
@@ -154,7 +154,7 @@ function dailyresult() {
 				} else {
 					restatus = p;
 				}
-
+				
 				t += "<tr>";
 				t += "<td>" + data.book[i].r_id + "</td>";
 				t += "<td>" + term + " 박 " + (term + 1) + " 일</td>";
@@ -164,7 +164,7 @@ function dailyresult() {
 					t += "<td>" + data.book[i].b_reg_date + "</td>";
 					if(restatus == p){
 						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+						t += "<td><input type='button' class='btn btn-success' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
 					} else{
 						t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 					}
@@ -229,7 +229,7 @@ function insertform(a1,a2,a3, r_id){
 	
 	var t = "<br>";
 		t += "<form name='form'>";
-		t += "<table border='1' id='dbtable'>";
+		t += "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
 		t += "<tr>";
 		t += "<th> 날짜 </th>";
 		t += "<th> 방 번호 </th>";

@@ -32,7 +32,7 @@
 	    	<jsp:include page="/book/BookForm.jsp" flush="false"/>
 		
 			<br><br><br>
-			<jsp:include page="/book/productorder.jsp" flush="false"/>
+			
 			
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
 			<br><br><br><br><br><br><br><br><br> 
