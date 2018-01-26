@@ -21,6 +21,8 @@ public class AdminNoticeContentHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		request.setCharacterEncoding("utf-8");
+		
 		int n_id = Integer.parseInt(request.getParameter("n_id"));
 		String n_pageNum = request.getParameter("n_pageNum");
 		String a_id = "°ü¸®ÀÚ";

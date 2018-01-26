@@ -14,10 +14,10 @@
 		erroralert(modifyerror);
 		//-->
 		</script>
-		<meta http-equiv='refresh' content="0; url=questionList.do?pageNum=${pageNum}">
+		<meta http-equiv='refresh' content="0; url=questionlist.do?pageNum=${pageNum}">
 		</c:if>
 		<c:if test="${result != 0 }">
-			<c:redirect url="questionList.do?pageNum=${pageNum}" />
+			<c:redirect url="questionlist.do?pageNum=${pageNum}" />
 		</c:if>
 	</body>
 </html>

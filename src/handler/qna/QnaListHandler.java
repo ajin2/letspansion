@@ -22,7 +22,7 @@ public class QnaListHandler implements CommandHandler {
 	@Resource
 	private QnaDao qDao;
 	
-	@RequestMapping("/questionList")
+	@RequestMapping("/questionlist")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
@@ -36,7 +36,7 @@ public class QnaListHandler implements CommandHandler {
 //		int q_delete = Integer.parseInt(request.getParameter("q_delete"));
 
 		int pageBlock = 5;
-		int pageSize = 20;			
+		int pageSize = 15;			
 		String pageNum = null;		
 		int currentPage = 0;		
 		int start = 0;				
@@ -99,10 +99,10 @@ public class QnaListHandler implements CommandHandler {
 			map.put("end", end);
 						
 			List<QnaDataBean> articles = qDao.getArticles( map );
-			request.setAttribute( "articles", articles );
+			request.setAttribute( "articles", articles ); 
 		}
 		
 		
-		return new ModelAndView("qna/questionList");
+		return new ModelAndView("qna/questionlist");
 	}
 }

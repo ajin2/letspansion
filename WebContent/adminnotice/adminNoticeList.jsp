@@ -5,9 +5,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp" %>
+		<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
+		<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 		<h3> 공지사항 </h3>
 	</head>
 	<body> 
+		
+	
 		<input type="hidden" name="a_id" value="${sessionScope.adminId}">
 	<form>
 		
@@ -15,7 +19,7 @@
 		<!-- <a href="questionWrite.do"> 문의하기 </a> <br> -->
 		<a href="adminQuestionList.do"> 문의함 </a> <br>
 
-	
+	  
 	<table border="1">
 		<tr>
 		 	<th colspan="4" align="right">

@@ -28,7 +28,7 @@ public class QuestionWriteHandler implements CommandHandler{
 			ref = Integer.parseInt( request.getParameter( "ref" ) );
 			re_step = Integer.parseInt( request.getParameter( "re_step" ) );
 			re_level = Integer.parseInt( request.getParameter( "re_level" ) );
-		}	
+		}
 
 		request.setAttribute( "q_num", q_num );
 		request.setAttribute("pageNum", pageNum);

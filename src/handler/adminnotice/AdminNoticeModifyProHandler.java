@@ -22,6 +22,8 @@ public class AdminNoticeModifyProHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		request.setCharacterEncoding("utf-8");
+		
 		NoticeDataBean nDto = new NoticeDataBean();
 		nDto.setN_id(Integer.parseInt(request.getParameter("n_id")));
 		nDto.setN_subject(request.getParameter("n_subject"));
