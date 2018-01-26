@@ -99,7 +99,7 @@ public class QnaListHandler implements CommandHandler {
 			map.put("end", end);
 						
 			List<QnaDataBean> articles = qDao.getArticles( map );
-			request.setAttribute( "articles", articles );
+			request.setAttribute( "articles", articles ); 
 		}
 		
 		
