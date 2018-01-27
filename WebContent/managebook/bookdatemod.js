@@ -101,7 +101,7 @@ function daily() {
 	Termselect(params);
 	book_termok();
 	
-	httpRequest = new HttpRequest(dailyresult, "select.do", params);
+	httpRequest = new HttpRequest(dailyresult, "bookselect.do", params);
 	httpRequest.sendRequest();
 }
 

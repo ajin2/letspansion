@@ -19,7 +19,7 @@ function daily() {
 		var day = inputform.day.value;
 	}
 	var params = "date=" + inputform.y.value + "-" + m + "-" + day ;
-	httpRequest = new HttpRequest(dailyresult, "select.do", params);
+	httpRequest = new HttpRequest(dailyresult, "bookselect.do", params);
 	httpRequest.sendRequest();
 }
 

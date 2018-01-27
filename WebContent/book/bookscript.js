@@ -81,7 +81,6 @@ function selecttermresult(){
 }
 
 function daily() {
-	
 	if(!inputform.m.value){
 		alert("날짜를 선택 해 주세요");
 		return;
@@ -97,9 +96,10 @@ function daily() {
 		var day = inputform.day.value;
 	}
 	var params = "date=" + inputform.y.value + "-" + m + "-" + day ;
+	
 	Termselect(params);
 	book_termok();
-	httpRequest = new HttpRequest(dailyresult, "select.do", params);
+	httpRequest = new HttpRequest(dailyresult, "bookselect.do", params);
 	httpRequest.sendRequest();
 	resettable();
 }
@@ -351,7 +351,7 @@ function bookinsert(payway){
 		+ "&m_id=" + memid + "&b_person=" + b_person 
 		+ "&b_totalprice=" + price + "&b_payway=" + parseInt(b_payway) + "&b_status=" + parseInt(b_status) + "&term=" + term;
 		
-		httpRequest = new HttpRequest(insertresult, "insert.do", params);
+		httpRequest = new HttpRequest(insertresult, "bookinsert.do", params);
 		httpRequest.sendRequest();
 	}else{
 		var price = Number($('#tp').text()) / term;
@@ -375,7 +375,7 @@ function bookinsert(payway){
 			+ "&m_id=" + memid + "&b_person=" + b_person 
 			+ "&b_totalprice=" + price + "&b_payway=" + parseInt(b_payway) + "&b_status=" + parseInt(b_status) + "&term=" + term;
 			
-			httpRequest = new HttpRequest(insertresult, "insert.do", params);
+			httpRequest = new HttpRequest(insertresult, "bookinsert.do", params);
 			httpRequest.sendRequest();
 			a3 = a_3;
 			a2 = a_2;

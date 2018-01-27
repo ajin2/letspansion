@@ -11,7 +11,7 @@ import handler.CommandHandler;
 
 @Controller
 public class AdminPensionBookInsertHandler implements CommandHandler{
-	@RequestMapping("/insert")
+	@RequestMapping("/bookinsert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
