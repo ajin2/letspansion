@@ -177,7 +177,7 @@ function selectDate(d1, d2, d3) {
 // -------------------------------------------------------------------------------------------------------------------------
 function show(cstr) {
 	var params = "date=" + cstr;
-	httpRequest = new HttpRequest(showresult, "select.do", params);
+	httpRequest = new HttpRequest(showresult, "bookselect.do", params);
 	httpRequest.sendRequest();
 }
 
