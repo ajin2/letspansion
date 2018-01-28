@@ -14,7 +14,7 @@
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp"%>
 		
-		<link href="<%=project%>after/style.css" rel="stylesheet" type="text/css">
+		<%-- <link href="<%=project%>after/style.css" rel="stylesheet" type="text/css"> --%>
 		<script src="/LetsPension/after/request.js"></script>
 		<script src="/LetsPension/js/jquery-3.2.1.js"></script>
 		
@@ -40,16 +40,16 @@
 %>
 
 <script>
-	$(document).ready(function(){
+/* 	$(document).ready(function(){
 		alert("시작");
 		makecomment();
-	});
+	}); */
 
 	var httpRequest = null;
 	var number = 0;
 	function insert() {
-		alert("추가 시작");
-		$('#inputform').attr('action', './insert.do');
+		/* alert("추가 시작"); */
+		$('#inputform').attr('action', './insertReply.do');
 		$('#inputform').submit();
 	}
 	
@@ -67,7 +67,7 @@
 			if ( "${sessionScope.memId}" == "<%=m_id%>" ){
 				$('#listcomment').append(
 					"<div id='re_"+<%=replyNum%>+"'>"
-					+ 	"<table>"
+					+ 	"<table class='table table-striped table-bordered table-hover' width='800px' border='1'>"
 					+ 		"<tr>"
 					+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
 					+			"<th style='width: 50px' id='<%=m_id%>'><%=m_id%></th>"
@@ -76,8 +76,8 @@
 					+				"<input type='text' class='editBoxContent' value='<%=content%>' style='display:none;'>"
 					+			"</td>"
 					+			"<th style='width: 200px'>"
-					+				"<input class='inputbutton' type='button' value='수정' onclick='javascript:mod(<%=replyNum%>,<%=m_id%>,re_content_<%=replyNum%>)'>"
-					+				"<input class='inputbutton' type='button' value='삭제' onclick='javascript:del("+<%=replyNum%>+")'>"
+					+				"<input class='btn btn-success' type='button' value='수정' onclick='javascript:mod(<%=replyNum%>,<%=m_id%>,re_content_<%=replyNum%>)'>"
+					+				"<input class='btn btn-warning' type='button' value='삭제' onclick='javascript:del("+<%=replyNum%>+")'>"
 					+			"</th>"
 					+		"</tr>"
 					+ 	"</table>"
@@ -86,7 +86,7 @@
 			} else {
 				$('#listcomment').append(
 						"<div>"
-						+ 	"<table>"
+						+ 	"<table class='table table-striped table-bordered table-hover' width='800px' border='1' >"
 						+ 		"<tr>"
 						+			"<th style='width: 20px'>" + <%=replyNum%> + "</th>"
 						+			"<th style='width: 50px'><%=m_id%></th>"
@@ -109,7 +109,7 @@
 		
 		$('input[name=re_num]').val( replyNum );
 		
-		$('#inputform').attr('action', './delete.do');
+		$('#inputform').attr('action', './deleteReply.do');
 		$('#inputform').submit();
 	}
 	
@@ -123,7 +123,7 @@
          newdiv.innerHTML = "<form id='modifyform' name='modifyform' action=''>"
          				+"<input type='hidden' name='am_num' value='<%=afterDto.getAm_num()%>'>"
          				+"<input type='hidden' name='re_num' value='"+replyNum+"'>"
-         				+"<table>"
+         				+"<table class='table table-striped table-bordered table-hover' width='800px' border='1' >"
          				+	"<tr>"
          				+		"<th> 아이디 </th>"
          				+		"<td> <input type='text' name='m_id' value='"+m_id+"' readonly> </td>"
@@ -134,9 +134,9 @@
          				+	"</tr>"
          				+	"<tr>"
          				+		"<th colspan='3'>"
-         				+			"<input type='button' value='수정' onclick='modify()'>"
-         				+			"<input type='reset' value='취소'>"
-         				+			"<input type='button' value='수정취소'>"
+         				+			"<input class='btn btn-success' type='button' value='수정' onclick='modify()'>"
+         				+			"<input class='btn btn-warning' type='reset' value='취소'>"
+         				+			"<input class='btn btn-warning' type='button' value='수정취소'>"
          				+		"</th>"
          				+	"</tr>"
          				+"</table>"
@@ -150,7 +150,7 @@
 	}
 	
 	function modify() {
-		$('#modifyform').attr('action', './modify.do');
+		$('#modifyform').attr('action', './modifyReply.do');
 		$('#modifyform').submit();
 	}
 	
@@ -170,7 +170,9 @@
 <h2> <%=page_content%> </h2>
     
 
-<table width="700px">
+
+<!-- 본문 -->
+<table class='table table-striped table-bordered table-hover' width='800px' border='1' >
 	<tr>
 		<th style="width: 10%"> <%=str_writer%> </th>
 		<td style="width: 10%" align="center"> 
@@ -204,16 +206,18 @@
 	</tr>
 	<tr>
 		<th colspan="4">
+		
 		<c:if test="${sessionScope.memId == afterDto.getM_id() }">
-			<input class="inputbutton" type="button" value="<%=btn_modify%>"
-				onclick="location='modifyView.do?am_num=<%=afterDto.getAm_num()%>&pageNum=<%=pageNum%>'">
-			<input class="inputbutton" type="button" value="<%=btn_delete%>"
-				onclick="location='deletePro.do?am_num=<%=afterDto.getAm_num()%>&pageNum=<%=pageNum%>'">
-			<input class="inputbutton" type="button" value="<%=btn_list%>"
+			<input class='btn btn-success' type="button" value="<%=btn_list%>"
 				onclick="location='list.do?pageNum=<%=pageNum%>'">
+			<input class='btn btn-success' type="button" value="<%=btn_modify%>"
+				onclick="location='modifyView.do?am_num=<%=afterDto.getAm_num()%>&pageNum=<%=pageNum%>'">
+			<input class='btn btn-warning' type="button" value="<%=btn_delete%>"
+				onclick="location='deletePro.do?am_num=<%=afterDto.getAm_num()%>&pageNum=<%=pageNum%>'">
+			
 		</c:if>
 		<c:if test="${sessionScope.memId != afterDto.getM_id() }">
-			<input class="inputbutton" type="button" value="<%=btn_list%>"
+			<input class='btn btn-success' type="button" value="<%=btn_list%>"
 				onclick="location='list.do?pageNum=<%=pageNum%>'">
 		</c:if>
 		</th>
@@ -230,7 +234,7 @@
 		<input type="hidden" id="pageNum" name="pageNum" value="<%=pageNum%>">
 		<input type="hidden" name="re_num" value="">
 		<!-- <input type="hidden" name="mid" value=""> -->
-		<table>
+		<table class='table table-striped table-bordered table-hover' width='800px' border='1' >
 			<tr>
 				<th> 이름 </th>
 				<td> <input class="input" type="text" id="m_id" name="m_id" value="${sessionScope.memId}" readonly> </td>
@@ -243,8 +247,8 @@
 			</tr>
 			<tr>
 				<th colspan="2">
-					<input class="inputbutton" type="button" value="작성" onclick="insert()">
-					<input class="inputbutton" type="reset" value="취소">
+					<input class='btn btn-success' type="button" value="작성" onclick="insert()">
+					<input class='btn btn-warning' type="reset" value="취소">
 				</th>
 			</tr>
 		</table>

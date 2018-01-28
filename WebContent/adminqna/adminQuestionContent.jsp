@@ -10,6 +10,15 @@
 	</head>
 	<body>
 		
+		<table>
+				<tr>
+					<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
+					<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
+				</tr>
+			</table>
+		
+		<br><br><br>
+		
 		<form name="qcontent">
 		<input type="hidden" name="q_num" value="${qDto.q_num}">
 		<input type="hidden" name="q_cate" value="${qDto.q_cate}">

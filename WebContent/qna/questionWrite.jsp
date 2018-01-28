@@ -70,20 +70,23 @@
               	<input type="text" class="form-control" name="q_subject" width="100px">
               	<br>
               	<label for="inputId" id="a">&nbsp;내용</label>
-              	<pre><textarea class="form-control" rows="15" cols="65" name="q_content"></textarea></pre>
+              	<textarea class="form-control" rows="15" cols="65" name="q_content"></textarea>
               </div>              
             </div>
 
-		<input class="btn btn-info" type="submit" value="문의하기" >
+		<input class="btn btn-success" type="submit" value="문의하기" >
 		<input class="btn btn-warning" type="button" value="취소" onclick="location='questionlist.do'">
 		<br><br>
 		 
 	</form>
+	<br><br><br><br><br><br>
 	</div>
 	</div>
 	</div>
 	</div>
 	</div>
+	
+	<%-- <jsp:include page="/home/pensionBottom.jsp" flush="false"/> --%>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 		
 	</head>
 	
-	
+	<br><br><br><br><br><br>
 	<c:if test="${(sessionScope.adminId == null || sessionScope.adminId == '')}">
 		<body onload="adminidfocus()">
 			<form name="adminhomeform" method="post" action="adminLoginPro.do" onsubmit="return adminlogincheck()">

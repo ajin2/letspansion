@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 		
 	</head>
-	<center>
+<center>
 <body id="talk">
     <div class="talk">
     <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
@@ -27,14 +27,15 @@
 	<form>
 
 	 <c:if test="${sessionScope.memId ne null}">
-		<input class="btn btn-info" type="button" value="문의하기" onclick="location='questionWrite.do'">
-		<input class="btn btn-info" type="button" value="문의함" onclick="location='questionlist.do'">
+				<input class="btn btn-success" type="button" value="문의하기" onclick="location='questionWrite.do'">
+				<input class="btn btn-success" type="button" value="문의함" onclick="location='questionlist.do'">
 	</c:if>  
+	 
 	
 	<br><br><br>
 	
-	<table border="1" width="800px">
-
+	<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
+			
 		<tr style="height:40px"> 
 			<th style="width: 8%; text-align:center; font-size:18px;"> 
 				구분 
@@ -116,7 +117,10 @@
 </div>
 </div>
 </div>
+
+<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
+
 </body>
-</center> 
+
 
 </html>
