@@ -57,7 +57,8 @@
 			<div class="form-group">
               <label for="inputId" id="a">*회원정보(아이디)</label> 
               <div class="input-group">
-              	<input type="text" class="form-control" name="m_id" value="${sessionScope.memId}">
+              	<label for="inputId" id="a">&nbsp;${sessionScope.memId}</label> 
+              	<%-- <input type="text" class="form-control" name="m_id" value="${sessionScope.memId}"> --%>
               </div>
             </div>
 	
