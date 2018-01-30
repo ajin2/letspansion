@@ -40,13 +40,10 @@
 				<ul>
 					<li><a href="adminNoticeList.do">관리자 공지사항</a></li>
 					<li><a href="adminPensionQna.do">관리자 QnA</a></li>
+					<li><a href="adminChatting.do"> 관리자 1:1 문의 </a></li>
 				</ul>
 			</li>
-			<li><a>관리자 후기</a>
-				<ul>
-					<li><a href=".do"></a>관리자 후기</li>
-				</ul>
-			</li>
+			<li><a href="serviceAgreement.do">서비스 약관 </a></li>
 		</ul>
 		<!-- <a href="adminPensionHome.do">Home</a> &nbsp; ㅣ &nbsp; 
 		<a href="#" onclick="managerroomchk();">관리자 Room</a> &nbsp; ㅣ &nbsp; 
