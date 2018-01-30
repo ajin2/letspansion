@@ -15,9 +15,6 @@
 		</table>
 	
 		<table border="1">
-			<tr>
-					<th colspan="2">  </th>
-			</tr>
 			<tr> 
 				<th> ${str_roomName} : </th>
 				<td> ${roomDto.r_name}</td>
@@ -40,8 +37,8 @@
 				<th> ${str_content} : </th>
 				<td> ${roomDto.r_content} </td>
 			</tr>
-		</table> fds
-		
+		</table> 
+		<br><br><br>
 		<div class="w3-content w3-display-container" style="max-width: 50%">
 			<!-- Main Picture -->
 			<c:forEach var="picture" items="${pictures}">			
@@ -58,22 +55,12 @@
 			</div>
 		</div>
 		<!-- Small Picture -->
-		<div class="w3-row-padding w3-section" style="max-width: 100%; max-height: 30%">
-			<table style="text-align:center">
+		<div class="w3-row-padding w3-section" style="max-width: 100%; max-height: 100%">
 			<c:forEach var="picture" items="${pictures}" begin="0" end="${countPicture}" varStatus="status">
-				<c:if test="${(status.count % 3) == 1}"> 
-					<tr>
-				</c:if>
-					<td>
-						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="${project}/roomupload/${picture.pic_sys}" style="width: 100%; height:10%" onclick="currentDiv(${status.count})">
-						</div>
-					</td>
-				<c:if test="${(status.count % 3) == 0}"> 
-					</tr>
-				</c:if> 
+				<div class="w3-col s4" >
+					<img class="demo w3-opacity w3-hover-opacity-off" src="${project}roomupload/${picture.pic_sys}" style="width: 70%; height:30%; margin-left:10%; margin:10px;" onclick="currentDiv(${status.count})">
+				</div>
 			</c:forEach>
-			</table>
 		</div>
 	</body>
 	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
