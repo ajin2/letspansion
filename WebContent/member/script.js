@@ -28,10 +28,15 @@ var delete_ok_error = "회원탈퇴가 성공적으로 완료되었습니다. \n
 var deleteconfirm = "회원을 탈퇴하시겠습니까?";
 var returnValue = "false";	
 var logindeletederror = "삭제된 아이디 입니다.";
+var inputdone = "회원가입이 완료 되었습니다";
 
 function erroralert( msg ) {
 	alert( msg );
 	history.back();
+}
+
+function loginalert( msg ) {
+	alert( msg );
 }
 
 // 회원 정보 수정

@@ -28,7 +28,7 @@
 		<table border="1">
 			<tr>
 				<th colspan="2">
-					: 카테고리 :
+					*카테고리
 				</th>
 			</tr>
 			<tr>
@@ -50,7 +50,7 @@
 			
 			<tr>
 				<th colspan="2">	
-					: 회원정보 :
+					*회원정보
 				</th>
 			</tr>
 			<tr>
@@ -60,15 +60,10 @@
 					</td>
 				
 			</tr>
-			<!-- <tr>
-				<th> 이메일 : </th>
-				<td><input type="text" name="email" value="이메일"> </td>
-				
-			</tr> -->
-			
+
 			<tr>
 				<th colspan="2">	
-					: 문의하기 :
+					*문의하기
 				</th>
 			</tr>
 			<tr>

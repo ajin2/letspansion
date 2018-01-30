@@ -1,20 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<style>
-		
-
-		
-		</style>
-	</head>
 	<body>
-		<h2> Admin Pension Main </h2>
-			어서오삼
+		<h2> Let's Pension의 Admin Main </h2>
+			
 	</body>
 </html>
 	

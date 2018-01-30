@@ -14,7 +14,7 @@
 		
 		<!-- Bootstrap core CSS -->
 	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	    <!-- Custom fonts for this template -->
 	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -37,12 +37,15 @@
 			<div class="container h-100">
 				<div class="row h-100">
 					<div class="col-12 my-auto">
-
+						
 					</div>
 				</div>
 			</div>
 		</div>
-	
+				<h2 class="mov_ttl">
+			<span class="mov_txt"><img src="/LetsPension/img/LetsPensionLogo.png"  alt="" width="600" height="250" /></span>
+		</h2>
+		
 		<!-- Bootstrap core JavaScript -->
 	    <script src="vendor/jquery/jquery.min.js"></script>
 	    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -54,8 +57,9 @@
 	    <script src="js/coming-soon.min.js"></script>
 		<%-- <%@include file="pensionMain.html" %>  --%>
 		<%-- <jsp:include page="pensionMain.jsp" flush="false"/> --%>
-			
+			<%-- <jsp:include page="pensionBottom.jsp" flush="false"/> --%>
 	</body>
+	
 	<%-- <jsp:include page="pensionBottom.jsp" flush="false"/> --%>
 </html>
 

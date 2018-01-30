@@ -10,12 +10,17 @@
 
 <c:if test="${result == 0}">
 	<script type="text/javascript">
-		<!--
+		//<!--
 		erroralert( inputerror );
 		//-->
 	</script>
 </c:if>
 <c:if test="${result != 0}">
+	<script type="text/javascript">
+		//<!--
+		loginalert( inputdone );
+		//-->
+	</script>
 	<c:redirect url="pensionHome.do"/>
 </c:if>	
 

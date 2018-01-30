@@ -1,4 +1,4 @@
-package handler.location;
+package handler.adminloaction;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,11 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class PensionLocationHandler implements CommandHandler{
-	
-	@RequestMapping("/pensionLocation")
+public class AdminLocationHandler implements CommandHandler{
+
+	@RequestMapping("/adminLocation")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		return new ModelAndView("location/pensionLocation");
+		return new ModelAndView("adminlocation/adminLocation");
 	}
 }

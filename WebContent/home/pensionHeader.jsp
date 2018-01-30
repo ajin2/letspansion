@@ -20,7 +20,7 @@
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
 		<body id="index">
 		<div id="header">
-			<h1><a href="pensionHome.do"><img src="/LetsPension/img/LetsPensionLogo.png" alt="" width="130" height="71"></a></h1>
+			<h1><a href="pensionHome.do"><img src="/LetsPension/img/LetsPensionLogo.png" alt="" ></a></h1>
 			<div class="gnb">
 				<ul>
 					<li><a>펜션 소개</a>
@@ -57,7 +57,7 @@
 					</li>
 					</ul>
 			</div>
-				<div class="sns">
+				<div class="logon">
 					<ul>
 						<li><a>로그인하기</a>
 						<ul>
@@ -114,26 +114,36 @@
 							<li><a href="list.do">후기</a></li>
 						</ul>
 					</li>
-					<li><a>마이페이지</a>
+					</ul>
+					</div>
+					<div class="logon">
+					<ul>
+						<li><a>마이페이지</a>
 						<ul>
 							<li><a href="logonModifyForm.do">회원수정</a></li>
 							<li><a href="logonDeleteForm.do">회원탈퇴</a></li>
 							<li><a href="PensionManageBook.do">예약관리</a></li> 
-              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+              				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+							<li><a href="logonLogout.do">로그아웃</a></li>
+						</ul>
+						</li>
+
+					</ul>
+				</div>
+		
+				<!-- 	<li><a>마이페이지</a>
+						<ul>
+							<li><a href="logonModifyForm.do">회원수정</a></li>
+							<li><a href="logonDeleteForm.do">회원탈퇴</a></li>
+							<li><a href="PensionManageBook.do">예약관리</a></li> 
+              				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
 					</li>			
-					</ul>
-			</div>
+					</ul> -->
+			
 		</div>
 		</body>
-
-
-<%-- 	    <body>
-		    <a class="text-shadow text-white" >${sessionScope.memId} 님</a> |
-		    <a class="text-shadow text-white" href="pensionMypage.do">${str_mypage}</a> | 
-		    <a class="text-shadow text-white" href="logonLogout.do">${str_logout}</a>
-		</body> --%>
 	</c:if>  	
 	
 </html>
