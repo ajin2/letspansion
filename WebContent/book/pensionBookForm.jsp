@@ -32,7 +32,8 @@
 	    	<jsp:include page="/book/BookForm.jsp" flush="false"/>
 		
 			<br><br><br>
-
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+			<br><br><br><br><br><br><br><br><br><br><br><br><br> 
 		</body>
 	</c:if>  
 	<br><br><br><br><br><br><br><br><br><br><br><br>

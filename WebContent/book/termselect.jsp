@@ -12,7 +12,7 @@
 					<c:forEach var="r" begin="1" end="5">
 						
 						<sql:query var="rs" dataSource="jdbc/kh">
-							select r_id, b_payway, to_char(b_reg_date, 'yyyy-mm-dd') b_reg_date
+							select r_id, b_payway, to_char(b_reg_date, 'yyyy-mm-dd') b_reg_date, m_id
 							from pension_book where r_id = ? and to_char(b_reg_date,'yyyy-mm-dd') = ?
 							<sql:param value="${r}" />
 							<sql:param value="${param.date}" />
@@ -24,7 +24,8 @@
 									{
 										"b_reg_date" : "${param.date}",
 										"r_id" : "${row.r_id}",
-										"b_payway" : "${row.b_payway}"
+										"b_payway" : "${row.b_payway}",
+										"m_id" : "${row.m_id}"
 									},
 								</c:forEach>
 							</c:when>   
@@ -33,7 +34,8 @@
 								{
 									"b_reg_date" : "${param.date}",
 									"r_id" : "${r}",
-									"b_payway" : ""
+									"b_payway" : "",
+									"m_id" : ""
 								},
 							</c:otherwise>
 						</c:choose>

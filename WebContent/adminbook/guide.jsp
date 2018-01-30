@@ -1,12 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="setting.jsp" %>
+<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>
     <body>
+    	
+    	<pre style="background:#2d5475">
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	</pre>
     	
     	<pre>
     	
-    	예약 안내
-    	<hr>
+    	* <font size="3em" color="navy"><b>예약 안내</b></font> *
+    	
     	
     	예약 시 환불기준을 숙지하시고 예약하시기 바랍니다.
 
@@ -15,7 +26,7 @@
 	
 	• 입금 계좌
 	
-	     KEB하나은행 111-2222-333456 (예금주 : ooo)
+	     신한 110-273-381245 (예금주 : 김대호)
 	
 	• 예약문의
 	
@@ -34,8 +45,8 @@
     	
     	<pre>
     	
-    	이용 안내
-    	<hr>
+    	* <font size="3em" color="navy"><b>이용 안내</b></font> *
+    	
     	
     	• 입실시간 : 15 시 ( 20 시 이후의 입실은 사전에 반드시 연락을 주시기 바랍니다. )
 	• 퇴실시간 : 11 시
@@ -53,13 +64,12 @@
     	
     	<pre>
     	
-    	환불 안내
-    	<hr>
+    	* <font size="3em" color="navy"><b>환불 안내</b></font> *
+    	
     	
     	1. 올바른 예약문화 정착을 위하여 더모스트펜션에서는 예약취소 시 환불기준을 아래와 같이 운영하고 있으니 확인하시고 예약해 주시기 바랍니다.
 	2. 취소 환불은 객실요금 100% 입금 시 적용됩니다.
 	3. 입실 당일 ~ 입실 3일 전 예약취소 시 환불이 불가능합니다.
-		</pre>
 		
 		<table border="1" style="margin-left:50px;">
 			<tr>
@@ -77,12 +87,13 @@
 				<td> 80% 환불 </td>
 			</tr>
 		</table>
+		</pre>
     	
-    	<br><br><br>
+    	<br>
     	<form name="checkform">
-	    	<input type="checkbox" value="0" name="agreecheck" style="margin-left:50px;" onchange="checkvalue(1)">
+	    	<input type="checkbox" value="0" name="agreecheck" style="margin-left:70px;margin-top:30px;" onchange="checkvalue(1)">
 	    	${str_agreecheck}
-	    	<input type="button" value="${btn_book}" onclick="agreecheckDo()" style="margin-left:10px;">
+	    	<input class="btn btn-success" type="button" value="${btn_book}" onclick="agreecheckDo()" style="margin-left:10px;">
     	</form>
     	<br><br><br>
     	
@@ -97,9 +108,10 @@
     			alert('${str_agreecheck0}');
     			return;
     		}else{
-    			window.location.href = "adminBookPro.do";
+    			window.location.href = "pensionBook.do";
     		}    		
     	}
     	</script>
     	
     </body>
+    <jsp:include page="/home/pensionBottom.jsp" flush="false"/>

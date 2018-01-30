@@ -10,3 +10,4 @@
 <c:set var="str_a" value="주류"/>
 
 <c:set var="btn_insert" value="추가"/>
+<c:set var="btn_close" value="닫기"/>

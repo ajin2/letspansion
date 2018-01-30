@@ -18,7 +18,6 @@ var path = "/LetsPension/adminmanage/productimg/";
 
 var bookprice = 0;
 var cnt = 0;
-var total = 0;
 
 var delbnum = [];
 
@@ -96,6 +95,26 @@ function booklistresult(){
 						$('#omoddel').html('');
 					}
 					if(data.book[i].m_id == $('#mid').html()){
+						var date = data.book[i].b_reg_date;
+						var a = date.toString().split('-');
+						var a2 = Number(a[2]) + cnt;
+						var a1 = Number(a[1]);
+						
+						var lastDate = new Date(a[0], a[1], 0);
+						lastDate = lastDate.getDate();
+						
+						if(a2 > lastDate){
+							a1 = a1 + 1;
+							if(a1 < 10)		a1 = "0" + a1;
+							a2 = a2 - lastDate;
+							if(a2 < 10)		a2 = "0" + a2;
+						}else{
+							if(a1 < 10)		a1 = "0" + a1;
+							if(a2 < 10)		a2 = "0" + a2;
+						}
+						
+						var enddate = a[0] + "-" + a1 + "-" + a2;
+						
 						var price = Number(data.book[i].b_totalprice) * cnt; 
 						if(cnt > 1){
 							if(i == 0){
@@ -110,7 +129,7 @@ function booklistresult(){
 								t += "<tr><td>" + cnt + "박" + (cnt+1) + "일" + "</td>"; 
 								t += "<td>" + data.book[i].b_reg_date + "</td>"; 
 							} else if(i == data.book.length-1){
-								t += "<td>" + data.book[i].b_reg_date + "</td>";
+								t += "<td>" + enddate + "</td>";
 								t += "<td>" + data.book[i].r_id + "</td>";
 								t += "<td>" + data.book[i].b_person + "</td>";
 								t += "<td>" + payway + "</td>";
@@ -129,7 +148,7 @@ function booklistresult(){
 							
 							t += "<tr><td>" + cnt + "박" + (cnt+1) + "일" + "</td>"; 
 							t += "<td>" + data.book[i].b_reg_date + "</td>"; 
-							t += "<td>" + data.book[i].b_reg_date + "</td>";
+							t += "<td>" + enddate + "</td>";
 							t += "<td>" + data.book[i].r_id + "</td>";
 							t += "<td>" + data.book[i].b_person + "</td>";
 							t += "<td>" + payway + "</td>";

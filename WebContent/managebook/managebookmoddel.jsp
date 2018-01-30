@@ -26,14 +26,15 @@
 			$('#bnum').css('display','none');
 			$('#payway').css('display','none');
 			$('#status').css('display','none');
+			$('#person').css('display','none');
 		});
 	//-->
 	</script>
 	
 	
 	<body>
-	<div class="reser">
-		<div class="top_bg"><h3><span>예약 조회</span></h3></div>
+	<div class="reser" style="margin-left:50px;">
+		<div class="top_bg"><h3><span>예약 변경</span></h3></div>  
 		<div class="board">
       	<div class="snb">
       	<div class="center">
@@ -42,6 +43,7 @@
 		<div id="mid"></div> 
 		<div id="bnum"></div>
 		<div id="payway"></div>
+		<div id="person"></div>
 		<div id="status"></div>
 
 		<div id="a">

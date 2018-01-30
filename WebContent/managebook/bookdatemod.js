@@ -126,7 +126,7 @@ function dailyresult() {
 
 				var date = data.book[i].b_reg_date;
 				var a = date.toString().split('-');
-				var a2 = Number(a[2]) + (term-1);
+				var a2 = Number(a[2]) + term;
 				var a1 = Number(a[1]);
 				
 				var lastDate = new Date(a[0], a[1], 0);
@@ -163,40 +163,20 @@ function dailyresult() {
 				t += "<tr>";
 				t += "<td>" + term + " 박 " + (term + 1) + " 일</td>";
 				
-				if(term == 1){//------------------------------------------------
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					t += "<td>" + data.book[i].r_id + "</td>";
-					if(restatus == p){
+				t += "<td>" + data.book[i].b_reg_date + "</td>";
+				t += "<td>" + enddate + "</td>";
+				t += "<td>" + data.book[i].r_id + "</td>";
+				if(restatus == p){
+					t += "<td>" + restatus + "</td>";
+					t += "<td><input type='button' value='변경하기' " +
+							"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+				} else{
+					if($('#mid').html() == data.book[i].m_id){
 						t += "<td>" + restatus + "</td>";
 						t += "<td><input type='button' value='변경하기' " +
 								"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-					} else{
-						if($('#mid').html() == data.book[i].m_id){
-							t += "<td>" + restatus + "</td>";
-							t += "<td><input type='button' value='변경하기' " +
-									"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-						}else{
-							t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
-						}
-					}
-				}else{//--------------------------------------------------------------------------------------------
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					t += "<td>" + enddate + "</td>";
-					t += "<td>" + data.book[i].r_id + "</td>";
-					if(book_p[i] == 1){
-						restatus = p;
-						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' value='변경하기' " +
-								"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-					} else{
-						if($('#mid').html() == data.book[i].m_id){
-							t += "<td>" + restatus + "</td>";
-							t += "<td><input type='button' value='변경하기' " +
-									"onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-						}else{
-							t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
-						}
+					}else{
+						t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 					}
 				}
 					
@@ -236,7 +216,7 @@ function insertform(a1,a2,a3, r_id){
 	var lastDate = new Date(a1, a2, 0);
 	lastDate = lastDate.getDate();
 	
-	var dd = Number(a3) + (term-1);
+	var dd = Number(a3) + term;
 	var mm = a2;
 	
 	if(dd > lastDate){
@@ -272,7 +252,7 @@ function insertform(a1,a2,a3, r_id){
 	
 	var t = "<br>";
 		t += "<form name='form'>";
-		t += "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
+		t += "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable' style='width:600px'>";
 		t += "<tr>";
 		t += "<th> 숙박 일수 </th>";
 		t += "<th> 입실 날짜 </th>";
@@ -341,6 +321,7 @@ function total(r_id, person){
 	
 	$('#tp').html(price);
 	totalvalue = 1;
+	$('#person').html(person);
 }
 
 

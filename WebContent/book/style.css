@@ -3,7 +3,6 @@
 /* #a{
 	float : left;
 }
- 
 
  #console{
 	margin-left : 650px;
@@ -16,36 +15,39 @@
 #total-btn {
 	float : left;
 	margin-left : 50px;
-}
+} */
 
-.banner {
-	float : left;
-	margin-left : 50px;
-}
-
-#presult {
-	float : left;
-	margin-left : 50px;
-	margin-top : 30px;
-}
-
+/* 
 img{
 	width : 13px; 
 	height : 13px;
 }
 
+*/
 #calendar{
 	width : 600px;
 	font-size : 0.7em;
 	border-spacing : 0px 0px;
 	border : 1px solid pink;
 	border-collapse: collapse;
+	margin-right : 30px;
 }
 
 #calendar td{
 	border : 1px solie pink; 
 }
 
+/* #product {
+	clear : both;
+}
+
+#presult {
+	float : left;
+	margin-left : 50px;
+	margin-top : 30px;
+} */
+
+/*
 #dbtable td{
 	text-align : center;
 	width : 70px;

@@ -46,7 +46,7 @@
 		</div>
 	
 	
-		<table class="table table-striped table-bordered table-hover" border="1" id="presult" style="display: none">
+		<table class="table table-striped table-bordered table-hover" border="1" id="presult" style="display: none; margin-top:10px">
 			<thead>
 				<tr>
 					<th> ${str_productname} </th>
@@ -63,7 +63,7 @@
 			</tfoot>
 		</table>
 		
-		<div id="total-btn">
+		<div id="total-btn" style="margin-bottom:100px;">
 			<div id="total">
 				${str_total} : <label id="book_total"></label>
 			</div>	

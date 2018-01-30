@@ -65,7 +65,7 @@
 							<li><a href="logonInputForm.do">회원가입</a></li>
 							<li><a href="logonFindId.do">id 찾기</a></li>
 							<li><a href="logonFindPasswd.do">비번 찾기</a></li>
-              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+              				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 						</ul>
 						</li>
 

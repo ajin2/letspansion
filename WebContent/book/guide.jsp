@@ -2,10 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ include file="setting.jsp" %>
 <jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-
     <body>
     	
-    	<pre style="margin-top:200px;">
+    	<pre style="background:#2d5475">
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	</pre>
+    	
+    	<pre>
     	
     	* <font size="3em" color="navy"><b>예약 안내</b></font> *
     	
@@ -17,7 +26,7 @@
 	
 	• 입금 계좌
 	
-	     KEB하나은행 111-2222-333456 (예금주 : ooo)
+	     신한 110-273-381245 (예금주 : 김대호)
 	
 	• 예약문의
 	
@@ -82,9 +91,9 @@
     	
     	<br>
     	<form name="checkform">
-	    	<input type="checkbox" value="0" name="agreecheck" style="margin-left:70px;" onchange="checkvalue(1)">
+	    	<input type="checkbox" value="0" name="agreecheck" style="margin-left:70px;margin-top:30px;" onchange="checkvalue(1)">
 	    	${str_agreecheck}
-	    	<input type="button" value="${btn_book}" onclick="agreecheckDo()" style="margin-left:10px;margin-bottom:50px;">
+	    	<input class="btn btn-success" type="button" value="${btn_book}" onclick="agreecheckDo()" style="margin-left:10px;">
     	</form>
     	<br><br><br>
     	

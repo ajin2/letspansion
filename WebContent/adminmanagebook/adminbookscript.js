@@ -29,28 +29,30 @@ function dailyresult() {
 			var xmldoc = httpRequest.request.responseXML;
 			var data = eval("("+ xmldoc.getElementsByTagName("data").item(0).firstChild.nodeValue+ ")");
 
-			var t = "<table border='1' id='dbtable'>";
+			var t = "<table border='1' id='dbtable' style='width:900px'>";
+			var cnt = 0;
 			
 			for (var i = 0; i < data.book.length; i++) {
 				if(data.book[i].m_id != ""){
-					t += "<tr>";
-					t += "<th> ID </th>";
-					t += "<th> 이름 </th>";
-					t += "<th> 전화번호 </th>";
-					t += "<th> 이메일 </th>";
-					t += "<th> 방 번호 </th>";
-					t += "<th> 숙박 일수 </th>";
-					t += "<th> 입실 날짜 </th>";
-					t += "<th> 퇴실 날짜 </th>";
-					t += "<th> 예약 인원 </th>";
-					t += "<th> 결제 금액 </th>";
-					t += "<th> 결제 날짜 </th>";
-					t += "<th> 결제 상태 </th>";
-					t += "<th> 입금 확인 </th>";
-					t += "<th> 주문 수정 </th>";
-					t += "<th> 예약 수정 </th>";
-					t += "<th> 취소 </th>";
-					t += "</tr>";
+					if(cnt == 0){
+						t += "<tr style='font-weight: bold;'>";
+						t += "<td> 이름 </td>";
+						t += "<td> 전화번호 </td>";
+						t += "<td> 방 </td>";
+						t += "<td> 숙박 일수 </td>";
+						t += "<td> 입실 </td>";
+						t += "<td> 퇴실 </td>";
+						t += "<td> 인원 </td>";
+						t += "<td> 금액 </td>";
+						t += "<td> 결제 날짜 </td>";
+						t += "<td> 상태 </td>"; 
+						t += "<td> 입금 확인 </td>";
+						t += "<td> 주문 수정 </td>";
+						t += "<td> 예약 수정 </td>";
+						t += "<td> 예약 취소 </td>";
+						t += "</tr>";
+						cnt = 1;
+					}
 				}
 				
 				var b_term = Number(data.book[i].b_term);
@@ -71,16 +73,33 @@ function dailyresult() {
 					var mid = data.book[i].m_id;
 					$('#mid').html(mid);
 					t += "<tr>";
-					t += "<td>" + mid + "</td>";
 					t += "<td>" + data.book[i].m_name + "</td>";
 					t += "<td>" + data.book[i].m_tel + "</td>";
-					t += "<td>" + data.book[i].m_email + "</td>";
 					t += "<td>" + data.book[i].r_id + "</td>";
 					t += "<td>" + b_term + " 박 " + (b_term + 1) + " 일</td>";
 					
+					var a = data.book[i].b_reg_date.toString().split('-');
+					var a2 = Number(a[2]) + b_term; 
+					var a1 = Number(a[1]);
+					   
+					var lastDate = new Date(a[0], a[1], 0);
+					lastDate = lastDate.getDate();
+					
+					if(a2 > lastDate){
+						a1 = a1 + 1;
+						if(a1 < 10)		a1 = "0" + a1;
+						a2 = a2 - lastDate;
+						if(a2 < 10)		a2 = "0"+a2;
+					}else{
+						if(a1 < 10)		a1 = "0" + a1;
+						if(a2 < 10)		a2 = "0" + a2;
+					}
+					
+					var enddate = a[0] + "-" + a1 + "-" + a2;
+					
 					if(b_term == 1){//---------------------------------------------------------------------------------
 						t += "<td>" + data.book[i].b_reg_date + "</td>";
-						t += "<td>" + data.book[i].b_reg_date + "</td>";
+						t += "<td>" + enddate + "</td>";
 						t += "<td>" + data.book[i].b_person + "</td>";
 						
 						var bnum = data.book[i].b_num;
@@ -110,27 +129,6 @@ function dailyresult() {
 						
 						termconfirm();
 						t += "<td>" + $('#regdate').html() + "</td>";
-						
-						var date = $('#regdate').html();
-						var a = date.toString().split('-');
-						var a2 = Number(a[2]) + (b_term-1);
-						var a1 = Number(a[1]);
-						   
-						var lastDate = new Date(a[0], a[1], 0);
-						lastDate = lastDate.getDate();
-						
-						if(a2 > lastDate){
-							a1 = a1 + 1;
-							if(a1 < 10)		a1 = "0" + a1;
-							a2 = a2 - lastDate;
-							if(a2 < 10)		a2 = "0"+a2;
-						}else{
-							if(a1 < 10)		a1 = "0" + a1;
-							if(a2 < 10)		a2 = "0" + a2;
-						}
-						
-						var enddate = a[0] + "-" + a1 + "-" + a2;
-						
 						t += "<td>" + enddate + "</td>";
 						t += "<td>" + data.book[i].b_person + "</td>";
 						
