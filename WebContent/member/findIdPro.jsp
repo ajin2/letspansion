@@ -1,32 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <%@ include file="setting.jsp" %>
-     
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<%@ include file="setting.jsp" %>
+
 	<script src="${project}member/script.js"></script>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-    <style type="text/css">
-			div #a{
-			margin-left:15%;}
-		</style>
-
+	<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
+	</head>
 	<body onload="findfocus()">
-   <div class="col-md-12">
-      <div class="page-header">
-         <h1 align="center"> ${page_findId} <small> LetsBand </small> </h1>
-      </div>
       
       <c:if test="${result == 1}">
+          <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+      <div class="top_bg"><h3><span>id찾기</span></h3></div>
+      <div class="board">
+      <div class="snb">
       
-      <form class="form-horizontal" method="post" name="findform">
+      <div class="center">
+      <div class="col-md-6 col-md-offset-3" >
+		<form method="post" name="findform">
+			<div class="form-group ">
+               <center><input type="text" class="form-control" value="${memberDto.m_id}" style="width:50%;" readonly></center>
+            </div>
+            <div class="form-group text-center">
+              <button class="btn btn-info" type="button" onclick="location='logonMain.do'">${btn_ok}<i class="fa fa-check spaceLeft"></i></button>
+            </div>
+      <%-- <form  method="post" name="findform">
       <div class="form-group">
-         <label class="col-sm-3 control-label" id="a">${str_id}</label>
+         <label for="inputid" id="a" style="margin-left:150px;">${str_id}</label>
       <div class="col-sm-2">
-         <input class="form-control" type="text" value="${memberDto.m_id}" readonly>
+        <center> <input class="form-control" type="text" value="${memberDto.m_id}" style="width:50%;" readonly></center>
       </div>
       </div>
       
@@ -34,15 +45,18 @@
 
       <div class="form-group">
          <div class="col-sm-12 text-center">
-             <button class="btn btn-primary" type="button" onclick="location='BandBoard_main.do'">${btn_ok}</button>
+             <button class="btn btn-primary" type="button" onclick="location='logonMain.do'">${btn_ok}</button>
          </div>
       </div>
      
+      </form> --%>
       </form>
-      
+      </div>
+      </div>
+      </div>
+      </div>
       </c:if>
       
-   </div>
    </body>
 	
 	
@@ -63,5 +77,6 @@
     	//-->
     	</script>
     </c:if>
+    </html>
     
     

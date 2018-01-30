@@ -6,10 +6,20 @@
 
 	<head>
 		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		 <script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+		 <script type="text/javascript" src="js/jquery-ui.js"></script>
+	     <link rel="stylesheet" type="text/css" href="css/boards.css"/>
 		<h3> 공지사항 </h3>
 	</head>
 	
 	<body>
+		
+		<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
+				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
 		
 		<form method="post" action="adminNoticeModifyPro.do" name="noticeModifyForm" 
 			onsubmit="return noticewritecheck()">

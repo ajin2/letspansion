@@ -20,11 +20,8 @@
 		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 	</head>	
 	
-<body id="talk">
-    <div class="talk">
-      <div class="board">
-      <div class="center">
-	<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
+
+	<table class='table table-striped table-bordered table-hover' border="1" >
 		<tr>
 			<td>
 				&nbsp;&nbsp;&nbsp; Tel : 02-1234-5678 &nbsp; | &nbsp; HP : 010-1234-5678 <br>  
@@ -35,9 +32,7 @@
 		
 		</tr>
 	</table>
-	</div>
-	</div>
-	</div>
+
 	</body>
 
 </html>

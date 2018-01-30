@@ -22,6 +22,8 @@ public class AdminQuestionModifyProHandler implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
+		request.setCharacterEncoding("utf-8");
+		
 		QnaDataBean qDto = new QnaDataBean();
 		qDto.setQ_num(Integer.parseInt(request.getParameter("q_num")));
 		qDto.setQ_subject(request.getParameter("q_subject"));
