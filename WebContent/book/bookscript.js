@@ -125,7 +125,7 @@ function dailyresult() {
 
 				var date = data.book[i].b_reg_date;
 				var a = date.toString().split('-');
-				var a2 = Number(a[2]) + (term-1);
+				var a2 = Number(a[2]) + term;
 				var a1 = Number(a[1]);
 				
 				var lastDate = new Date(a[0], a[1], 0);
@@ -159,27 +159,15 @@ function dailyresult() {
 				t += "<td>" + data.book[i].r_id + "</td>";
 				t += "<td>" + term + " 박 " + (term + 1) + " 일</td>";
 				
-				if(term == 1){//------------------------------------------------
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					if(restatus == p){
-						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' class='btn btn-success' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-					} else{
-						t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
-					}
-				}else{//--------------------------------------------------------------------------------------------
-					t += "<td>" + data.book[i].b_reg_date + "</td>";
-					t += "<td>" + enddate + "</td>";
-					if(book_p[i] == 1){
-						restatus = p;
-						t += "<td>" + restatus + "</td>";
-						t += "<td><input type='button' class='btn btn-success' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
-					} else{
-						t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
-					}
+				t += "<td>" + data.book[i].b_reg_date + "</td>";
+				t += "<td>" + enddate + "</td>";
+				if(restatus == p){
+					t += "<td>" + restatus + "</td>";
+					t += "<td><input type='button' class='btn btn-success' value='예약하기' onclick='insertform("+a[0]+","+a[1]+","+a[2]+","+data.book[i].r_id+")'></td>";
+				} else{
+					t += "<td>" + restatus + "</td><td> &nbsp;&nbsp;&nbsp; </td>";
 				}
-					
+				
 				t += "</tr>";
 			}
 			t += "</table>";

@@ -59,13 +59,13 @@
 			</div>
 				<div class="sns">
 					<ul>
-						<li><a>로그인</a>
+						<li><a>로그인하기</a>
 						<ul>
 							<li><a href="logonMain.do">로그인</a></li>
 							<li><a href="logonInputForm.do">회원가입</a></li>
 							<li><a href="logonFindId.do">id 찾기</a></li>
 							<li><a href="logonFindPasswd.do">비번 찾기</a></li>
-              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+              				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 						</ul>
 						</li>
 

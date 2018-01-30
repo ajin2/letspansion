@@ -15,6 +15,7 @@ var nm = parseInt(today.getMonth()+1);
 var nd = parseInt(today.getDate());
 
 var cstr;
+var cnt = 0;
 
 var p = "<img src='/LetsPension/book/img/예.jpg'>";
 var pn = "<img src='/LetsPension/book/img/대.jpg'>";
@@ -164,6 +165,10 @@ function nextCalendar() {
 	// 다음 달을 today에 값을 저장하고 달력을 뿌려줍니다.
 	today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
 	buildCalendar();
+	if(cnt == 0){
+		prevCalendar();
+		cnt = 1;
+	}
 }
 
 

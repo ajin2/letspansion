@@ -9,7 +9,7 @@ function orderaddbtn(){
 	$('#product').css('display','');
 	$('#pconsole').css('display','');
 	$('.banner1 .sub').css('display','');
-	p_list('b');
+	p_list('고기');
 }
 
 function ordermoddel(){

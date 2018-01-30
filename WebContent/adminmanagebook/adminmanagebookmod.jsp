@@ -5,7 +5,6 @@
 <html>
 	<meta charset="UTF-8">
 	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 	<script src="${project}managebook/managebookmoddel.js"></script>
 	<script src="${project}managebook/bookdatemod.js"></script>
 	<script src="${project}managebook/managebookmoddelorder.js"></script>
@@ -24,6 +23,7 @@
 			$('#btn_mod').css('display','none');
 			$('#bnum').css('display','none');
 			$('#payway').css('display','none');
+			$('#person').css('display','none');
 			$('#status').css('display','none');
 		});
 	//-->
@@ -37,6 +37,7 @@
 		<div id="mid">${param.mid}</div> 
 		<div id="bnum">${param.bnum}</div>
 		<div id="payway"></div>
+		<div id="person"></div>
 		<div id="status"></div>
 
 		<div id="a">
@@ -87,9 +88,9 @@
 		</form>
 		</div>
    		
-   		<div id="modbook"></div>
+   		<div id="modbook" style="width:500px"></div>
 		
-   		<div id="modbookresult"></div>
+   		<div id="modbookresult" style="width:600px"></div>
 		<div id="btn_mod"><input type="button" value="${btn_mod}" onclick="booklist_moddel()" ></div>
    		
 		<div id="aaa"></div>	

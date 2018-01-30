@@ -2,6 +2,7 @@
 
 #a{
 	float : left;
+	margin-left : 100px;
 }
 
 #b{
@@ -10,8 +11,9 @@
 }
 
 #console{
-	margin-left : 650px;
+	margin-left : 750px;
 	margin-top : 50px;
+	font-size : 1.2em;
 }
 
 #omoddel{

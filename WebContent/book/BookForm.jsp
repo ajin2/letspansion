@@ -22,7 +22,6 @@ pageEncoding="UTF-8"%>
 	
 	<body id="talk" onload="memId('${sessionScope.memId}')">
 	<div class="reser">
-		<!-- <form name="inputform"> -->
 		<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
 		<div class="top_bg"><h3><span>예약</span></h3></div>
 		<div class="board">
@@ -56,7 +55,7 @@ pageEncoding="UTF-8"%>
 		</div> -->
 		
 
-		<div class="form-inline" id="b" style="position:absolute; top:250px; right:400px">
+		<div class="form-inline" id="b" style="position:absolute; top:120px; right:400px"> 
 			<br>${today_date} : 
 			<input class="form-control" type="text" name="todayDate" style="width:150px;">
 			

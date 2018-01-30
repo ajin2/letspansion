@@ -80,7 +80,7 @@
 			<input class="btn btn-success" type="button" value="${btn_close}" onclick="ordermoddel_cancel()">
 		</div>
 		<div class="banner1">
-   			<div class="title"> ${str_order} </div>
+   			<div class="title"> <font color="white">${str_order}</font> <font color="white" style="float:right">클릭 하세요</font> </div>
    			<div class="sub"></div>
    		</div>
 		

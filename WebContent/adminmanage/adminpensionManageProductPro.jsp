@@ -10,27 +10,26 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 	
 	<script type="text/javascript">
 	//<!--
 	    $(document).ready(function() {
-	        $(".banner .title").click(function() {
+	    	$(".banner .title").click(function() {
 	            if($(this).next("div").is(":visible")){
 	            $(this).next("div").slideUp("fast");
 	            } else {
-	                $(".banner .sub").slideUp("fast");
+	                $(".banner1 .sub").slideUp("fast");
 	                $(this).next("div").slideToggle("fast");
 	            }
-	        });
+	        }); 
 	        
-	        $('.title').css('background','gray');
-	        
+	        $('.title').css('background','gray'); 
 	        $('.sub').css('display','none');
-	        //$('#delimg').css('display','none');
+	        $('#delimg').css('display','none');
 	        $('#path').css('display','none');
 	        $('#result').css('display','none');
 	        $('#insertparam').css('display','none');
+	        plist('${str_b}');
 	    });
 	
 	    function fileSubmit() {
@@ -46,7 +45,6 @@
 	            	console.log(data);
 	            	console.log($('#result').html(data));
 	            	addproduct_2($('#insertparam').html());
-	                alert("파일 업로드하였습니다.");
 	            },
 	            error : function(error) {
 	                alert("파일 업로드에 실패하였습니다.");
@@ -69,7 +67,6 @@
 	            	console.log(data);
 	            	console.log($('#result').html(data));
 	            	mod_product($('#insertparam').html());
-	                alert("파일 업로드하였습니다.");
 	            },
 	            error : function(error) {
 	                alert("파일 업로드에 실패하였습니다.");
@@ -83,14 +80,18 @@
 	</script>
 
 	<body>
+	<div id="alldiv" style="margin-left:50px;">
 		<h2> 상품관리 </h2>
-		
+		<br><br>
 		<div id="result"></div>
 		<div id="insertparam"></div>
 		<div id="delimg"></div>
 		
 		<input type="button" value="${btn_insert}" onclick="insertproduct()">
+		<br><br>
+		
 		<div id="add_product"></div>
+		<br><br>
 
 		<!-- <form id="filemodForm" action="adminManageModProduct.do" method="post" enctype="multipart/form-data">
 			<input type="file" id="filemod" name="filemod" /> 
@@ -101,14 +102,16 @@
 		<tr>
 		<td>
 		<div class="banner">
-		    <div class="title" onclick="plist('${str_b}')"> ${str_b} </div>
-		    <div class="sub"><div id="sub_b"></div></div>
-		    <div class="title" onclick="plist('${str_r}')"> ${str_r} </div>
-		    <div class="sub"><div id="sub_r"></div></div>
-		    <div class="title" onclick="plist('${str_d}')"> ${str_d} </div>
-		    <div class="sub"><div id="sub_d"></div></div>
-		    <div class="title" onclick="plist('${str_a}')"> ${str_a} </div>
-		    <div class="sub"><div id="sub_a"></div></div>
+			<table id="product" style="margin-bottom:10px;">
+				<tr>
+					<th> <input type="button" value="${str_b}" onclick="plist('${str_b}')"> </th> 
+					<th> <input type="button" value="${str_r}" onclick="plist('${str_r}')"> </th>
+					<th> <input type="button" value="${str_d}" onclick="plist('${str_d}')"> </th>
+					<th> <input type="button" value="${str_a}" onclick="plist('${str_a}')"> </th>
+					<th> <input type="button" value="${btn_close}" onclick="order_cancel()"> </th>
+				</tr>
+			</table>
+			<div class="sub"></div><div id="subp"></div> 
 		</div>
 		</td>
 		<td>
@@ -116,7 +119,8 @@
 		</td>
 		</tr>
 		</table>
-
+	</div>
+	<div style="margin-bottom:400px;"></div>
 	</body>
 	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
 </html>

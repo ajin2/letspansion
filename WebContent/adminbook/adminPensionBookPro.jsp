@@ -8,7 +8,6 @@
 	<%@ include file="setting.jsp" %>
 	<%@ include file="/book/setting.jsp" %>
 	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 	
 	<c:if test="${sessionScope.adminId != null}">
 	    <body>
@@ -21,7 +20,6 @@
 			<br><br><br><br><br><br><br><br><br>
 		</body>
 	</c:if>  
-	
 	<jsp:include page="/adminhome/adminPensionBottom.jsp" flush="false"/>
 </html>
 	

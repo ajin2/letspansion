@@ -10,7 +10,6 @@ function plist(param){
 }
 
 function p_listresult(){
-	var divid = "";
 	if (httpRequest.request.readyState == 4) {
 		if (httpRequest.request.status == 200) {
 			var xmldoc = httpRequest.request.responseXML;
@@ -27,13 +26,6 @@ function p_listresult(){
 	        	t += "</tr>";
 	        
 	        for(var i = 0; i < data.product.length; i++){
-	        	if(i == 0){
-	        		if(data.product[i].p_cate == '고기') divid = "sub_b";
-	        		else if(data.product[i].p_cate == '라면') divid = "sub_r";
-	        		else if(data.product[i].p_cate == '음료') divid = "sub_d";
-	        		else if(data.product[i].p_cate == '주류') divid = "sub_a";
-	        	}
-	        	
         		t += "<tr>"+
         			"<td style='width:140px;' id='"+data.product[i].p_id+"'>"+ data.product[i].p_name +"</td>";
         		
@@ -60,9 +52,13 @@ function p_listresult(){
         		
 	        }
 	        t += "</table></form>";
-	        $('#'+divid).html(t);
+	        $('#subp').html(t);
 		}
 	}
+}
+
+function order_cancel(){
+	$('#subp').html('');
 }
 
 function insertproduct(){
@@ -74,7 +70,7 @@ function insertproduct(){
 	t += "<th>수량</th>";
 	t += "<th>가격</th>";
 	t += "<th colspan='2'></th></tr><tr>";
-	t += "<td id='inserttd'> <input type='text' name='pcate' placeholder='고기, 라면, 음료, 주류 중 택 1' style='width:180px'> </td>";
+	t += "<td id='inserttd'> <input type='text' name='pcate' placeholder='고기, 라면, 음료, 주류 중 택 1' style='width:200px'> </td>";
 	t += "<td> <input type='text' name='pname' style='width:120px'> </td>";
 	t += "<td> <input type='file' name='fileup' id='fileup' style='width:180px'> </td>";
 	t += "<td> <input type='number' name='amount' style='width:80px'> </td>";
@@ -144,13 +140,12 @@ function addproductresult(){
 			
 	       	if(code == "success"){
 	       		msg = message;
-	       		plist(message);
-		            
+	       		plist(msg);
+	       		$('.sub').css('display','');
 	       	}else{
 	       		msg = message ;
 	       	}
 	       	console.log(msg);
-	       	$('.sub_'+msg).css('display','');
 		}
 	}
 }
@@ -258,7 +253,6 @@ function modresult(){
 
 function delproduct(pid, psys){
 	$('#delimg').text(psys);
-	alert($('#delimg').text(psys));
 	
 	var params = "pid=" + Number(pid);
 	httpRequest = new HttpRequest(delproductresult, "productdelete.do", params);
