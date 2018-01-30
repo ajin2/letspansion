@@ -31,7 +31,7 @@
 		<table border="1">
 			<tr>
 				<th colspan="2">
-					: 카테고리 :
+					*카테고리 
 				</th>
 			</tr>
 			<tr>
@@ -56,29 +56,24 @@
 			
 			<tr>
 				<th colspan="2">	
-					: 회원정보 :
+					*회원정보
 				</th>
 			</tr>
 			<tr>
 				<th> 이름 </th>
 					<td>
-					 <input type="text" name="a_id" value="${sessionScope.adminId}"> </td>
+					 &nbsp;&nbsp; ${sessionScope.adminId}
 				
 			</tr>
-			<!-- <tr>
-				<th> 이메일 : </th>
-				<td><input type="text" name="email" value="이메일"> </td>
-				
-			</tr> -->
 			
 			<tr>
 				<th colspan="2">	
-					: 문의하기 :
+					*문의하기
 				</th>
 			</tr>
 			<tr>
 				<th> 제목 </th>
-				<td> <input type="text" name="q_subject"> </td>
+				<td> <input type="text" name="q_subject" value="${qDto.q_subject}"> </td>
 			</tr>
 			<tr>
 				<th> 내용 </th>

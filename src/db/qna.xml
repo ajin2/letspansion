@@ -48,7 +48,7 @@
   		update pension_qna set re_step=re_step-1 where ref=#{ref} and re_step &gt; #{re_step}
   	</update>
   	<update id="delete" parameterType="int">
-  		update pension_qna set q_delete=1 where q_num=#{q_num}
+  		update pension_qna set q_delete=1, re_step=0, re_level=0 where q_num=#{q_num}
   	</update>
   	
   	
