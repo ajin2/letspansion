@@ -48,9 +48,15 @@ td{
 }
 
 #result{
+	width:700px;
 	margin-left : 650px;
 	margin-top : 50px;
 }
+#result1{
+	width:700px;
+	
+}
+
 
 
 .banner1{

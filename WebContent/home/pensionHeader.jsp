@@ -11,10 +11,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<script src="${project}home/script.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
 	</head>
 	
 	<c:if test="${(sessionScope.memId == null || sessionScope.memId == '')}">
@@ -59,9 +60,9 @@
 					</li>
 					</ul>
 			</div>
-				<div class="sns">
+				<div class="logon">
 					<ul>
-						<li><a>로그인</a>
+						<li><a>로그인하기</a>
 						<ul>
 							<li><a href="logonMain.do">로그인</a></li>
 							<li><a href="logonInputForm.do">회원가입</a></li>
@@ -117,17 +118,32 @@
 							<li><a href="list.do">후기</a></li>
 						</ul>
 					</li>
-					<li><a>마이페이지</a>
+					</ul>
+			</div>
+			<div class="logon">
+					<ul>
+						<li><a>마이페이지</a>
 						<ul>
 							<li><a href="logonModifyForm.do">회원수정</a></li>
 							<li><a href=".do">회원탈퇴</a></li>
 							<li><a href="PensionManageBook.do">예약관리</a></li> 
-              <li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+             				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
+							<li><a href="logonLogout.do">로그아웃</a></li>
+
+					</ul>
+					</li>
+					</ul>
+				</div>
+					<!-- <li><a>마이페이지</a>
+						<ul>
+							<li><a href="logonModifyForm.do">회원수정</a></li>
+							<li><a href=".do">회원탈퇴</a></li>
+							<li><a href="PensionManageBook.do">예약관리</a></li> 
+             				<li><a href="serviceAgreement.do">서비스 이용약관</a></li>
 							<li><a href="logonLogout.do">로그아웃</a></li>
 						</ul>
-					</li>			
-					</ul>
-			</div>
+					</li> -->			
+					
 		</div>
 		</body>
 
