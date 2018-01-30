@@ -28,7 +28,7 @@
 		<input type="hidden" name="a_id" value="${nDto.a_id}">
 	
 		
-		<table width="700px" border="1">
+		<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
 				<tr>
 					<th style="text-align:center;"> 제목 </th>
 					<td colspan="3"> &nbsp;&nbsp; ${nDto.n_subject} </td>
@@ -53,13 +53,16 @@
 			
 			<br><br><br>
 
-		<input class="btn btn-info" type="button" value="목록"
+		<input class="btn btn-success" type="button" value="목록"
 				onclick="location='noticeList.do?n_pageNum=${n_pageNum}'">
 </form>
 	</div>
 	</div>
 	</div>
 	</div>
+	
+	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
+	
 	</body>
 	
 </html>

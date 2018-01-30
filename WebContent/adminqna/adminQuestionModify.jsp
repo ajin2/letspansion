@@ -7,6 +7,17 @@
 		<%@ include file="setting.jsp" %>
 	</head>
 	<body>
+	
+	<table>
+				<tr>
+					<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
+					<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
+				</tr>
+			</table>
+			
+			<br><br><br>
+			
+	
 	<form method="post" name="questionform" action="adminQuestionModifyPro.do" 
 		onsubmit="return writecheck()">
 		

@@ -23,7 +23,7 @@
       <div class="top_bg"><h3><span> 문의하기 </span></h3></div>
       <div class="board">
       <div class="snb">
-      <div class="center"><div class="col-md-6 col-md-offset-3">
+      <div class="center">
        
 		<form name="qcontent">
 		<input type="hidden" name="q_num" value="${qDto.q_num}">
@@ -32,10 +32,10 @@
 		<input type="hidden" name="q_delete" value="${qDto.q_delete}">
 		<input type="hidden" name="ref" value="${qDto.ref}">
 		<input type="hidden" name="re_step" value="${qDto.re_step}">
-		<input type="hidden" name="re_level" value="${qDto.re_level}">
+		<input type="hidden" name="re_level" value="${qDto.re_level}"> 
 		
-			<table class='table table-striped table-bordered table-hover' border="1"> 
-				<tr>
+			<table width="800px" class='table table-striped table-bordered table-hover' border="1"> 
+				<tr> 
 					<th style="text-align:center;"> 제목 </th>
 					<td colspan="5"> &nbsp;&nbsp; ${qDto.q_subject} </td>
 				</tr>
@@ -80,7 +80,7 @@
   
   			<br><br>
 
-             &nbsp;&nbsp;	${qDto.q_content}
+           ${qDto.q_content}
 
 
 			<br><br><br>
@@ -95,11 +95,11 @@
 			  
 				<!-- 수정 -->
 			<c:if test="${qDto.m_id eq sessionScope.memId}">
-				<input class=class="btn btn-success" type="button" value="수정" 
+				<input class="btn btn-success" type="button" value="수정" 
 					onclick="location='questionModify.do?q_num=${qDto.q_num}&pageNum=${pageNum}'">	
 				
 				<!-- 삭제 -->
-				<input class="btn btn-warning" type="button" value="삭제" onclick="DelCheck('${qDto.q_num}', '${qDto.ref}', '${qDto.re_step}', '${qDto.re_level}' ,'${pageNum}')">	
+				<%-- <input class="btn btn-warning" type="button" value="삭제" onclick="DelCheck('${qDto.q_num}', '${qDto.ref}', '${qDto.re_step}', '${qDto.re_level}' ,'${pageNum}')"> --%>	
 			</c:if>
 			 
 			<br><br><br>
@@ -108,7 +108,7 @@
 	</div>
 	</div>
 	</div>
-	</div>
+	
+	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 	</body>
-</center>
 </html>
