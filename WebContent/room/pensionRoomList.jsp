@@ -12,11 +12,6 @@
 		<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
-	
-	<%-- <jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --%>
 
 	<body id="talk">
 	<div class="talk">
@@ -47,4 +42,3 @@
 	</body>
 	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 </html>
-

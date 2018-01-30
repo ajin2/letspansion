@@ -1,32 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-<script src="${project}member/script.js"></script>
-   
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="${project}js/jquery-3.2.1.js"></script>
 
-	<script src="${project}book/request.js"></script>
-	<script src="${project}book/calendar.js"></script>
-	<script src="${project}book/bookscript.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
-	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	</head>
-
-
-<body > 
-	<div class="reser">
-		<!-- <form name="inputform"> -->
-		<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
-		<div class="top_bg"><h3><span>오시는길</span></h3></div>
-		<div class="board">
-      	<div class="snb">
-      	<div class="center">
+<body> 
+	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>
+	<br><br><br>
 	<table class='table table-striped table-bordered table-hover'>
 		<tr>
 			<th> 주소 </th>
@@ -50,10 +29,7 @@ pageEncoding="UTF-8"%>
 			</td>
 		</tr>
 	</table>
-	</div>
-	</div>
-	</div>
-</div>
+
 	<script>
  		function myMap() {
 			var myCenter = new google.maps.LatLng(37.4991233,127.0329797);	// 학원 좌표
@@ -80,11 +56,6 @@ pageEncoding="UTF-8"%>
 		
  	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXzJV-FAbAusCWqcfyDXtkNK9lrqrzTcc&callback=myMap"></script>
-	</div>
-	</div>
-	</div>
-	</div>
 </body>
-<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 </html>
 
