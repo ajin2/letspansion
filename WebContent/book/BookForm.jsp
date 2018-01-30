@@ -56,7 +56,7 @@ pageEncoding="UTF-8"%>
 		</div> -->
 		
 
-		<div class="form-inline" id="b" style="position:absolute; top:250px; right:400px">
+		<div class="form-inline" id="b" style="position:absolute; top:200px; right:400px">
 			<br>${today_date} : 
 			<input class="form-control" type="text" name="todayDate" style="width:150px;">
 			
