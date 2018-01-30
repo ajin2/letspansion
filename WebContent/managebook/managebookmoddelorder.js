@@ -205,7 +205,7 @@ function booklist_moddel(){
 				httpRequest.sendRequest();
 			}else{
 				// 삽입
-				httpRequest = new HttpRequest(booklist_delresult, "insert.do", params);
+				httpRequest = new HttpRequest(booklist_delresult, "bookinsert.do", params);
 				httpRequest.sendRequest();
 			}
 			

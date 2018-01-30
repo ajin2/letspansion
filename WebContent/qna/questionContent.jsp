@@ -34,7 +34,7 @@
 		<input type="hidden" name="re_step" value="${qDto.re_step}">
 		<input type="hidden" name="re_level" value="${qDto.re_level}">
 		
-			<table width="700px" border="1">
+			<table class='table table-striped table-bordered table-hover' border="1"> 
 				<tr>
 					<th style="text-align:center;"> 제목 </th>
 					<td colspan="5"> &nbsp;&nbsp; ${qDto.q_subject} </td>
@@ -80,12 +80,12 @@
   
   			<br><br>
 
-             &nbsp;&nbsp;	<pre>${qDto.q_content}</pre>
+             &nbsp;&nbsp;	${qDto.q_content}
 
 
 			<br><br><br>
 				<!-- 목록 -->
-			<input class="btn btn-info" type="button" value="목록" onclick="location='questionlist.do'">
+			<input class="btn btn-success" type="button" value="목록" onclick="location='questionlist.do'">
 			
 				<!-- 답글 -->
 			<%-- <c:if test="${qDto.re_step eq 0}">
@@ -95,7 +95,7 @@
 			  
 				<!-- 수정 -->
 			<c:if test="${qDto.m_id eq sessionScope.memId}">
-				<input class="btn btn-info" type="button" value="수정" 
+				<input class=class="btn btn-success" type="button" value="수정" 
 					onclick="location='questionModify.do?q_num=${qDto.q_num}&pageNum=${pageNum}'">	
 				
 				<!-- 삭제 -->
