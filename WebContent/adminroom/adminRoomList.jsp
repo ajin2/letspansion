@@ -36,23 +36,15 @@
 				<c:forEach var="picture" items="${pictures}" varStatus="status">
 					<c:if test="${picture.r_id != null }">	
 						<div class="w3-third ">
-							<div class="w3-card w3-round">				<!-- class="w3-round" 사진 살짝 둥글게 -->
-								<img src="${project}roomupload/${picture.pic_sys}" class="w3-round" style="width: 100%; cursor:pointer" onclick="location='adminRoomDetail.do?r_id=${picture.r_id}'">
+							<div class="w3-card w3-round" style="width:80%; height:300px; margin-left:20%; margin:5px;">				<!-- class="w3-round" 사진 살짝 둥글게 -->
+								<img src="${project}roomupload/${picture.pic_sys}" class="w3-round" style="width: 100%; height:250px; cursor:pointer" onclick="location='adminRoomDetail.do?r_id=${picture.r_id}'">
 								<div class="w3-container">
 									<h4>${roomDto[status.index].r_name}</h4>
 								</div>
 							</div>
 						</div>
 					</c:if>	
-					<c:if test="${(picture.r_id % 3) == 0}"> 
-						<br><br><br><br><br><br><br><!-- <br><br><br><br><br><br><br><br><br><br><br> -->
-					</c:if>
 				</c:forEach>
-				
-					<c:if test="${roomDto[status.index].r_name == null }">		<!-- "방어코드" 방에 등록된 사진이 없다면 사진 등록하러 가기 -->
-						<input type="button" value="${roomDto[status.index].r_name} 방 사진 등록하러 가기" onclick="location='adminRoomDetail.do?r_id=${picture.r_id}'">
-					</c:if>
-					
 			</div>
 		</body>
 	</c:if>
