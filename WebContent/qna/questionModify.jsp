@@ -75,16 +75,21 @@
 		
 		<br>
 
-		<input class="btn btn-info" type="submit" value="수정하기" >
+		<input class="btn btn-success" type="submit" value="수정하기" >
 		<input class="btn btn-warning" type="button" value="취소" onclick="location='questionlist.do'">
-		<br><br>
+		<br><br><br>
 		
 
 	</form>
+	<br><br><br><br><br><br><br>
 	</div>
 	</div>
 	</div>
 	</div>
 	</div>
+	<%-- <jsp:include page="/home/pensionBottom.jsp" flush="false"/> --%> 	
+	
 	</body>
+	
+
 </html>

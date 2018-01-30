@@ -22,7 +22,7 @@
 	
 	    <!-- Custom styles for this template -->
 	    <link href="css/coming-soon.min.css" rel="stylesheet">
-	    
+	    <script type="text/javascript" src="js/jquery-ui.js"></script>
 	</head>
 	
 	<body>
@@ -54,8 +54,9 @@
 	    <script src="js/coming-soon.min.js"></script>
 		<%-- <%@include file="pensionMain.html" %>  --%>
 		<%-- <jsp:include page="pensionMain.jsp" flush="false"/> --%>
-	<jsp:include page="pensionBottom.jsp" flush="false"/>	
+			
 	</body>
-	
+	<%-- <jsp:include page="pensionBottom.jsp" flush="false"/> --%>
 </html>
+
 	

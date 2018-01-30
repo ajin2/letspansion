@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 	</head>
 
-<center>
+
 <body id="talk">
     <div class="talk">
     <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
@@ -31,7 +31,7 @@
 		<input type="hidden" name="re_step" value="${article.re_step}">
 		<input type="hidden" name="q_delete" value="${article.q_delete}">
 		
-			<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
+			<table class='table table-striped table-bordered table-hover' width="900px" border="1" >
 				<!-- <colgroup>
 						<col width="10%" align="center"/>
 						<col width="*" />
@@ -68,22 +68,22 @@
 				  <%-- <c:if test="${ article.m_id eq sessionScope.memId || article.a_id eq sessionScope.adminId}"> --%>
 					<c:if test="${article.re_step >= 0}" > 
 						<c:if test="${article.q_cate == 1}">
-							<td align="center" style="color:#93DAFF">
+							<td align="center" style="color:#0064CD;">
 							[환불/교환] 
 							</td> 
 						</c:if>
 						<c:if test="${article.q_cate == 2}">
-							<td align="center" style="color:#00AFFF">
+							<td align="center" style="color:#483D8B;">
 							 [예약취소]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 3}">
-							<td align="center" style="color:#0078FF">
+							<td align="center" style="color:#0000CD;">
 							 [픽업문의]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 4}">
-							<td align="center" style="color:#0000ff">
+							<td align="center" style="color:#000069;">
 							 [기타문의]
 							 </td>
 						</c:if>
@@ -175,6 +175,6 @@
 </div>
 </body>
 
- </center>
+<jsp:include page="/home/pensionBottom.jsp" flush="false"/>
 
 </html>

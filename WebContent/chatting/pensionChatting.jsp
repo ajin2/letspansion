@@ -5,14 +5,42 @@
 <html>
 	<meta charset="UTF-8">
 	
-	<body onload="openserver()">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/gambit-smoothscroll-min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
+
+	
+	<body onload="openserver()" id="talk">
+	 <div class="talk">
+    <jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+	 <div class="top_bg"><h3><span> 1:1 문의 </span></h3></div>
+      <div class="board">
+      <div class="snb">   
+      <div class="center">	 
 		<form name="inputform">
-			<table border="1">
+			<table class='table table-striped table-bordered table-hover' width="500px" border="1" >
 				<tr>
-					<th> 메시지 </th>
-					<td> <input type="text" name="id" size="5px" value="${sessionScope.memId}" readonly="readonly"> </td>
-					<td> <input type="text" name="message" autofocus placeholder="대화를 입력하세요" onkeyup="enterkey()"> </td>
-					<td> <input type="button" value="전송" onclick="sendmsg()"> </td>
+					<th> 아이디 </th>
+					<td>
+						<div class="input-group">
+	              			<label for="inputId" id="a">${sessionScope.memId}</label>
+	              		</div>
+	              	</td>
+	              	<td>
+	             	 	<div class="input-group">
+	              			<label for="inputId" id="a">
+	              				<input class="form-control" type="text" width="100px" name="message" autofocus placeholder="대화를 입력하세요" onkeyup="enterkey()">
+	              			</label> 
+	              		</div>
+              		</td>
+              		<td>
+              			<input class='btn btn-success' type="button" value="전송" onclick="sendmsg()">
+              		</td> 
+					<%-- <td> <input type="text" name="id" size="5px" value="${sessionScope.memId}" readonly="readonly"> </td> --%>
+					<!-- <td> <input type="text" name="message" autofocus placeholder="대화를 입력하세요" onkeyup="enterkey()"> </td> -->
 				</tr>
 				<tr>
 					<th colspan="4">
@@ -23,6 +51,10 @@
 		</form>
 		<br><br>
 		<div id="result"></div>
+		</div>
+		</div>
+		</div>
+		</div>
 	</body>
 	
 	<script type="text/javascript">

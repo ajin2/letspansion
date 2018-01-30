@@ -21,11 +21,13 @@
 
 	  
 	<table border="1">
+		<c:if test="${sessionScope.adminId ne null}">
 		<tr>
 		 	<th colspan="4" align="right">
 				<input type="button" value="글작성" onclick="location='adminNoticeWrite.do'">
 			</th> 
 		</tr>
+		</c:if>
 		
 		<tr>
 			<th style="width: 8%;"> 

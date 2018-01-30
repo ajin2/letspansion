@@ -7,7 +7,6 @@
 	<meta charset="UTF-8">
 	<%@ include file="setting.jsp" %>
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
 	<script src="${project}managebook/request.js"></script>
 	<script src="${project}js/jquery-3.2.1.js"></script>
 	

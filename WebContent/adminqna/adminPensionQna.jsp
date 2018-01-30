@@ -11,6 +11,15 @@
 		<h2> </h2>
 		<%-- <jsp:include page="${project}adminPensionHeader.jsp" flush="false"/>	
 		<jsp:include page="${project}adminPensionMenu.jsp" flush="false"/> --%>
+		
+		<table>
+			<tr>
+				<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
+				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
+			</tr>
+		</table>
+		
+		<br><br><br>
 
 		<form name="qlist">
 		 
@@ -19,12 +28,12 @@
 		<input type="hidden" name="re_step" value="${article.re_step}">
 		<input type="hidden" name="q_delete" value="${article.q_delete}">
 		
-			<table width="1120px" border="1" >
+			<table width="800px" border="1" >
 				<tr>   
 					 
 				</tr>
 				<tr> 
-					<th width="10%"> 카테고리 </th>
+					<th width="10%"> 구분 </th>
 					<th width="58%"> 제목 </th>
 					<th width="10%"> 작성자 </th>
 					<th width="25%"> 작성일 </th>
@@ -42,22 +51,22 @@
 				<tr>
 					<c:if test="${article.re_step >= 0}" > 
 						<c:if test="${article.q_cate == 1}">
-							<td align="center" style="background-color:purple">
+							<td align="center" style="color:#0064CD;">
 								[환불/교환] 
 							</td> 
 						</c:if>
 						<c:if test="${article.q_cate == 2}">
-							<td align="center" style="background-color:aqua">
+							<td align="center" style="color:#483D8B;">
 								 [예약취소]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 3}">
-							<td align="center" style="background-color:magenta">
+							<td align="center" style="color:#0000CD;">
 								 [픽업문의]
 							 </td>
 						</c:if>
 						<c:if test="${article.q_cate == 4}">
-							<td align="center" style="background-color:pink">
+							<td align="center" style="color:#000069;">
 								 [기타문의]
 							 </td>
 						</c:if>

@@ -43,14 +43,14 @@
 
 <h2> <%=page_list%> ( <%=str_count%> : <%=count%> ) </h2>
 
-<table border="1">
+<table class='table table-striped table-bordered table-hover' width="800px" border="1" >
 	<tr>
 		<th colspan="6" align="right">
-			<input type="button" class='btn btn-info' value='글쓰기' onclick="location='writeForm.do'">
+			<input type="button" class='btn btn-success' value='글작성' onclick="location='writeForm.do'">
 				 &nbsp;&nbsp;&nbsp;
 		</th> 
 	</tr>
-	<tr>
+	<tr style="height:40px;">
 		<th style="width: 8%; text-align: center; font-size: 15px"> 
 			<%=str_num%> 
 		</th>
@@ -85,7 +85,7 @@
 			for( int i=0; i<articles.size(); i++ ) {
 				AfterDataBean article = articles.get(i);
 				%>
-				<tr>
+				<tr style="height:30px;">
 					<td align="center">
 						<%=number--%>	
 					</td>

@@ -113,7 +113,7 @@ function dailyresult() {
 
 			var term = Number($("#book_term > option:selected").val());
 			
-			var t = "<table border='1' id='dbtable'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
 			t += "<tr>";
 			t += "<th> 숙박 일수 </th>";
 			t += "<th> 입실 날짜 </th>";
@@ -272,7 +272,7 @@ function insertform(a1,a2,a3, r_id){
 	
 	var t = "<br>";
 		t += "<form name='form'>";
-		t += "<table border='1' id='dbtable'>";
+		t += "<table class='table table-striped table-bordered table-hover' border='1' id='dbtable'>";
 		t += "<tr>";
 		t += "<th> 숙박 일수 </th>";
 		t += "<th> 입실 날짜 </th>";

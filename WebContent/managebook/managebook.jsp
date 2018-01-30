@@ -10,6 +10,7 @@
 	<script src="${project}js/jquery-3.2.1.js"></script>
 	<link href="${project}managebook/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/boards.css"/>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<%@ include file="setting.jsp" %>
@@ -53,7 +54,13 @@
 	
 	
 	<body>
-		<h2> 예약 조회  </h2>
+	<div class="reser">
+		<!-- <form name="inputform"> -->
+		<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
+		<div class="top_bg"><h3><span>예약 조회</span></h3></div>
+		<div class="board">
+      	<div class="snb">
+      	<div class="center">
 		
 		<div id="str_msg"></div>
 		<div id="bmoddel">
@@ -108,6 +115,9 @@
 		
 		<div id="aaa"></div>
 		<br><br>
-			
+			</div>
+			</div>
+			</div>
+			</div>
 	</body>
 </html>
