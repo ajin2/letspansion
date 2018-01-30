@@ -43,6 +43,7 @@
 			$('#product').css('display','none');
 			$('#pconsole').css('display','none');
 			$('#btn').css('display','none');
+			$('#person').css('display','none');
 			
 			memId('${sessionScope.memId}');
 			datemake();
@@ -69,6 +70,7 @@
 		
 		<div id="mid"></div>
 		<div id="bnum"></div>
+		<div id="person"></div>
 		<div id="result1"></div><br><br>
 		
 		<br>

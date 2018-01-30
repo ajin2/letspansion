@@ -298,6 +298,7 @@ function insertform(a1,a2,a3, r_id){
 		
 	$('#modbookresult').html(t);
 	$('#btn_mod').css('display','');
+	$('#person').html(person);
 }
 
 function total(r_id, person){

@@ -36,6 +36,8 @@
 <c:set var="str_productname" value="상품명"/>
 <c:set var="str_productcnt" value="수량"/>
 <c:set var="str_productprice" value="금액"/>
+<c:set var="str_agreecheck" value="예약 안내를 모두 읽고 동의합니다."/>
+<c:set var="str_agreecheck0" value="예약 안내를 모두 읽고 동의에 체크해주세요."/>
 
 <c:set var="today_date" value="오늘 날짜"/>    
 <c:set var="select_date" value="선택 날짜"/>
@@ -44,6 +46,7 @@
 <c:set var="btn_cancel" value="취소"/>
 <c:set var="btn_close" value="닫기"/>
 <c:set var="btn_pay" value="무통장입금"/>
-<c:set var="btn_cardpay" value="카드결제"/>    
+<c:set var="btn_cardpay" value="카드결제"/>   
+<c:set var="btn_book" value="예약하기"/> 
 
     
