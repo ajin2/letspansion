@@ -4,11 +4,8 @@
 <html>
 
 <body> 
-	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>
-		<div class="reser">
-     <div class="board">
-       <div class="snb">
-       <div class="center">
+	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>
+	<br><br><br>
 	<table class='table table-striped table-bordered table-hover'>
 		<tr>
 			<th> 주소 </th>
@@ -32,10 +29,7 @@
 			</td>
 		</tr>
 	</table>
-	</div>
-	</div>
-	</div>
-</div>
+
 	<script>
  		function myMap() {
 			var myCenter = new google.maps.LatLng(37.4991233,127.0329797);	// 학원 좌표

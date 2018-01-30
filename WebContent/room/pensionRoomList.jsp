@@ -6,11 +6,12 @@
 	<meta charset="UTF-8">
 	<%@ include file="setting.jsp" %>
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<body>
+	<br><br><br><h2> Let's Pension 방 소개 </h2><br><br><br><br>
+	
 		<div class="w3-row-padding w3-margin-top">
 			<c:forEach var="picture" items="${pictures}" varStatus="status">
 				<div class="w3-third ">
