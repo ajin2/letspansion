@@ -5,13 +5,13 @@
 <html>
 	<meta charset="UTF-8">
 	<jsp:include page="/home/pensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/home/pensionMenu.jsp" flush="false"/>
 	<script src="${project}managebook/managebookmoddel.js"></script>
 	<script src="${project}managebook/bookdatemod.js"></script>
 	<script src="${project}managebook/managebookmoddelorder.js"></script>
 	<script src="${project}book/request.js"></script> 
 	<script src="${project}js/jquery-3.2.1.js"></script>
 	<link href="${project}managebook/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/boards.css"/>
 	<%@ include file="setting.jsp" %>
 	
 	<script type="text/javascript">
@@ -32,9 +32,13 @@
 	
 	
 	<body>
-		<h2> 예약  변경  </h2>
+	<div class="reser">
+		<div class="top_bg"><h3><span>예약 조회</span></h3></div>
+		<div class="board">
+      	<div class="snb">
+      	<div class="center">
 		
-		<input type="button" value="${btn_bookshow}" onclick="location='PensionManageBook.do'"><br>
+		<input class="btn btn-success" type="button" value="${btn_bookshow}" onclick="location='PensionManageBook.do'"><br>
 		<div id="mid"></div> 
 		<div id="bnum"></div>
 		<div id="payway"></div>
@@ -65,16 +69,16 @@
 		<div id="result"></div>
 		
 		<div id="b">
-		<form name="inputform">
+		<form class="form-inline" name="inputform">
 			<br>${today_date} : 
-			<input type="text" name="todayDate" style="width:120px; text-align:center">
+			<input class="form-control" type="text" name="todayDate" style="width:130px; text-align:center">
 			
 			<br>${select_date} : 
-			<input type="text" name="y" style="width:40px; text-align:center">${str_year}
-			<input type="text" name="m" style="width:30px; text-align:center">${str_month}
-			<input type="text" name="day" style="width:30px; text-align:center">${str_day}
+			<input class="form-control" type="text" name="y" style="width:70px; text-align:center">${str_year}
+			<input class="form-control" type="text" name="m" style="width:50px; text-align:center">${str_month}
+			<input class="form-control" type="text" name="day" style="width:50px; text-align:center">${str_day}
 			
-			<select id="book_term" onchange="daily()">
+			<select class="form-control" style="margin-top:10px;" id="book_term" onchange="daily()">
 			  <option value="1" selected="selected">${term_12}</option>
 			  <option value="2">${term_23}</option>
 			  <option value="3">${term_34}</option>
@@ -83,7 +87,7 @@
 			  <option value="6">${term_67}</option>
 			</select>
 			
-			<input type="button" value="${btn_ok}" onclick="daily()">
+			<input class="btn btn-success" type="button" value="${btn_ok}" onclick="daily()" style="margin-top:10px;">
 			
 		</form>
 		</div>
@@ -103,6 +107,10 @@
 									  + today.getDate() + "${str_day}" ;
 		</script>
 		
+		</div>
+		</div>
+		</div>
+		</div>
 		
 	</body>
 	<jsp:include page="/home/pensionBottom.jsp" flush="false"/>

@@ -51,7 +51,7 @@ function booklistresult(){
 			
 			var msg = "<font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;** 결제 금액은 상품 주문 금액을 포함하지 않은 숙소 예약 금액입니다 **</font><br><br>";
 			
-			var t = "<table border='1'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1'>";
 			t += "<tr>";
 			t += "<th> 숙박 일수 </th>";
 			t += "<th> 입실 날짜 </th>";
@@ -205,7 +205,7 @@ function booklist_moddel(){
 				httpRequest.sendRequest();
 			}else{
 				// 삽입
-				httpRequest = new HttpRequest(booklist_delresult, "insert.do", params);
+				httpRequest = new HttpRequest(booklist_delresult, "bookinsert.do", params);
 				httpRequest.sendRequest();
 			}
 			
