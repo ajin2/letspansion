@@ -136,7 +136,7 @@ function booklistresult(){
 
 function booklist_moddel(){
 	var term = Number($("#book_term > option:selected").val());
-	var b_person = form.b_person.value;
+	var b_person = Number($('#person').html());
 	var a1 = a_1;
 	var a2 = a_2;
 	var a3 = a_3;

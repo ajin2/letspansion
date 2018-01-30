@@ -30,7 +30,7 @@
 			}
 			function managerbookchk(){
 			    if(${sessionScope.adminId != null}){
-			        location.href = "adminBookPro.do";
+			        location.href = "adminBookGuide.do";
 			        return true;
 			    } else {
 			    	var adminloginerror = "어디가 로그인해야지";

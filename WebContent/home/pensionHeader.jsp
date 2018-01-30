@@ -103,7 +103,7 @@
 					</li>
 					<li><a>실시간 예약</a>
 						<ul>
-							<li><a href="pensionBook.do">예약</a></li>
+							<li><a href="pensionBookGuide.do">예약</a></li>
 						</ul>
 					</li>
 					<li><a>공지사항</a>
