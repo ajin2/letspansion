@@ -22,7 +22,7 @@
 	
 	    <!-- Custom styles for this template -->
 	    <link href="css/coming-soon.min.css" rel="stylesheet">
-	    
+	    <script type="text/javascript" src="js/jquery-ui.js"></script>
 	</head>
 	
 	<body>

@@ -19,7 +19,7 @@
 	src: url('/font/OpenSans.ttf');
 	src: url('/font/OpenSans.woff');
 }
- html, body, div, span, applet, object, iframe,
+ html, body, div,  span , applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -76,13 +76,26 @@ a:active				{color:#000;text-decoration:none}
 #header .gnb > ul > li > ul > li.gb {padding-bottom:15px;}
 #header .gnb > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
 #header .gnb ul li a {display:block;text-align:center;}
-#header .sns {float:right;margin-right:20px;margin-bottom:12px}
-#header .sns ul {float:left;}
-#header .sns ul li a {display:block;padding:28px 0 27px;font-size:16px;color:#fff;}
-#header .sns ul li ul { background:#fff;display:none;width:100px;}
-#header .sns ul li ul li a {padding:8px 0;font-size:15px;color:black;font-weight:bold;text-align:center;}
-/* #header .sns ul >li {width:20%;}
+#header .logon{position:absolute;left:1750px;margin:0 auto;}
+/* #header .sns ul {width:100%;} */
+#header .logon ul  {width:100%;}
+/* #header .logon ul >li {float:left;width:20%;}
+#header .logon > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .logon > ul > li > ul {background:#fff;display:none;}
+#header .logon > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
+#header .logon ul li a {display:block;text-align:center;} */
+/* #header .sns ul li a {display:block;padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .sns ul li ul { background:#fff;display:none;width:120px;}
+#header .sns ul li ul li a {padding:8px 0;font-size:15px;color:black;font-weight:bold;text-align:center;} */
+#header .logon {margin-left:20px;margin-bottom:12px}
+#header .logon ul {float:left;}
+#header .logon ul li a {display:block;padding:28px 0 27px;font-size:16px;color:#fff;}
+#header .logon ul li ul { background:#fff;display:none;width:100px;}
+#header .logon ul li ul li a {padding:8px 0;font-size:15px;color:black;font-weight:bold;text-align:center;}
+/* #header .sns{float:right;width:100%;}
+#header .sns ul  {width:50%;}
+#header .sns ul >li {width:20%;}
 #header .sns > ul > li > a {padding:28px 0 27px;font-size:16px;color:#fff;}
 #header .sns > ul > li > ul {background:#fff;display:none;}
 #header .sns > ul > li > ul > li > a {padding:8px 0;font-size:15px;font-weight:bold;}
-#header .sns ul li a {display:block;text-align:center;}   */
+#header .sns ul li a {display:block;text-align:center;} */

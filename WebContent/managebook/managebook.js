@@ -52,16 +52,16 @@ function booklistresult(){
 			var cnt = 0;
 			var msg = "";
 			
-			var t = "<table class='table table-striped table-bordered table-hover' border='1' id='sc'>";
+			var t = "<table class='table table-striped table-bordered table-hover' border='1'>";
 			t += "<tr>";
-			t += "<th> 숙박 일수 </th>";
-			t += "<th> 입실 날짜 </th>";
-			t += "<th> 퇴실 날짜 </th>";
-			t += "<th> 방 번호 </th>";
-			t += "<th> 인원 </th>";
-			t += "<th> 결제 방법 </th>";
-			t += "<th> 결제 금액 </th>";
-			t += "<th> 예약 상태 </th>";
+			t += "<th > 숙박 일수 </th>";
+			t += "<th > 입실 날짜 </th>";
+			t += "<th > 퇴실 날짜 </th>";
+			t += "<th > 방 번호 </th>";
+			t += "<th > 인원 </th>";
+			t += "<th > 결제 방법 </th>";
+			t += "<th > 결제 금액 </th>";
+			t += "<th > 예약 상태 </th>";
 			t += "</tr>";
 			
 			if(data.book.length == 0){
