@@ -14,12 +14,10 @@
 		 <script type="text/javascript" src="js/jquery-ui.js"></script>
 	     <link rel="stylesheet" type="text/css" href="css/boards.css"/>
 	     
-		<h3 align="center"> 글 읽기 </h3>
 	</head>
 	<body>
-	<table>
+		<table>
 			<tr>
-				<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
 				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
 			</tr>
 		</table>
@@ -30,7 +28,7 @@
 		<input type="hidden" name="a_id" value="${nDto.a_id}">
 	
 	
-		<table border="1" width="800px">
+		<table border="1" width="800px" >
 	<tr>
 		<th style="width: 10%"> 작성자 </th>
 		<td style="width: 10%" align="center"> 

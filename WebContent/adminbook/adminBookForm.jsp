@@ -8,10 +8,10 @@
 	<script src="${project}book/request.js"></script>
 	<script src="${project}book/calendar.js"></script>
 	<script src="${project}book/bookscript.js"></script>
-	<link href="${project}book/style.css" rel="stylesheet" type="text/css">
+	<link href="${project}adminbook/style.css" rel="stylesheet" type="text/css">
 	<body onload="memId('')">
 		<form name="inputform">
-		<div id="a">
+		<div id="a" style="margin-left:100px;">
 			<table id="calendar" border="1"> 
 				<tr style="height:40px; background:pink; font-size:1.3em">
 			     	<td align="center"><label onclick="prevCalendar()"> ◀ </label></td>

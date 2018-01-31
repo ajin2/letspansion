@@ -6,7 +6,6 @@
 		<meta charset="UTF-8">
 		<%@ include file="setting.jsp" %>
 		<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-		<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 		<h3> 공지사항 </h3>
 	</head>
 	<body> 

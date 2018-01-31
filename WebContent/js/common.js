@@ -32,7 +32,7 @@ $(".gnb > ul > li").hover(function(){
 	$(this).find("ul").stop().slideUp(300);
 });
 //sns
-$(".sns > ul > li").hover(function(){
+$(".logon > ul > li").hover(function(){
 	$(this).addClass("active");
 	$(this).find("a").addClass("active");
 	$(this).find("ul").slideDown(350);

@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<%@ include file="setting.jsp" %>
 	<jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/>	
-	<jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/>
 	
 	<body>
 		<h2> </h2>

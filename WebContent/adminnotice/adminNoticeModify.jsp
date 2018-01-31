@@ -18,7 +18,6 @@
 	
 	<body>
 		
-		<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
 				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
 		
 		<form method="post" action="adminNoticeModifyPro.do" name="noticeModifyForm" 

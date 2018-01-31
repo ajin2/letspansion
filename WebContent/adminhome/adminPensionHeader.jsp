@@ -55,7 +55,7 @@
 					</li>
 					<li><a>후기</a>
 						<ul>
-							<li><a href="list.do">후기</a></li>
+							<li><a href="adminlist.do">후기</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -113,7 +113,7 @@
 					</li>
 					<li><a>후기</a>
 						<ul>
-							<li><a href="list.do">후기</a></li>
+							<li><a href="adminlist.do">후기</a></li>
 						</ul>
 					</li>
 				</ul>

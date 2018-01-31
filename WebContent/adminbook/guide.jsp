@@ -108,7 +108,7 @@
     			alert('${str_agreecheck0}');
     			return;
     		}else{
-    			window.location.href = "pensionBook.do";
+    			window.location.href = "adminBookPro.do";
     		}    		
     	}
     	</script>

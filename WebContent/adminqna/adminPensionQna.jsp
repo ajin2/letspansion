@@ -14,7 +14,6 @@
 		
 		<table>
 			<tr>
-				<th> <jsp:include page="/adminhome/adminPensionMenu.jsp" flush="false"/> </th>	
 				<td> <jsp:include page="/adminhome/adminPensionHeader.jsp" flush="false"/> </td>
 			</tr>
 		</table>
